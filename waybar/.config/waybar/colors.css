@@ -1,23 +1,33 @@
 @define-color dark rgb(75, 63, 115);
+@define-color dark-dim rgb(37, 31, 57);
 @define-color dark-bright rgb(113, 95, 173);
 
 @define-color red rgb(226, 63, 115);
+@define-color red-dim rgb(113, 31, 57);
 @define-color red-bright rgb(255, 95, 173);
 
 @define-color green rgb(75, 223, 115);
+@define-color green-dim rgb(37, 111, 57);
 @define-color green-bright rgb(113, 255, 173);
 
 @define-color yellow rgb(226, 223, 115);
+@define-color yellow-dim rgb(113, 111, 57);
 @define-color yellow-bright rgb(255, 255, 173);
 
 @define-color blue rgb(75, 63, 249);
+@define-color blue-dim rgb(37, 31, 124);
 @define-color blue-bright rgb(113, 95, 255);
 
 @define-color magenta rgb(226, 63, 249);
+@define-color magenta-dim rgb(113, 31, 124);
 @define-color magenta-bright rgb(255, 95, 255);
 
 @define-color cyan rgb(75, 223, 249);
+@define-color cyan-dim rgb(37, 111, 124);
 @define-color cyan-bright rgb(113, 255, 255);
 
 @define-color light rgb(226, 225, 249);
+@define-color light-dim rgb(113, 111, 124);
 @define-color light-bright rgb(255, 255, 255); 
+
+

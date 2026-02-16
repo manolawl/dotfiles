@@ -18,32 +18,27 @@
   min-width: 0;
 }
 
-window#waybar {
-  background-color: transparent;
-}
-
 .modules-left, 
 .modules-center,
 .modules-right {
+  background-color: @dark-dim;
   padding: 0 8px 0 8px;
+  border-color: @dark-bright;
   border-style: solid;
-  border-width: 2px;
+  border-width: 4px;
   border-top: none;
 }
 
 .modules-left {
-  border-color: @red;
   border-left: none;
   border-radius: 0 0 16px 0;
 }
 
 .modules-center {
-  border-color: @green;
   border-radius: 0 0 16px 16px;
 }
 
 .modules-right {
-  border-color: @blue;
   border-right: none;
   border-radius: 0 0 0 16px;
 }
@@ -62,7 +57,7 @@ window#waybar {
 }
 
 #workspaces button label {
-  color: @red-bright;
+  color: @cyan-bright;
 }
 
 #custom-notifications,
@@ -71,12 +66,12 @@ window#waybar {
 #clock,
 #bluetooth,
 #network {
-  color: @green-bright;
+  color: @magenta-bright;
 }
 
 
 #temperature,
 #cpu,
 #memory {
-  color: @blue-bright;
+  color: @yellow-bright;
 }
