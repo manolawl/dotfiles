@@ -71,7 +71,10 @@
     "format-on": "<span font='16'></span>",
     "format-disabled": "<span font='16'>󰂲</span>",
     "format-connected": "<span font='16'>󰂱</span>",
-    "on-click": "exec blueman-manager"
+    "on-click": "exec blueman-manager",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+	  "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
   },
 
   "network": {
@@ -92,6 +95,7 @@
     "timezone": "Asia/Manila",
     "locale": "en_US.UTF-8",
     "format": "{:%I:%M}",
+    "tooltip": false,
     "interval": 60
   },
 
@@ -101,18 +105,21 @@
   
   "temperature": {
     "interval": 1,
+    "tooltip": false,
     "format": "{temperatureC}°"
   },
 
   "cpu": {
     "interval": 1,
     "min-length": 3,
+    "tooltip": false,
     "format": "{usage}%"
   },
 
   "memory": {
     "interval": 1,
     "min-length": 7,
+    "tooltip": false,
     "format": "{used}GiB"
   }
 }

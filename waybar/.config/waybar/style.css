@@ -30,6 +30,14 @@
   border-top: none;
 }
 
+tooltip label {
+  border-radius: 16px;
+  border: 4px @dark-bright solid;
+  background-color: @dark-dim;
+  color: @yellow-bright;
+  padding: 0 8px 0 8px;
+}
+
 .modules-left {
   border-left: none;
   border-radius: 0 0 16px 0;
@@ -44,37 +52,9 @@
   border-radius: 0 0 0 16px;
 }
 
-#workspaces button label,
-#backlight,
-#wireplumber,
-#custom-notifications,
-#clock,
-#bluetooth,
-#network,
-#temperature,
-#cpu,
-#memory {
+.module, .module button label {
   margin: 0 4px 0 4px;
   color: @yellow-bright;
 }
 
-/*#workspaces button label {
-  color: @cyan-bright;
-}
 
-#custom-notifications,
-#backlight,
-#wireplumber,
-#clock,
-#bluetooth,
-#network {
-  color: @magenta-bright;
-}
-
-
-#temperature,
-#cpu,
-#memory {
-  color: @yellow-bright;
-}
-*/
