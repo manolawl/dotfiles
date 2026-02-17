@@ -5,7 +5,7 @@ add_newline = false
 format = '$all'
 
 [character]
-success_symbol = '[𜰘𜰙](bold #71FFAD)'
-error_symbol = '[𜰘𜰚](bold #FF5FAD) '
-vimcmd_symbol = '[𜰘𜲂](bold #FFFFAD) '
+success_symbol = '[-->](bold #71FFAD)'
+error_symbol = '[~~>](bold #FF5FAD) '
+vimcmd_symbol = '[>->](bold #FFFFAD) '
 
