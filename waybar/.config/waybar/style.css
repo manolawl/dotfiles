@@ -2,20 +2,21 @@
 
 * {
   color: @light-bright;
-  font-family: "DeJaVuSansM Nerd Font Mono", "Font Awesome 7", "Font Awesome 7 Free Solid", "Font Awesome 7 Brands Regular", "Font Awesome 7 Free Regular", "Symbols Nerd Font Regular";
+  font-family: "DeJaVuSansM Nerd Font Mono", "Symbols Nerd Font Regular";
   font-size: 12pt;
   border: none;
   border-radius: 0;
   transition: none;
   min-height: 0;
+  min-width: 0;
   background: none;
   padding: 0;
+  margin: 0;
   text-shadow: none;
   box-shadow: none;
   transition: none;
   -gtk-icon-shadow: none;
   -gtk-icon-effect: none;
-  min-width: 0;
 }
 
 .modules-left, 
@@ -43,10 +44,10 @@
   border-radius: 0 0 0 16px;
 }
 
-#custom-notifications,
-#workspaces button,
+#workspaces button label,
 #backlight,
 #wireplumber,
+#custom-notifications,
 #clock,
 #bluetooth,
 #network,
@@ -54,9 +55,10 @@
 #cpu,
 #memory {
   margin: 0 4px 0 4px;
+  color: @yellow-bright;
 }
 
-#workspaces button label {
+/*#workspaces button label {
   color: @cyan-bright;
 }
 
@@ -75,3 +77,4 @@
 #memory {
   color: @yellow-bright;
 }
+*/

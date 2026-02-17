@@ -1,16 +1,25 @@
 {
   "position": "top",
-  "margin-top": 0,
-  "margin-left": 0,
-  "margin-right": 0,
-  "margin-bottom": 0,
+  "margin": 0,
   
   "modules-left":["hyprland/workspaces"],
-  "modules-center":["backlight", "wireplumber", "clock", "custom/notifications", "clock#date", "bluetooth", "network"],
-  "modules-right":["temperature", "cpu", "memory"],
+
+  "modules-center":[
+    "backlight", 
+    "wireplumber", 
+    "clock", 
+    "custom/notifications", 
+    "clock#date", 
+    "bluetooth", 
+    "network"],
+
+  "modules-right":[
+    "temperature", 
+    "network#rate", 
+    "memory"],
 
   "hyprland/workspaces": {
-    "format": "{icon}",
+    "format": "<span font='16'>{icon}</span>",
     "format-icons": {
       "default":  "",
       "active": ""
@@ -70,6 +79,12 @@
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
     "interval": 1
   },
+  
+  "network#rate": {
+    "format": "{bandwidthTotalBytes}",
+    "min-length": 8,
+    "interval": 1
+  },
 
   "clock": {
     "timezone": "Asia/Manila",
@@ -79,16 +94,12 @@
   },
 
   "clock#date": {
-    "timezone": "Asia/Manila",
-    "locale": "en_US.UTF-8",
-    "format": "{:%m-%d}",
-    "interval": 60
+    "format": "{:%m-%d}"
   },
   
   "temperature": {
     "interval": 1,
-    "format": "{temperatureC}°C",
-    "format-icons": ["", "", "", "", ""]
+    "format": "{temperatureC}°"
   },
 
   "cpu": {
