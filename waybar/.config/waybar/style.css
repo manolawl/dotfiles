@@ -2,7 +2,7 @@
 
 * {
   color: @light-bright;
-  font-family: "DeJaVuSansM Nerd Font Mono", "Symbols Nerd Font Regular";
+  font-family: "JetBrainsMono Nerd Font";
   font-size: 12pt;
   border: none;
   border-radius: 0;
@@ -23,7 +23,7 @@
 .modules-center,
 .modules-right {
   background-color: @dark-dim;
-  padding: 0 8px 0 8px;
+  padding: 0 8px;
   border-color: @dark-bright;
   border-style: solid;
   border-width: 4px;
@@ -52,9 +52,12 @@ tooltip label {
   border-radius: 0 0 0 16px;
 }
 
-.module, .module button label {
-  margin: 0 4px 0 4px;
+.module {
+  margin: 0 8px;
   color: @yellow-bright;
 }
 
-
+#workspaces button label {
+  margin: 0 8px;
+  color: @yellow-bright;
+}

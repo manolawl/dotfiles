@@ -21,10 +21,10 @@
   ],
 
   "hyprland/workspaces": {
-    "format": "<span font='16'>{icon}</span>",
+    "format": "{icon}",
     "format-icons": {
-      "default":  "",
-      "active": ""
+      "default":  "󰄰",
+      "active": "󰄯"
     },
     "persistent-workspaces": {
       "eDP-1": [1, 2, 3, 4],
@@ -34,7 +34,7 @@
 
   "custom/notifications": {
     "tooltip": true,
-    "format": "<span font='16'>{icon}</span>",
+    "format": "{icon}",
     "format-icons": {
       "notification": "󱅫",
       "none": "󰂜",
@@ -55,22 +55,22 @@
 
   "backlight": {
     "device": "intel_backlight",
-    "format": "<span font='16'>{icon}</span>",
+    "format": "{icon}",
     "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
     "tooltip-format": "{percent}%"
   },
 
   "wireplumber": {
-    "format": "<span font='16'>{icon}</span>",
+    "format": "{icon}",
     "tooltip-format": "{volume}%",
-    "format-muted": "<span font='16' rise='-2000'>󰖁</span>",
+    "format-muted": "󰝟",
     "format-icons": ["󰕿", "󰖀", "󰕾"]
   },
 
   "bluetooth": {
-    "format-on": "<span font='16'></span>",
-    "format-disabled": "<span font='16'>󰂲</span>",
-    "format-connected": "<span font='16'>󰂱</span>",
+    "format-on": "󰂯",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
     "on-click": "exec blueman-manager",
     "tooltip-format": "{controller_alias}\t{controller_address}",
 	  "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
@@ -78,7 +78,7 @@
   },
 
   "network": {
-    "format-wifi": "<span font='16'>{icon}</span>",
+    "format-wifi": "{icon}",
     "tooltip-format": "{essid}",
     "on-click": "exec kitty nmtui",
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],

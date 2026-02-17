@@ -2,7 +2,7 @@
 opacity = 0.75
 
 [font]
-normal = { family = "DejaVuSansM Nerd Font Mono", style = "Regular" }
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 size = 12
 
 [cursor]
