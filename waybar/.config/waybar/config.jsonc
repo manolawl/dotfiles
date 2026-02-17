@@ -11,12 +11,14 @@
     "custom/notifications", 
     "clock#date", 
     "bluetooth", 
-    "network"],
+    "network"
+  ],
 
   "modules-right":[
     "temperature", 
     "network#rate", 
-    "memory"],
+    "memory"
+  ],
 
   "hyprland/workspaces": {
     "format": "<span font='16'>{icon}</span>",
@@ -74,10 +76,10 @@
 
   "network": {
     "format-wifi": "<span font='16'>{icon}</span>",
-    "tooltip-format": "{essid} {bandwidthTotalBytes}",
+    "tooltip-format": "{essid}",
     "on-click": "exec kitty nmtui",
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
-    "interval": 1
+    "interval": 10
   },
   
   "network#rate": {
