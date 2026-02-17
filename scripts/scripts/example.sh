@@ -1,3 +1,6 @@
 #! /usr/bin/bash
 
-echo "Hello World"
+for i in {1..5}
+do
+  notify-send "Hello World!"
+done
