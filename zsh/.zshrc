@@ -15,6 +15,6 @@ compinit
 
 eval "$(starship init zsh)"
 alias ls="ls -a  --color=auto"
-alias grep="rg --color=auto"
+alias grep="rg -p -i"
 alias tree="tree -a -C"
 alias ff="fastfetch"
