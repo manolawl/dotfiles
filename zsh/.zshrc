@@ -14,7 +14,7 @@ compinit
 # End of lines added by compinstall
 
 eval "$(starship init zsh)"
-alias ls="ls -a  --color=auto"
+alias ls="ls -A -lh --color=auto"
 alias grep="rg -p -i"
 alias tree="tree -a -C"
 alias ff="fastfetch"
