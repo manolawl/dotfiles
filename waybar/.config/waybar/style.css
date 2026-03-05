@@ -19,20 +19,17 @@
   -gtk-icon-effect: none;
 }
 
+window#waybar {
+  background-color: @dark-dim;
+}
+
 .modules-left, 
 .modules-center,
 .modules-right {
-  background-color: @dark-dim;
   padding: 0 8px;
-  border-color: @dark-bright;
-  border-style: solid;
-  border-width: 4px;
-  border-top: none;
 }
 
 tooltip label {
-  border-radius: 16px;
-  border: 4px @dark-bright solid;
   background-color: @dark-dim;
   color: @yellow-bright;
   padding: 0 8px 0 8px;
