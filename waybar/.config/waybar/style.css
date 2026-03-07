@@ -1,7 +1,7 @@
 @import "colors.css";
 
 * {
-  color: @light-bright;
+  color: @diamond-light;
   font-family: "JetBrainsMono Nerd Font";
   font-size: 12pt;
   border: none;
@@ -20,7 +20,7 @@
 }
 
 window#waybar {
-  background-color: @dark-dim;
+  background-color: @amethyst-dark;
 }
 
 .modules-left, 
@@ -30,8 +30,8 @@ window#waybar {
 }
 
 tooltip label {
-  background-color: @dark-dim;
-  color: @yellow-bright;
+  background-color: @amethyst-dark;
+  color: @citrine-light;
   padding: 0 8px 0 8px;
 }
 
@@ -51,10 +51,10 @@ tooltip label {
 
 .module {
   margin: 0 8px;
-  color: @yellow-bright;
+  color: @citrine-light;
 }
 
 #workspaces button label {
   margin: 0 8px;
-  color: @yellow-bright;
+  color: @citrine-light;
 }

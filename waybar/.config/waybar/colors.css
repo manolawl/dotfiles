@@ -1,33 +1,50 @@
-@define-color dark rgb(75, 63, 115);
-@define-color dark-dim rgb(37, 31, 57);
-@define-color dark-bright rgb(113, 95, 173);
+/* ==== DARK COLORS ==== */
 
-@define-color red rgb(226, 63, 115);
-@define-color red-dim rgb(113, 31, 57);
-@define-color red-bright rgb(255, 95, 173);
+@define-color amethyst-dark rgb(38, 32, 58); /* #26203a */
+@define-color diamond-dark rgb(113, 112, 125); /* #71707d */
+@define-color ruby-dark rgb(113, 32, 58); /* #71203a */
+@define-color spinel-dark rgb(113, 32, 125); /* #71207d */
+@define-color sapphire-dark rgb(38, 32, 125); /* #26207d */
+@define-color turquoise-dark rgb(38, 112, 125); /* #26707d */
+@define-color peridot-dark rgb(38, 112, 58); /* #26703a */
+@define-color citrine-dark rgb(113, 112, 58); /* #71703a */
+@define-color rhodolite-dark rgb(113, 32, 92); /* #71205c */
+@define-color tanzanite-dark rgb(76, 32, 125); /* #4c207d */
+@define-color aquamarine-dark rgb(38, 72, 125); /* #26487d */
+@define-color tourmaline-dark rgb(38, 112, 92); /* #26705c */
+@define-color emerald-dark rgb(76, 112, 58); /* #4c703a */
+@define-color spessartine-dark rgb(113, 72, 58); /* #71483a */
 
-@define-color green rgb(75, 223, 115);
-@define-color green-dim rgb(37, 111, 57);
-@define-color green-bright rgb(113, 255, 173);
+/* ==== NEUTRAL COLORS ==== */
 
-@define-color yellow rgb(226, 223, 115);
-@define-color yellow-dim rgb(113, 111, 57);
-@define-color yellow-bright rgb(255, 255, 173);
+@define-color amethyst-neutral rgb(75, 64, 116); /* #4b4074 */
+@define-color diamond-neutral rgb(226, 223, 249); /* #e2dff9 */
+@define-color ruby-neutral rgb(226, 64, 116); /* #e24074 */
+@define-color spinel-neutral rgb(226, 64, 249); /* #e240f9 */
+@define-color sapphire-neutral rgb(75, 64, 249); /* #4b40f9 */
+@define-color turquoise-neutral rgb(75, 223, 249); /* #4bdff9 */
+@define-color peridot-neutral rgb(75, 223, 116); /* #4bdf74 */
+@define-color citrine-neutral rgb(226, 223, 116); /* #e2df74 */
+@define-color rhodolite-neutral rgb(226, 64, 182); /* #e240b6 */
+@define-color tanzanite-neutral rgb(150, 64, 249); /* #9640f9 */
+@define-color aquamarine-neutral rgb(75, 144, 249); /* #4b90f9 */
+@define-color tourmaline-neutral rgb(75, 223, 182); /* #4bdfb6 */
+@define-color emerald-neutral rgb(150, 223, 116); /* #96df74 */
+@define-color spessartine-neutral rgb(226, 144, 116); /* #e29074 */
 
-@define-color blue rgb(75, 63, 249);
-@define-color blue-dim rgb(37, 31, 124);
-@define-color blue-bright rgb(113, 95, 255);
+/* ==== LIGHT COLORS ==== */
 
-@define-color magenta rgb(226, 63, 249);
-@define-color magenta-dim rgb(113, 31, 124);
-@define-color magenta-bright rgb(255, 95, 255);
-
-@define-color cyan rgb(75, 223, 249);
-@define-color cyan-dim rgb(37, 111, 124);
-@define-color cyan-bright rgb(113, 255, 255);
-
-@define-color light rgb(226, 225, 249);
-@define-color light-dim rgb(113, 111, 124);
-@define-color light-bright rgb(255, 255, 255); 
-
-
+@define-color amethyst-light rgb(113, 96, 174); /* #7160ae */
+@define-color diamond-light rgb(255, 255, 255); /* #ffffff */
+@define-color ruby-light rgb(255, 96, 174); /* #ff60ae */
+@define-color spinel-light rgb(255, 96, 255); /* #ff60ff */
+@define-color sapphire-light rgb(113, 96, 255); /* #7160ff */
+@define-color turquoise-light rgb(113, 255, 255); /* #71ffff */
+@define-color peridot-light rgb(113, 255, 174); /* #71ffae */
+@define-color citrine-light rgb(255, 255, 174); /* #ffffae */
+@define-color rhodolite-light rgb(255, 96, 214); /* #ff60d6 */
+@define-color tanzanite-light rgb(184, 96, 255); /* #b860ff */
+@define-color aquamarine-light rgb(113, 176, 255); /* #71b0ff */
+@define-color tourmaline-light rgb(113, 255, 214); /* #71ffd6 */
+@define-color emerald-light rgb(184, 255, 174); /* #b8ffae */
+@define-color spessartine-light rgb(255, 176, 174); /* #ffb0ae */
