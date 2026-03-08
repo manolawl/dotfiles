@@ -1,6 +1,8 @@
 @import "colors.css";
 
 * {
-  color: @citrine-light;
+  color: @tourmaline-neutral;
   border-radius: 0;
+  border: none;
+  background: none;
 }

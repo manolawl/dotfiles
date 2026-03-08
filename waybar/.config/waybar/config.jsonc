@@ -61,6 +61,7 @@
   },
 
   "wireplumber": {
+    "on-click": "hyprctl dispatch exec '[float; size 960 540] kitty wiremix'",
     "format": "{icon}",
     "tooltip-format": "{volume}%",
     "format-muted": "󰝟",
@@ -68,19 +69,19 @@
   },
 
   "bluetooth": {
+    "on-click": "hyprctl dispatch exec '[float; size 960 540] kitty bluetui'",
     "format-on": "󰂯",
     "format-disabled": "󰂲",
     "format-connected": "󰂱",
-    "on-click": "exec blueman-manager",
     "tooltip-format": "{controller_alias}\t{controller_address}",
 	  "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
   },
 
   "network": {
+    "on-click": "hyprctl dispatch exec '[float; size 960 540] kitty nmtui'",
     "format-wifi": "{icon}",
     "tooltip-format": "{essid}",
-    "on-click": "exec kitty nmtui",
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
     "interval": 10
   },

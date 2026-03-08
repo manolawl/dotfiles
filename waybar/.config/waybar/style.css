@@ -23,38 +23,17 @@ window#waybar {
   background-color: @amethyst-dark;
 }
 
-.modules-left, 
-.modules-center,
-.modules-right {
-  padding: 0 8px;
-}
-
 tooltip label {
   background-color: @amethyst-dark;
-  color: @citrine-light;
-  padding: 0 8px 0 8px;
-}
-
-.modules-left {
-  border-left: none;
-  border-radius: 0 0 16px 0;
-}
-
-.modules-center {
-  border-radius: 0 0 16px 16px;
-}
-
-.modules-right {
-  border-right: none;
-  border-radius: 0 0 0 16px;
+  color: @amethyst-light;
 }
 
 .module {
   margin: 0 8px;
-  color: @citrine-light;
+  color: @tourmaline-neutral;
 }
 
 #workspaces button label {
   margin: 0 8px;
-  color: @citrine-light;
+  color: @tourmaline-neutral;
 }
