@@ -1,42 +1,39 @@
 {
   "position": "top",
-  "margin": 0,
+  "margin-top": 4,
   
-  "modules-left":["hyprland/workspaces"],
-
-  "modules-center":[
-    "backlight", 
-    "wireplumber", 
+  "modules-left":[
     "clock", 
     "custom/notifications", 
-    "clock#date", 
     "bluetooth", 
     "network"
   ],
 
+  "modules-center":[
+  ],
+
   "modules-right":[
+    "backlight", 
+    "wireplumber",
     "temperature", 
-    "network#rate", 
-    "memory"
+    "memory",
+    "cpu"
   ],
 
   "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "default":  "󰄰",
-      "active": "󰄯"
-    },
-    "persistent-workspaces": {
-      "eDP-1": [1, 2, 3, 4],
-      "HDMI-A-1": [5, 6, 7, 8]
-    }
+    "format": "{icon}"
+  },
+
+  "hyprland/window": {
+    "format": "{title}"
   },
 
   "custom/notifications": {
+    "min-length": 5,
     "tooltip": true,
-    "format": "{icon}",
+    "format": "{icon} {0}",
     "format-icons": {
-      "notification": "󱅫",
+      "notification": "󰂚",
       "none": "󰂜",
       "dnd-notification": "󰂠",
       "dnd-none": "󰪓",
@@ -54,74 +51,75 @@
   },
 
   "backlight": {
+    "min-length": 5,
     "device": "intel_backlight",
-    "format": "{icon}",
+    "format": "{icon} {percent}",
     "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
-    "tooltip-format": "{percent}%"
+    "tooltip": false
   },
 
   "wireplumber": {
+    "min-length": 5,
     "on-click": "hyprctl dispatch exec '[float; size 960 540] kitty wiremix'",
-    "format": "{icon}",
-    "tooltip-format": "{volume}%",
-    "format-muted": "󰝟",
+    "format": "{icon} {volume}",
+    "tooltip": false,
+    "format-muted": "󰕿 X",
     "format-icons": ["󰕿", "󰖀", "󰕾"]
   },
 
   "bluetooth": {
+    "min-length": 5,
     "on-click": "hyprctl dispatch exec '[float; size 960 540] kitty bluetui'",
-    "format-on": "󰂯",
-    "format-disabled": "󰂲",
-    "format-connected": "󰂱",
-    "tooltip-format": "{controller_alias}\t{controller_address}",
-	  "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    "format-on": "󰂯 ON",
+    "format-off": "󰂲 OFF",
+    "format-disabled": "󰂲 DIS",
+    "format-connected": "󰂱 CON",
+    "format-connected-battery": "󰂱 {device_battery_percentage}"
   },
 
   "network": {
-    "on-click": "hyprctl dispatch exec '[float; size 960 540] kitty nmtui'",
-    "format-wifi": "{icon}",
-    "tooltip-format": "{essid}",
+    "min-length": 5,
+    "on-click": "hyprctl dispatch exec '[float; size 1000 720] kitty gazelle'",
+    "format-wifi": "{icon} {signalStrength}",
+    "tooltip-format": "{essid} {bandwidthTotalBytes}",
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
-    "interval": 10
-  },
-  
-  "network#rate": {
-    "format": "{bandwidthTotalBytes}",
-    "min-length": 8,
-    "interval": 1
+    "interval": 30
   },
 
   "clock": {
+    "min-length": 5,
     "timezone": "Asia/Manila",
     "locale": "en_US.UTF-8",
-    "format": "{:%I:%M}",
-    "tooltip": false,
+    "format": "{:%I %M}",
+    "tooltip-format": "{:%m-%d}",
     "interval": 60
   },
 
   "clock#date": {
+    "min-length": 5,
     "format": "{:%m-%d}"
   },
   
   "temperature": {
-    "interval": 1,
+    "min-length": 5,
+    "interval": 30,
     "tooltip": false,
-    "format": "{temperatureC}°"
+    "format": "{icon} {temperatureC}",
+    "format-icons": ["󱃃", "󰔏", "󱃂"]
   },
 
   "cpu": {
-    "interval": 1,
-    "min-length": 3,
+    "min-length": 5,
+    "interval": 30,
     "tooltip": false,
-    "format": "{usage}%"
+    "format": "󰙅 {usage}"
   },
 
   "memory": {
-    "interval": 1,
-    "min-length": 7,
+    "min-length": 5,
+    "interval": 30,
     "tooltip": false,
-    "format": "{used}GiB"
+    "format": "󰍛 {percentage}"
   }
 }
 

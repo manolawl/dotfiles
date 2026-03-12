@@ -3,10 +3,9 @@
 * {
   color: @diamond-light;
   font-family: "JetBrainsMono Nerd Font";
-  font-size: 12pt;
+  font-size: 12px;
   border: none;
-  border-radius: 0;
-  transition: none;
+  border-radius: 4px;
   min-height: 0;
   min-width: 0;
   background: none;
@@ -14,26 +13,32 @@
   margin: 0;
   text-shadow: none;
   box-shadow: none;
-  transition: none;
+  transition: 500ms;
   -gtk-icon-shadow: none;
   -gtk-icon-effect: none;
 }
 
-window#waybar {
-  background-color: @amethyst-dark;
-}
-
 tooltip label {
+  margin: 4px;
+  padding: 2px;
+  color: @tourmaline-neutral;
   background-color: @amethyst-dark;
-  color: @amethyst-light;
+  border: solid 2px @tourmaline-neutral;
 }
 
 .module {
-  margin: 0 8px;
+  margin: 0 2px;
+  padding: 0  4px;
   color: @tourmaline-neutral;
+  background-color: @amethyst-dark;
+  border: solid 2px @amethyst-neutral;
 }
 
-#workspaces button label {
+.module:hover {
+  border-color: @tourmaline-neutral;
+}
+
+#workspaces button label, #window label {
   margin: 0 8px;
   color: @tourmaline-neutral;
 }
