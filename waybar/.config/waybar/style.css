@@ -19,7 +19,6 @@
 }
 
 tooltip label {
-  margin: 4px;
   padding: 2px;
   color: @tourmaline-neutral;
   background-color: @amethyst-dark;
@@ -27,7 +26,6 @@ tooltip label {
 }
 
 .module {
-  margin: 0 2px;
   padding: 0  4px;
   color: @tourmaline-neutral;
   background-color: @amethyst-dark;
@@ -39,6 +37,9 @@ tooltip label {
 }
 
 #workspaces button label, #window label {
-  margin: 0 8px;
   color: @tourmaline-neutral;
+}
+
+#mpris.paused, #bluetooth.off, #bluetooth.disabled, #network.disabled {
+  color: @tourmaline-dark;
 }

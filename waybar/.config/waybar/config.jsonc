@@ -1,26 +1,33 @@
 {
   "position": "top",
   "margin-top": 4,
+  "margin-bottom": 2,
+  "margin-left": 4,
+  "margin-right": 4,
+  "spacing": 4,
   
   "modules-left":[
     "clock", 
-    "custom/notifications", 
     "bluetooth", 
-    "network"
+    "network",
+    "backlight", 
+    "wireplumber"
   ],
 
   "modules-center":[
+    "mpris"
   ],
 
   "modules-right":[
-    "backlight", 
-    "wireplumber",
+    "privacy",
     "temperature", 
     "memory",
-    "cpu"
+    "cpu",
+    "custom/notifications"
   ],
 
   "hyprland/workspaces": {
+    "expand": true,
     "format": "{icon}"
   },
 
@@ -28,10 +35,16 @@
     "format": "{title}"
   },
 
+  "mpris": {
+    "min-length": 5,
+	  "format": "󰝚 {title} by {artist} 󰝚"
+  },
+
   "custom/notifications": {
     "min-length": 5,
     "tooltip": true,
     "format": "{icon} {0}",
+
     "format-icons": {
       "notification": "󰂚",
       "none": "󰂜",
@@ -42,6 +55,7 @@
       "dnd-inhibited-notification": "󰂛",
       "dnd-inhibited-none": "󰪑"
     },
+
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
@@ -60,7 +74,7 @@
 
   "wireplumber": {
     "min-length": 5,
-    "on-click": "hyprctl dispatch exec '[float; size 960 540] kitty wiremix'",
+    "on-click": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty wiremix'",
     "format": "{icon} {volume}",
     "tooltip": false,
     "format-muted": "󰕿 X",
@@ -69,7 +83,7 @@
 
   "bluetooth": {
     "min-length": 5,
-    "on-click": "hyprctl dispatch exec '[float; size 960 540] kitty bluetui'",
+    "on-click": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty bluetui'",
     "format-on": "󰂯 ON",
     "format-off": "󰂲 OFF",
     "format-disabled": "󰂲 DIS",
@@ -79,7 +93,7 @@
 
   "network": {
     "min-length": 5,
-    "on-click": "hyprctl dispatch exec '[float; size 1000 720] kitty gazelle'",
+    "on-click": "hyprctl dispatch exec '[float; size 1000 720; move 4 32] kitty gazelle'",
     "format-wifi": "{icon} {signalStrength}",
     "tooltip-format": "{essid} {bandwidthTotalBytes}",
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
