@@ -1,2 +1,5 @@
 term=kitty
-width=50%
+width=25%
+lines=5
+hide_scroll=true
+matching=fuzzy
