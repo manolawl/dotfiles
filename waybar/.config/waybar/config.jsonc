@@ -1,7 +1,7 @@
 {
   "position": "top",
   "margin-top": 4,
-  "margin-bottom": 2,
+  "margin-bottom": 0,
   "margin-left": 4,
   "margin-right": 4,
   "spacing": 4,
@@ -26,8 +26,11 @@
     "custom/notifications"
   ],
 
+  "user": {
+    "format": "{work_H}h {work_M}m"
+  },
+
   "hyprland/workspaces": {
-    "expand": true,
     "format": "{icon}"
   },
 
@@ -36,12 +39,12 @@
   },
 
   "mpris": {
-    "min-length": 5,
+    "min-length": 12,
 	  "format": "󰝚 {title} by {artist} 󰝚"
   },
 
   "custom/notifications": {
-    "min-length": 5,
+    "min-length": 12,
     "tooltip": true,
     "format": "{icon} {0}",
 
@@ -65,24 +68,24 @@
   },
 
   "backlight": {
-    "min-length": 5,
+    "min-length": 12,
     "device": "intel_backlight",
-    "format": "{icon} {percent}",
+    "format": "{icon} {percent}%",
     "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
     "tooltip": false
   },
 
   "wireplumber": {
-    "min-length": 5,
-    "on-click": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty wiremix'",
-    "format": "{icon} {volume}",
+    "min-length": 12,
+    "on-click-right": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty wiremix'",
+    "format": "{icon} {volume}%",
     "tooltip": false,
-    "format-muted": "󰕿 X",
+    "format-muted": "󰝟 {volume}%",
     "format-icons": ["󰕿", "󰖀", "󰕾"]
   },
 
   "bluetooth": {
-    "min-length": 5,
+    "min-length": 12,
     "on-click": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty bluetui'",
     "format-on": "󰂯 ON",
     "format-off": "󰂲 OFF",
@@ -92,48 +95,49 @@
   },
 
   "network": {
-    "min-length": 5,
-    "on-click": "hyprctl dispatch exec '[float; size 1000 720; move 4 32] kitty gazelle'",
-    "format-wifi": "{icon} {signalStrength}",
-    "tooltip-format": "{essid} {bandwidthTotalBytes}",
+    "min-length": 12,
+    "on-click-right": "hyprctl dispatch exec '[float; size 1200 720; move 4 32] kitty gazelle'",
+    "on-click": "toggle-format",
+    "format-wifi": "{icon} {signalStrength}%",
+    "format-alt": "{icon} {bandwidthTotalBytes}",
+    "tooltip-format": "{essid}",
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
     "interval": 30
   },
 
   "clock": {
-    "min-length": 5,
+    "min-length": 12,
     "timezone": "Asia/Manila",
     "locale": "en_US.UTF-8",
-    "format": "{:%I %M}",
-    "tooltip-format": "{:%m-%d}",
+    "format": "󱑂 {:%I:%M}",
+    "format-alt": "󰃭 {:%m-%d}",
+    "tooltip": false,
+    "on-click": "toggle-format",
     "interval": 60
   },
 
-  "clock#date": {
-    "min-length": 5,
-    "format": "{:%m-%d}"
-  },
-  
   "temperature": {
-    "min-length": 5,
+    "min-length": 12,
     "interval": 30,
     "tooltip": false,
-    "format": "{icon} {temperatureC}",
+    "format": "{icon} {temperatureC}°C",
     "format-icons": ["󱃃", "󰔏", "󱃂"]
   },
 
   "cpu": {
-    "min-length": 5,
+    "min-length": 12,
     "interval": 30,
     "tooltip": false,
-    "format": "󰙅 {usage}"
+    "format": "󰙅 {usage}%"
   },
 
   "memory": {
-    "min-length": 5,
+    "min-length": 12,
     "interval": 30,
     "tooltip": false,
-    "format": "󰍛 {percentage}"
+    "format": "󰍛 {percentage}%",
+    "format-alt": "󰍛 {used}G",
+    "on-click": "toggle-format"
   }
 }
 

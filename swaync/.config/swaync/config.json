@@ -80,19 +80,19 @@
           "label": "󰐥",
           "type": "toggle",
           "active": true,
-          "command": "notify-send 'Shutting down in 30 seconds'"
+          "command": "notify-send 'Shutting down...'"
         },
         {
           "label": "󰜉",
           "type": "toggle",
           "active": true,
-          "command": "notify-send 'Rebooting in 30 seconds'"
+          "command": "notify-send 'Rebooting...'"
         },
         {
-          "label": "󰤄",
+          "label": "󰍃",
           "type": "toggle",
           "active": true,
-          "command": "notify-send 'Sleeping in 30 seconds'"
+          "command": "notify-send 'Logging out...'"
         }
       ]
     }

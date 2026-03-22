@@ -40,6 +40,10 @@ tooltip label {
   color: @tourmaline-neutral;
 }
 
-#mpris.paused, #bluetooth.off, #bluetooth.disabled, #network.disabled {
+#mpris.paused, 
+#bluetooth.off, 
+#bluetooth.disabled, 
+#network.disabled,
+#wireplumber.muted {
   color: @tourmaline-dark;
 }
