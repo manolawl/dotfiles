@@ -109,8 +109,8 @@
     "min-length": 12,
     "timezone": "Asia/Manila",
     "locale": "en_PH.UTF-8",
-    "format": "󱑂 {:F%I:%M}",
-    "format-alt": "󰃭 {:F%m-%d}",
+    "format": "󱑂 {:%I:%M}",
+    "format-alt": "󰃭 {:%m-%d}",
     "tooltip": false,
     "on-click": "toggle-format",
     "interval": 60
