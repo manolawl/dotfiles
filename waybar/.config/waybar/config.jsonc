@@ -104,8 +104,8 @@
     "min-length": 5,
     "timezone": "Asia/Manila",
     "locale": "en_US.UTF-8",
-    "format": "{:%I %M}",
-    "tooltip-format": "{:%m-%d}",
+    "format": "{:F%I %M}",
+    "tooltip-format": "{:F%m-%d}",
     "interval": 60
   },
 
