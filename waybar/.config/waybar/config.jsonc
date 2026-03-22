@@ -108,11 +108,9 @@
   "clock": {
     "min-length": 12,
     "timezone": "Asia/Manila",
-    "locale": "en_US.UTF-8",
-    "format": "{:%I %M}",
-    "tooltip-format": "{:%m-%d}",
-    "format": "󱑂 {:%I:%M}",
-    "format-alt": "󰃭 {:%m-%d}",
+    "locale": "en_PH.UTF-8",
+    "format": "󱑂 {:F%I:%M}",
+    "format-alt": "󰃭 {:F%m-%d}",
     "tooltip": false,
     "on-click": "toggle-format",
     "interval": 60
