@@ -23,6 +23,7 @@
     "temperature", 
     "memory",
     "cpu",
+    "battery",
     "custom/notifications"
   ],
 
@@ -137,6 +138,28 @@
     "tooltip": false,
     "format": "󰍛 {percentage}%",
     "format-alt": "󰍛 {used}G",
+    "on-click": "toggle-format"
+  },
+
+  "battery": {
+    "min-length": 12,
+    "interval": 30,
+    "tooltip": false,
+    "format": "{icon} {capacity}%",
+    "format-time": "{H}h {M}m",
+    "format-alt": "{icon} {time}",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
     "on-click": "toggle-format"
   }
 }
