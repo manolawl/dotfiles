@@ -14,10 +14,6 @@ function ll
   ls -A -C -lh --color=auto
 end
 
-function grep
-  rg -p -i
-end
-
 function tr
   tree -a -C
 end
