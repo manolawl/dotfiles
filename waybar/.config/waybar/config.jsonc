@@ -92,7 +92,7 @@
     "format-off": "󰂲 OFF",
     "format-disabled": "󰂲 DIS",
     "format-connected": "󰂱 CON",
-    "format-connected-battery": "󰂱 {device_battery_percentage}"
+    "format-connected-battery": "󰂱 {device_battery_percentage}%"
   },
 
   "network": {
@@ -148,18 +148,10 @@
     "format": "{icon} {capacity}%",
     "format-time": "{H}h {M}m",
     "format-alt": "{icon} {time}",
-    "format-icons": [
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ],
+    "format-icons": {
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂊", "󰂅"]
+    },
     "on-click": "toggle-format"
   }
 }
