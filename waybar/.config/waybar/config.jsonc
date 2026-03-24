@@ -99,7 +99,7 @@
     "min-length": 12,
     "on-click-right": "hyprctl dispatch exec '[float; size 1200 720; move 4 32] kitty gazelle'",
     "on-click": "toggle-format",
-    "format-wifi": "{icon} {signalStrength}%",
+    "format": "{icon} {signalStrength}%",
     "format-alt": "{icon} {bandwidthTotalBytes}",
     "tooltip-format": "{essid}",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
