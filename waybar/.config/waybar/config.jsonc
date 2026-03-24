@@ -88,10 +88,10 @@
   "bluetooth": {
     "min-length": 12,
     "on-click": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty bluetui'",
-    "format-on": "󰂯 ON",
-    "format-off": "󰂲 OFF",
-    "format-disabled": "󰂲 DIS",
-    "format-connected": "󰂱 CON",
+    "format-on": "󰂯 ACTIVE",
+    "format-off": "󰂲 INACTIVE",
+    "format-disabled": "󰂲 DISABLED",
+    "format-connected": "󰂱 CONNECTED",
     "format-connected-battery": "󰂱 {device_battery_percentage}%"
   },
 
