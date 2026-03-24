@@ -137,7 +137,7 @@
     "interval": 15,
     "tooltip": false,
     "format": "󰽘 {percentage}%",
-    "format-alt": "󰽘 {used}G",
+    "format-alt": "󰽘 {used}GiB",
     "on-click": "toggle-format"
   },
 
