@@ -5,6 +5,7 @@
   "margin-left": 4,
   "margin-right": 4,
   "spacing": 4,
+  "expand-center": true,
   
   "modules-left":[
     "clock", 
@@ -15,7 +16,7 @@
   ],
 
   "modules-center":[
-    "mpris"
+    "hyprland/workspaces"
   ],
 
   "modules-right":[
@@ -32,7 +33,7 @@
   },
 
   "hyprland/workspaces": {
-    "format": "{icon}"
+    "format": "    "
   },
 
   "hyprland/window": {

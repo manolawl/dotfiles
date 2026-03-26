@@ -18,6 +18,11 @@
   -gtk-icon-effect: none;
 }
 
+#workspaces {
+  border: none;
+  background: none;
+}
+
 tooltip label {
   padding: 2px;
   color: @tourmaline-neutral;
@@ -25,19 +30,20 @@ tooltip label {
   border: solid 2px @tourmaline-neutral;
 }
 
-.module {
-  padding: 0  4px;
+.module, #workspaces button {
+  padding: 0 2px;
   color: @tourmaline-neutral;
   background-color: @amethyst-dark;
   border: solid 2px @amethyst-neutral;
 }
 
-.module:hover {
+#workspaces button.active {
+  background-color: @tourmaline-neutral;
   border-color: @tourmaline-neutral;
 }
 
-#workspaces button label, #window label {
-  color: @tourmaline-neutral;
+.module:hover, #workspaces button:hover {
+  border-color: @tourmaline-neutral;
 }
 
 #mpris.paused, 
