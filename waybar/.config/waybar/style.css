@@ -26,15 +26,15 @@
 tooltip label {
   padding: 2px;
   color: @tourmaline-neutral;
-  background-color: @amethyst-dark;
+  background-color: @amethyst-dark-glass;
   border: solid 2px @tourmaline-neutral;
 }
 
 .module, #workspaces button {
   padding: 0 2px;
   color: @tourmaline-neutral;
-  background-color: @amethyst-dark;
-  border: solid 2px @amethyst-neutral;
+  background-color: @amethyst-dark-glass;
+  border: solid 2px @amethyst-neutral-glass;
 }
 
 #workspaces button.active {
