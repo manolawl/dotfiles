@@ -37,6 +37,10 @@ tooltip label {
   border: solid 2px @amethyst-neutral-glass;
 }
 
+#workspaces button {
+  margin: 0 2px;
+}
+
 #workspaces button.active {
   background-color: @tourmaline-neutral;
   border-color: @tourmaline-neutral;
