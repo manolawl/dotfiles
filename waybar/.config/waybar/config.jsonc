@@ -33,7 +33,7 @@
   },
 
   "hyprland/workspaces": {
-    "format": "    "
+    "format": "       "
   },
 
   "hyprland/window": {
@@ -41,12 +41,12 @@
   },
 
   "mpris": {
-    "min-length": 12,
-	  "format": "󰝚 {title} by {artist} 󰝚"
+    "min-length": 9,
+    "format": "󰝚 {title} by {artist} 󰝚"
   },
 
   "custom/notifications": {
-    "min-length": 12,
+    "min-length": 9,
     "tooltip": true,
     "format": "{icon} {0}",
 
@@ -70,7 +70,7 @@
   },
 
   "backlight": {
-    "min-length": 12,
+    "min-length": 9,
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
@@ -78,7 +78,7 @@
   },
 
   "wireplumber": {
-    "min-length": 12,
+    "min-length": 9,
     "on-click-right": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty wiremix'",
     "format": "{icon} {volume}%",
     "tooltip": false,
@@ -87,28 +87,26 @@
   },
 
   "bluetooth": {
-    "min-length": 12,
+    "min-length": 9,
     "on-click": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty bluetui'",
-    "format-on": "󰂯 ACTIVE",
-    "format-off": "󰂲 INACTIVE",
-    "format-disabled": "󰂲 DISABLED",
-    "format-connected": "󰂱 CONNECTED",
+    "format-on": "󰂯 󰔡",
+    "format-off": "󰂲 󰨙",
+    "format-disabled": "󰂲 󰨙",
+    "format-connected": "󰂱 󰄬",
     "format-connected-battery": "󰂱 {device_battery_percentage}%"
   },
 
   "network": {
-    "min-length": 12,
-    "on-click-right": "hyprctl dispatch exec '[float; size 1200 720; move 4 32] kitty gazelle'",
-    "on-click": "toggle-format",
+    "min-length": 9,
+    "on-click": "hyprctl dispatch exec '[float; size 900 720; move 4 32] kitty gazelle'",
     "format": "{icon} {signalStrength}%",
-    "format-alt": "{icon} {bandwidthTotalBytes}",
     "tooltip-format": "{essid}",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "interval": 15
+    "interval": 5
   },
 
   "clock": {
-    "min-length": 12,
+    "min-length": 9,
     "timezone": "Asia/Manila",
     "locale": "en_PH.UTF-8",
     "format": "󱑂 {:%I:%M}",
@@ -119,31 +117,31 @@
   },
 
   "temperature": {
-    "min-length": 12,
-    "interval": 15,
+    "min-length": 9,
+    "interval": 5,
     "tooltip": false,
     "format": "{icon} {temperatureC}°C",
     "format-icons": ["󱃃", "󰔏", "󱃂"]
   },
 
   "cpu": {
-    "min-length": 12,
-    "interval": 15,
+    "min-length": 9,
+    "interval": 5,
     "tooltip": false,
     "format": "󰍛 {usage}%"
   },
 
   "memory": {
-    "min-length": 12,
-    "interval": 15,
+    "min-length": 9,
+    "interval": 5,
     "tooltip": false,
-    "format": "󰽘 {percentage}%",
-    "format-alt": "󰽘 {used}GiB",
+    "format": "󰓌 {percentage}%",
+    "format-alt": "󰓌 {used}GiB",
     "on-click": "toggle-format"
   },
 
   "battery": {
-    "min-length": 12,
+    "min-length": 9,
     "interval": 60,
     "tooltip": false,
     "format": "{icon} {capacity}%",
