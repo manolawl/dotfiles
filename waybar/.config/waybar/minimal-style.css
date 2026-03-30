@@ -1,0 +1,24 @@
+@import "colors.css";
+
+* {
+  color: @diamond-light;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  min-height: 0;
+  min-width: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  text-shadow: none;
+  box-shadow: none;
+  transition: 500ms;
+  -gtk-icon-shadow: none;
+  -gtk-icon-effect: none;
+}
+
+#workspaces {
+  border: none;
+  background: none;
+}
