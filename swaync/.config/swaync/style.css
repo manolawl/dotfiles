@@ -1,19 +1,25 @@
 @import "colors.css";
 
 * {
-  border-radius: 4px;
+  font-family: 'JetBrainsMono Nerd Font';
   background: none;
   border: none;
+  border-radius: 4px;
   box-shadow: none;
   color: @tourmaline-neutral;
+  transition: 500ms;
 }
 
 .control-center {
-  background-color: @amethyst-dark;
+  background-color: @amethyst-dark-glass;
   border: solid 2px @tourmaline-neutral;
 }
-.widget-buttons {
-  background-color: @amethyst-neutral;
-  border: solid 2px @tourmaline-light;
-  color: @tourmaline-neutral;
+
+.notification {
+  background-color: @amethyst-dark-glass;
+  border: 2px solid @amethyst-neutral-glass;
+}
+
+.notification:hover {
+  border-color: @tourmaline-neutral;
 }
