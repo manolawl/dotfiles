@@ -1,7 +1,7 @@
 @import "colors.css";
 
 * {
-  color: @tourmaline-light-glass;
+  color: @tourmaline-light;
   font-family: "JetBrainsMono Nerd Font";
   font-size: 16px;
   border: none;
@@ -23,10 +23,10 @@ window#waybar {
 }
 
 #workspaces button {
-  background-color: @tourmaline-dark-glass;
+  background-color: @tourmaline-dark;
   margin: 0.2px;
 }
 
 #workspaces button.active {
-  background-color: @tourmaline-light-glass;
+  background-color: @tourmaline-light;
 }
