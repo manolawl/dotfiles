@@ -33,7 +33,7 @@
   },
 
   "hyprland/workspaces": {
-    "format": "       "
+    "format": "  "
   },
 
   "hyprland/window": {
@@ -41,12 +41,12 @@
   },
 
   "mpris": {
-    "min-length": 9,
+    "min-length": 12,
     "format": "󰝚 {title} by {artist} 󰝚"
   },
 
   "custom/notifications": {
-    "min-length": 9,
+    "min-length": 12,
     "tooltip": true,
     "format": "{icon} {0}",
 
@@ -70,7 +70,7 @@
   },
 
   "backlight": {
-    "min-length": 9,
+    "min-length": 12,
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
@@ -78,8 +78,8 @@
   },
 
   "wireplumber": {
-    "min-length": 9,
-    "on-click-right": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty wiremix'",
+    "min-length": 12,
+    "on-click-right": "hyprctl dispatch exec '[float; size 1260 540; move 4 32] kitty wiremix'",
     "format": "{icon} {volume}%",
     "tooltip": false,
     "format-muted": "󰝟 {volume}%",
@@ -87,8 +87,8 @@
   },
 
   "bluetooth": {
-    "min-length": 9,
-    "on-click": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty bluetui'",
+    "min-length": 12,
+    "on-click": "hyprctl dispatch exec '[float; size 1260 540; move 4 32] kitty bluetui'",
     "format-on": "󰂯 [ON]",
     "format-off": "󰂲 [OFF]",
     "format-disabled": "󰂲 [DIS]",
@@ -97,8 +97,8 @@
   },
 
   "network": {
-    "min-length": 9,
-    "on-click": "hyprctl dispatch exec '[float; size 900 720; move 4 32] kitty gazelle'",
+    "min-length": 12,
+    "on-click": "hyprctl dispatch exec '[float; size 1200 720; move 4 32] kitty gazelle'",
     "format": "{icon} {signalStrength}%",
     "tooltip-format": "{essid}",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -106,7 +106,7 @@
   },
 
   "clock": {
-    "min-length": 9,
+    "min-length": 12,
     "timezone": "Asia/Manila",
     "locale": "en_PH.UTF-8",
     "format": "󱑂 {:%I:%M}",
@@ -117,7 +117,7 @@
   },
 
   "temperature": {
-    "min-length": 9,
+    "min-length": 12,
     "interval": 5,
     "tooltip": false,
     "format": "{icon} {temperatureC}°C",
@@ -125,14 +125,14 @@
   },
 
   "cpu": {
-    "min-length": 9,
+    "min-length": 12,
     "interval": 5,
     "tooltip": false,
     "format": "󰍛 {usage}%"
   },
 
   "memory": {
-    "min-length": 9,
+    "min-length": 12,
     "interval": 5,
     "tooltip": false,
     "format": "󰓌 {percentage}%",
@@ -141,7 +141,7 @@
   },
 
   "battery": {
-    "min-length": 9,
+    "min-length": 12,
     "interval": 60,
     "tooltip": false,
     "format": "{icon} {capacity}%",
