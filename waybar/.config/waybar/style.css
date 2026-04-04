@@ -36,11 +36,6 @@ tooltip label {
   background-color: @amethyst-dark;
 }
 
-.module:hover {
-  font-weight: bolder;
-  font-style: italic;
-}
-
 #workspaces button {
   margin: 0 2px;
 }
@@ -53,101 +48,101 @@ tooltip label {
 #clock {
   color: @ruby-light;
   border-color: @ruby-neutral;
-  background-color: @ruby-dark;
 }
 
 #bluetooth {
   color: @rhodolite-light;
   border-color: @rhodolite-neutral;
-  background-color: @rhodolite-dark;
 }
 
 #network {
   color: @spinel-light;
   border-color: @spinel-neutral;
-  background-color: @spinel-dark;
 }
 
 #backlight {
   color: @tanzanite-light;
   border-color: @tanzanite-neutral;
-  background-color: @tanzanite-dark;
 }
 
 #wireplumber {
   color: @sapphire-light;
   border-color: @sapphire-neutral;
-  background-color: @sapphire-dark;
 }
 
 #temperature {
   color: @tourmaline-light;
   border-color: @tourmaline-neutral;
-  background-color: @tourmaline-dark;
 }
 
 #memory {
   color: @peridot-light;
   border-color: @peridot-neutral;
-  background-color: @peridot-dark;
 }
 
 #cpu {
   color: @emerald-light;
   border-color: @emerald-neutral;
-  background-color: @emerald-dark;
 }
 
 #battery {
   color: @citrine-light;
   border-color: @citrine-neutral;
-  background-color: @citrine-dark;
 }
 
 #custom-notifications {
   color: @spessartine-light;
   border-color: @spessartine-neutral;
-  background-color: @spessartine-dark;
 }
 
 #clock:hover {
   border-color: @ruby-light;
+  background-color: @ruby-dark;
 }
 
 #bluetooth:hover {
   border-color: @rhodolite-light;
+  background-color: @rhodolite-dark;
 }
 
 #network:hover {
   border-color: @spinel-light;
+  background-color: @spinel-dark;
 }
 
 #backlight:hover {
   border-color: @tanzanite-light;
+  background-color: @tanzanite-dark;
 }
 
 #wireplumber:hover {
   border-color: @sapphire-light;
+  background-color: @sapphire-dark;
 }
 
 #temperature:hover {
   border-color: @tourmaline-light;
+  background-color: @tourmaline-dark;
 }
 
 #memory:hover {
   border-color: @peridot-light;
+  background-color: @peridot-dark;
 }
 
 #cpu:hover {
   border-color: @emerald-light;
+  background-color: @emerald-dark;
 }
 
 #battery:hover {
   border-color: @citrine-light;
+  background-color: @citrine-dark;
 }
 
 #custom-notifications:hover {
   border-color: @spessartine-light;
+  background-color: @spessartine-dark;
 }
 
 #mpris.paused, 

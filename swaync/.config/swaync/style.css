@@ -11,12 +11,12 @@
 }
 
 .control-center {
-  background-color: @spessartine-dark;
+  background-color: @amethyst-dark;
   border: solid 2px @spessartine-neutral;
 }
 
 .notification {
-  background-color: @spessartine-dark;
+  background-color: @amethyst-dark;
   border: 2px solid @spessartine-neutral;
 }
 
