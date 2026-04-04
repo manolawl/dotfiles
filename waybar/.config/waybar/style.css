@@ -1,7 +1,6 @@
 @import "colors.css";
 
 * {
-  color: @diamond-light;
   font-family: "JetBrainsMono Nerd Font";
   font-size: 18px;
   border: none;
@@ -13,7 +12,7 @@
   margin: 0;
   text-shadow: none;
   box-shadow: none;
-  transition: 500ms;
+  transition: 250ms;
   -gtk-icon-shadow: none;
   -gtk-icon-effect: none;
 }
@@ -32,9 +31,14 @@ tooltip label {
 
 .module, #workspaces button {
   padding: 0 2px;
-  color: @tourmaline-neutral;
-  background-color: @amethyst-dark-glass;
-  border: solid 2px @amethyst-neutral-glass;
+  border: solid 2px @amethyst-neutral;
+  color: @diamond-light;
+  background-color: @amethyst-dark;
+}
+
+.module:hover {
+  font-weight: bolder;
+  font-style: italic;
 }
 
 #workspaces button {
@@ -46,8 +50,104 @@ tooltip label {
   border-color: @tourmaline-neutral;
 }
 
-.module:hover, #workspaces button:hover {
+#clock {
+  color: @ruby-light;
+  border-color: @ruby-neutral;
+  background-color: @ruby-dark;
+}
+
+#bluetooth {
+  color: @rhodolite-light;
+  border-color: @rhodolite-neutral;
+  background-color: @rhodolite-dark;
+}
+
+#network {
+  color: @spinel-light;
+  border-color: @spinel-neutral;
+  background-color: @spinel-dark;
+}
+
+#backlight {
+  color: @tanzanite-light;
+  border-color: @tanzanite-neutral;
+  background-color: @tanzanite-dark;
+}
+
+#wireplumber {
+  color: @sapphire-light;
+  border-color: @sapphire-neutral;
+  background-color: @sapphire-dark;
+}
+
+#temperature {
+  color: @tourmaline-light;
   border-color: @tourmaline-neutral;
+  background-color: @tourmaline-dark;
+}
+
+#memory {
+  color: @peridot-light;
+  border-color: @peridot-neutral;
+  background-color: @peridot-dark;
+}
+
+#cpu {
+  color: @emerald-light;
+  border-color: @emerald-neutral;
+  background-color: @emerald-dark;
+}
+
+#battery {
+  color: @citrine-light;
+  border-color: @citrine-neutral;
+  background-color: @citrine-dark;
+}
+
+#custom-notifications {
+  color: @spessartine-light;
+  border-color: @spessartine-neutral;
+  background-color: @spessartine-dark;
+}
+
+#clock:hover {
+  border-color: @ruby-light;
+}
+
+#bluetooth:hover {
+  border-color: @rhodolite-light;
+}
+
+#network:hover {
+  border-color: @spinel-light;
+}
+
+#backlight:hover {
+  border-color: @tanzanite-light;
+}
+
+#wireplumber:hover {
+  border-color: @sapphire-light;
+}
+
+#temperature:hover {
+  border-color: @tourmaline-light;
+}
+
+#memory:hover {
+  border-color: @peridot-light;
+}
+
+#cpu:hover {
+  border-color: @emerald-light;
+}
+
+#battery:hover {
+  border-color: @citrine-light;
+}
+
+#custom-notifications:hover {
+  border-color: @spessartine-light;
 }
 
 #mpris.paused, 
@@ -55,5 +155,5 @@ tooltip label {
 #bluetooth.disabled, 
 #network.disabled,
 #wireplumber.muted {
-  color: @tourmaline-dark;
+  color: @diamond-dark;
 }

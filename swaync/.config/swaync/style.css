@@ -6,20 +6,20 @@
   border: none;
   border-radius: 4px;
   box-shadow: none;
-  color: @tourmaline-neutral;
+  color: @spessartine-light;
   transition: 500ms;
 }
 
 .control-center {
-  background-color: @amethyst-dark-glass;
-  border: solid 2px @tourmaline-neutral;
+  background-color: @spessartine-dark;
+  border: solid 2px @spessartine-neutral;
 }
 
 .notification {
-  background-color: @amethyst-dark-glass;
-  border: 2px solid @amethyst-neutral-glass;
+  background-color: @spessartine-dark;
+  border: 2px solid @spessartine-neutral;
 }
 
 .notification:hover {
-  border-color: @tourmaline-neutral;
+  border-color: @spessartine-light;
 }
