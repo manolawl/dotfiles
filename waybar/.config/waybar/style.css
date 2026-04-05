@@ -2,9 +2,9 @@
 
 * {
   font-family: "JetBrainsMono Nerd Font";
-  font-size: 18px;
+  font-size: 16px;
   border: none;
-  border-radius: 4px;
+  border-radius: 0;
   min-height: 0;
   min-width: 0;
   background: none;
@@ -17,132 +17,105 @@
   -gtk-icon-effect: none;
 }
 
-#workspaces {
-  border: none;
-  background: none;
-}
-
-tooltip label {
-  padding: 2px;
-  color: @tourmaline-neutral;
-  background-color: @amethyst-dark-glass;
-  border: solid 2px @tourmaline-neutral;
-}
-
-.module, #workspaces button {
-  padding: 0 2px;
-  border: solid 2px @amethyst-neutral;
+.module {
+  border-style: solid;
+  border-width: 4px;
   color: @diamond-light;
   background-color: @amethyst-dark;
 }
 
-#workspaces button {
-  margin: 0 2px;
+#custom-exit {
+  color: @spinel-light;
+  border-color: @spinel-neutral;
+  border-style: solid none solid solid;
+  border-radius: 16px 0 0 16px;
 }
 
-#workspaces button.active {
-  background-color: @tourmaline-neutral;
-  border-color: @tourmaline-neutral;
+#custom-reboot {
+  color: @citrine-light;
+  border-color: @citrine-neutral;
+  border-style: solid none solid none;
+}
+
+#custom-poweroff {
+  color: @turquoise-light;
+  border-color: @turquoise-neutral;
+  border-style: solid solid solid none;
+  border-radius: 0 16px 16px 0;
 }
 
 #clock {
-  color: @ruby-light;
-  border-color: @ruby-neutral;
+  color: @spinel-light;
+  border-color: @spinel-neutral;
+  border-style: solid none solid solid;
+  border-radius: 16px 0 0 16px;
 }
 
 #bluetooth {
   color: @rhodolite-light;
   border-color: @rhodolite-neutral;
+  border-style: solid none solid none;
 }
 
 #network {
-  color: @spinel-light;
-  border-color: @spinel-neutral;
+  color: @ruby-light;
+  border-color: @ruby-neutral;
+  border-style: solid none solid none;
 }
 
 #backlight {
-  color: @tanzanite-light;
-  border-color: @tanzanite-neutral;
+  color: @spessartine-light;
+  border-color: @spessartine-neutral;
+  border-style: solid none solid none;
 }
 
 #wireplumber {
-  color: @sapphire-light;
-  border-color: @sapphire-neutral;
+  color: @citrine-light;
+  border-color: @citrine-neutral;
+  border-style: solid none solid none;
 }
 
 #temperature {
-  color: @tourmaline-light;
-  border-color: @tourmaline-neutral;
+  color: @emerald-light;
+  border-color: @emerald-neutral;
+  border-style: solid none solid none;
 }
 
 #memory {
   color: @peridot-light;
   border-color: @peridot-neutral;
+  border-style: solid none solid none;
 }
 
 #cpu {
-  color: @emerald-light;
-  border-color: @emerald-neutral;
+  color: @tourmaline-light;
+  border-color: @tourmaline-neutral;
+  border-style: solid none solid none;
+}
+
+#disk {
+  color: @turquoise-light;
+  border-color: @turquoise-neutral;
+  border-style: solid none solid none;
 }
 
 #battery {
-  color: @citrine-light;
-  border-color: @citrine-neutral;
+  color: @aquamarine-light;
+  border-color: @aquamarine-neutral;
+  border-style: solid none solid none;
+}
+
+#power-profiles-daemon {
+  color: @sapphire-light;
+  border-color: @sapphire-neutral;
+  border-style: solid none solid none;
 }
 
 #custom-notifications {
-  color: @spessartine-light;
-  border-color: @spessartine-neutral;
-}
-
-#clock:hover {
-  border-color: @ruby-light;
-  background-color: @ruby-dark;
-}
-
-#bluetooth:hover {
-  border-color: @rhodolite-light;
-  background-color: @rhodolite-dark;
-}
-
-#network:hover {
-  border-color: @spinel-light;
-  background-color: @spinel-dark;
-}
-
-#backlight:hover {
-  border-color: @tanzanite-light;
-  background-color: @tanzanite-dark;
-}
-
-#wireplumber:hover {
-  border-color: @sapphire-light;
-  background-color: @sapphire-dark;
-}
-
-#temperature:hover {
-  border-color: @tourmaline-light;
-  background-color: @tourmaline-dark;
-}
-
-#memory:hover {
-  border-color: @peridot-light;
-  background-color: @peridot-dark;
-}
-
-#cpu:hover {
-  border-color: @emerald-light;
-  background-color: @emerald-dark;
-}
-
-#battery:hover {
-  border-color: @citrine-light;
-  background-color: @citrine-dark;
-}
-
-#custom-notifications:hover {
-  border-color: @spessartine-light;
-  background-color: @spessartine-dark;
+  color: @tanzanite-light;
+  border-color: @tanzanite-neutral;
+  border-style: solid solid solid none;
+  border-radius: 0 16px 16px 0;
 }
 
 #mpris.paused, 

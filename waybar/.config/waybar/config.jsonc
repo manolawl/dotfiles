@@ -1,31 +1,60 @@
 {
   "position": "top",
-  "margin-top": 4,
+  "margin-top": 8,
   "margin-bottom": 0,
-  "margin-left": 4,
-  "margin-right": 4,
-  "spacing": 4,
+  "spacing": 0,
   "expand-center": true,
+  "fixed-center": true,
   
   "modules-left":[
+    "custom/exit",
+    "custom/reboot",
+    "custom/poweroff",
+  ],
+
+  "modules-center":[
     "clock", 
     "bluetooth", 
     "network",
     "backlight", 
-    "wireplumber"
-  ],
-
-  "modules-center":[
-  ],
-
-  "modules-right":[
+    "wireplumber",
     "privacy",
     "temperature", 
     "memory",
     "cpu",
+    "disk",
     "battery",
+    "power-profiles-daemon",
     "custom/notifications"
   ],
+
+  "custom/exit": {
+    "min-length": 6,
+    "tooltip": false,
+    "format": "󰍃",
+    "on-click": "notify-send 'leaving hyprland...' && hyprctl dispatch exit"
+  },
+
+  "custom/reboot": {
+    "min-length": 6,
+    "tooltip": false,
+    "format": "󰜉",
+    "on-click": "notify-send 'rebooting in 15 seconds...' && systemctl reboot"
+  },
+
+  "custom/poweroff": {
+    "min-length": 6,
+    "tooltip": false,
+    "format": "󰤂",
+    "on-click": "notify-send 'shutting down in 15 seconds...' && systemctl poweroff"
+  }
+  ,
+  "modules-right":[
+  ],
+
+  "custom/filler": {
+    "format": "                       "
+  },
 
   "user": {
     "format": "{work_H}h {work_M}m"
@@ -40,13 +69,113 @@
   },
 
   "mpris": {
-    "min-length": 12,
+    "min-length": 9,
     "format": "󰝚 {title} by {artist} 󰝚"
   },
 
-  "custom/notifications": {
-    "min-length": 12,
+  "clock": {
+    "min-length": 9,
+    "timezone": "Asia/Manila",
+    "locale": "en_PH.UTF-8",
+    "format": "󱑂 {:%I:%M}",
+    "format-alt": "󰃶 {:%m-%d}",
+    "tooltip": false,
+    "on-click": "toggle-format",
+    "interval": 60
+  },
+
+  "bluetooth": {
+    "min-length": 9,
+    "on-click": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty bluetui'",
+    "format-on": "󰂯 [ON]",
+    "format-off": "󰂲 [OFF]",
+    "format-disabled": "󰂲 [DIS]",
+    "format-connected": "󰂱 [CON]",
+    "format-connected-battery": "󰂱 {device_battery_percentage}%"
+  },
+
+  "network": {
+    "min-length": 9,
+    "on-click": "hyprctl dispatch exec '[float; size 900 720; move 4 32] kitty gazelle'",
+    "format": "{icon} {signalStrength}%",
+    "tooltip-format": "{essid}",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "interval": 5
+  },
+
+  "backlight": {
+    "min-length": 9,
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+    "tooltip": false
+  },
+
+  "wireplumber": {
+    "min-length": 9,
+    "on-click-right": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty wiremix'",
+    "format": "{icon} {volume}%",
+    "tooltip": false,
+    "format-muted": "󰝟 {volume}%",
+    "format-icons": ["󰕿", "󰖀", "󰕾"]
+  },
+
+  "temperature": {
+    "min-length": 9,
+    "interval": 5,
+    "tooltip": false,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["󱃃", "󰔏", "󱃂"]
+  },
+
+  "memory": {
+    "min-length": 9,
+    "interval": 5,
+    "tooltip": "{used}GiB",
+    "format": "󰓌 {percentage}%"
+  },
+
+  "cpu": {
+    "min-length": 9,
+    "interval": 5,
+    "tooltip": false,
+    "format": "󰍛 {usage}%"
+  },
+
+  "disk": {
+    "min-length": 9,
+    "interval": 60,
+    "format": "󰋊 {percentage_used}%"
+  },
+
+  "battery": {
+    "min-length": 9,
+    "interval": 60,
+    "tooltip": false,
+    "format": "{icon} {capacity}%",
+    "format-time": "{H}h {M}m",
+    "format-icons": {
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂊", "󰂅"]
+    }
+  },
+
+  "power-profiles-daemon": {
+    "min-length": 9,
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
+    "format-icons": {
+      "default": "󱐌",
+      "performance": "󱐋 [PRF]",
+      "balanced": "󰗑 [BAL]",
+      "power-saver": "󰌪 [SAV]"
+    }
+  },
+
+  "custom/notifications": {
+    "min-length": 9,
+    "tooltip": false,
     "format": "{icon} {0}",
 
     "format-icons": {
@@ -66,91 +195,6 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
-  },
-
-  "backlight": {
-    "min-length": 12,
-    "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
-    "tooltip": false
-  },
-
-  "wireplumber": {
-    "min-length": 12,
-    "on-click-right": "hyprctl dispatch exec '[float; size 1260 540; move 4 32] kitty wiremix'",
-    "format": "{icon} {volume}%",
-    "tooltip": false,
-    "format-muted": "󰝟 {volume}%",
-    "format-icons": ["󰕿", "󰖀", "󰕾"]
-  },
-
-  "bluetooth": {
-    "min-length": 12,
-    "on-click": "hyprctl dispatch exec '[float; size 1260 540; move 4 32] kitty bluetui'",
-    "format-on": "󰂯 [ON]",
-    "format-off": "󰂲 [OFF]",
-    "format-disabled": "󰂲 [DIS]",
-    "format-connected": "󰂱 [CON]",
-    "format-connected-battery": "󰂱 {device_battery_percentage}%"
-  },
-
-  "network": {
-    "min-length": 12,
-    "on-click": "hyprctl dispatch exec '[float; size 1200 720; move 4 32] kitty gazelle'",
-    "format": "{icon} {signalStrength}%",
-    "tooltip-format": "{essid}",
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "interval": 5
-  },
-
-  "clock": {
-    "min-length": 12,
-    "timezone": "Asia/Manila",
-    "locale": "en_PH.UTF-8",
-    "format": "󱑂 {:%I:%M}",
-    "format-alt": "󰃶 {:%m-%d}",
-    "tooltip": false,
-    "on-click": "toggle-format",
-    "interval": 60
-  },
-
-  "temperature": {
-    "min-length": 12,
-    "interval": 5,
-    "tooltip": false,
-    "format": "{icon} {temperatureC}°C",
-    "format-icons": ["󱃃", "󰔏", "󱃂"]
-  },
-
-  "cpu": {
-    "min-length": 12,
-    "interval": 5,
-    "tooltip": false,
-    "format": "󰍛 {usage}%"
-  },
-
-  "memory": {
-    "min-length": 12,
-    "interval": 5,
-    "tooltip": false,
-    "format": "󰓌 {percentage}%",
-    "format-alt": "󰓌 {used}GiB",
-    "on-click": "toggle-format"
-  },
-
-  "battery": {
-    "min-length": 12,
-    "interval": 60,
-    "tooltip": false,
-    "format": "{icon} {capacity}%",
-    "format-time": "{H}h {M}m",
-    "format-alt": "{icon} {time}",
-    "format-icons": {
-      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂊", "󰂅"]
-    },
-    "on-click": "toggle-format"
   }
 }
 
