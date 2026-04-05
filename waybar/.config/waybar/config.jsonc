@@ -9,7 +9,7 @@
   "modules-left":[
     "custom/exit",
     "custom/reboot",
-    "custom/poweroff",
+    "custom/poweroff"
   ],
 
   "modules-center":[
@@ -32,21 +32,21 @@
     "min-length": 6,
     "tooltip": false,
     "format": "󰍃",
-    "on-click": "notify-send 'leaving hyprland...' && hyprctl dispatch exit"
+    "on-click": "hyprctl dispatch exit"
   },
 
   "custom/reboot": {
     "min-length": 6,
     "tooltip": false,
     "format": "󰜉",
-    "on-click": "notify-send 'rebooting in 15 seconds...' && systemctl reboot"
+    "on-click": "systemctl reboot"
   },
 
   "custom/poweroff": {
     "min-length": 6,
     "tooltip": false,
-    "format": "󰤂",
-    "on-click": "notify-send 'shutting down in 15 seconds...' && systemctl poweroff"
+    "format": "󰐥",
+    "on-click": "systemctl poweroff"
   }
   ,
   "modules-right":[
