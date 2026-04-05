@@ -1,55 +1,55 @@
 /* ==== DARK COLORS ==== */
 
-@define-color amethyst-dark-glass     rgba(38,  32,  58,  0.5); /* #26203a */
-@define-color diamond-dark-glass      rgba(113, 112, 125, 0.5); /* #71707d */
-@define-color ruby-dark-glass         rgba(113, 32,  58,  0.5); /* #71203a */
-@define-color rhodolite-dark-glass    rgba(113, 32,  92,  0.5); /* #71205c */
-@define-color spinel-dark-glass       rgba(113, 32,  125, 0.5); /* #71207d */
-@define-color tanzanite-dark-glass    rgba(76,  32,  125, 0.5); /* #4c207d */
-@define-color sapphire-dark-glass     rgba(38,  32,  125, 0.5); /* #26207d */
-@define-color aquamarine-dark-glass   rgba(38,  72,  125, 0.5); /* #26487d */
-@define-color turquoise-dark-glass    rgba(38,  112, 125, 0.5); /* #26707d */
-@define-color tourmaline-dark-glass   rgba(38,  112, 92,  0.5); /* #26705c */
-@define-color peridot-dark-glass      rgba(38,  112, 58,  0.5); /* #26703a */
-@define-color emerald-dark-glass      rgba(76,  112, 58,  0.5); /* #4c703a */
-@define-color citrine-dark-glass      rgba(113, 112, 58,  0.5); /* #71703a */
-@define-color spessartine-dark-glass  rgba(113, 72,  58,  0.5); /* #71483a */
+@define-color amethyst-dark-glass     rgba(38,  32,  58,  0.75); /* #26203a */
+@define-color diamond-dark-glass      rgba(113, 112, 125, 0.75); /* #71707d */
+@define-color ruby-dark-glass         rgba(113, 32,  58,  0.75); /* #71203a */
+@define-color rhodolite-dark-glass    rgba(113, 32,  92,  0.75); /* #71205c */
+@define-color spinel-dark-glass       rgba(113, 32,  125, 0.75); /* #71207d */
+@define-color tanzanite-dark-glass    rgba(76,  32,  125, 0.75); /* #4c207d */
+@define-color sapphire-dark-glass     rgba(38,  32,  125, 0.75); /* #26207d */
+@define-color aquamarine-dark-glass   rgba(38,  72,  125, 0.75); /* #26487d */
+@define-color turquoise-dark-glass    rgba(38,  112, 125, 0.75); /* #26707d */
+@define-color tourmaline-dark-glass   rgba(38,  112, 92,  0.75); /* #26705c */
+@define-color peridot-dark-glass      rgba(38,  112, 58,  0.75); /* #26703a */
+@define-color emerald-dark-glass      rgba(76,  112, 58,  0.75); /* #4c703a */
+@define-color citrine-dark-glass      rgba(113, 112, 58,  0.75); /* #71703a */
+@define-color spessartine-dark-glass  rgba(113, 72,  58,  0.75); /* #71483a */
 
 
 /* ==== NEUTRAL COLORS ==== */
 
-@define-color amethyst-neutral-glass     rgba(75,  64,  116, 0.5); /* #4b4074 */
-@define-color diamond-neutral-glass      rgba(226, 223, 249, 0.5); /* #e2dff9 */
-@define-color ruby-neutral-glass         rgba(226, 64,  116, 0.5); /* #e24074 */
-@define-color rhodolite-neutral-glass    rgba(226, 64,  183, 0.5); /* #e240b7 */
-@define-color spinel-neutral-glass       rgba(226, 64,  249, 0.5); /* #e240f9 */
-@define-color tanzanite-neutral-glass    rgba(151, 64,  249, 0.5); /* #9740f9 */
-@define-color sapphire-neutral-glass     rgba(75,  64,  249, 0.5); /* #4b40f9 */
-@define-color aquamarine-neutral-glass   rgba(75,  144, 249, 0.5); /* #4b90f9 */
-@define-color turquoise-neutral-glass    rgba(75,  223, 249, 0.5); /* #4bdff9 */
-@define-color tourmaline-neutral-glass   rgba(75,  223, 183, 0.5); /* #4bdfb7 */
-@define-color peridot-neutral-glass      rgba(75,  223, 116, 0.5); /* #4bdf74 */
-@define-color emerald-neutral-glass      rgba(151, 223, 116, 0.5); /* #97df74 */
-@define-color citrine-neutral-glass      rgba(226, 223, 116, 0.5); /* #e2df74 */
-@define-color spessartine-neutral-glass  rgba(226, 144, 116, 0.5); /* #e29074 */
+@define-color amethyst-neutral-glass     rgba(75,  64,  116, 0.75); /* #4b4074 */
+@define-color diamond-neutral-glass      rgba(226, 223, 249, 0.75); /* #e2dff9 */
+@define-color ruby-neutral-glass         rgba(226, 64,  116, 0.75); /* #e24074 */
+@define-color rhodolite-neutral-glass    rgba(226, 64,  183, 0.75); /* #e240b7 */
+@define-color spinel-neutral-glass       rgba(226, 64,  249, 0.75); /* #e240f9 */
+@define-color tanzanite-neutral-glass    rgba(151, 64,  249, 0.75); /* #9740f9 */
+@define-color sapphire-neutral-glass     rgba(75,  64,  249, 0.75); /* #4b40f9 */
+@define-color aquamarine-neutral-glass   rgba(75,  144, 249, 0.75); /* #4b90f9 */
+@define-color turquoise-neutral-glass    rgba(75,  223, 249, 0.75); /* #4bdff9 */
+@define-color tourmaline-neutral-glass   rgba(75,  223, 183, 0.75); /* #4bdfb7 */
+@define-color peridot-neutral-glass      rgba(75,  223, 116, 0.75); /* #4bdf74 */
+@define-color emerald-neutral-glass      rgba(151, 223, 116, 0.75); /* #97df74 */
+@define-color citrine-neutral-glass      rgba(226, 223, 116, 0.75); /* #e2df74 */
+@define-color spessartine-neutral-glass  rgba(226, 144, 116, 0.75); /* #e29074 */
 
 
 /* ==== LIGHT COLORS ==== */
 
-@define-color amethyst-light-glass     rgba(113, 96,  174, 0.5); /* #7160ae */
-@define-color diamond-light-glass      rgba(255, 255, 255, 0.5); /* #ffffff */
-@define-color ruby-light-glass         rgba(255, 96,  174, 0.5); /* #ff60ae */
-@define-color rhodolite-light-glass    rgba(255, 96,  215, 0.5); /* #ff60d7 */
-@define-color spinel-light-glass       rgba(255, 96,  255, 0.5); /* #ff60ff */
-@define-color tanzanite-light-glass    rgba(184, 96,  255, 0.5); /* #b860ff */
-@define-color sapphire-light-glass     rgba(113, 96,  255, 0.5); /* #7160ff */
-@define-color aquamarine-light-glass   rgba(113, 176, 255, 0.5); /* #71b0ff */
-@define-color turquoise-light-glass    rgba(113, 255, 255, 0.5); /* #71ffff */
-@define-color tourmaline-light-glass   rgba(113, 255, 215, 0.5); /* #71ffd7 */
-@define-color peridot-light-glass      rgba(113, 255, 174, 0.5); /* #71ffae */
-@define-color emerald-light-glass      rgba(184, 255, 174, 0.5); /* #b8ffae */
-@define-color citrine-light-glass      rgba(255, 255, 174, 0.5); /* #ffffae */
-@define-color spessartine-light-glass  rgba(255, 176, 174, 0.5); /* #ffb0ae */
+@define-color amethyst-light-glass     rgba(113, 96,  174, 0.75); /* #7160ae */
+@define-color diamond-light-glass      rgba(255, 255, 255, 0.75); /* #ffffff */
+@define-color ruby-light-glass         rgba(255, 96,  174, 0.75); /* #ff60ae */
+@define-color rhodolite-light-glass    rgba(255, 96,  215, 0.75); /* #ff60d7 */
+@define-color spinel-light-glass       rgba(255, 96,  255, 0.75); /* #ff60ff */
+@define-color tanzanite-light-glass    rgba(184, 96,  255, 0.75); /* #b860ff */
+@define-color sapphire-light-glass     rgba(113, 96,  255, 0.75); /* #7160ff */
+@define-color aquamarine-light-glass   rgba(113, 176, 255, 0.75); /* #71b0ff */
+@define-color turquoise-light-glass    rgba(113, 255, 255, 0.75); /* #71ffff */
+@define-color tourmaline-light-glass   rgba(113, 255, 215, 0.75); /* #71ffd7 */
+@define-color peridot-light-glass      rgba(113, 255, 174, 0.75); /* #71ffae */
+@define-color emerald-light-glass      rgba(184, 255, 174, 0.75); /* #b8ffae */
+@define-color citrine-light-glass      rgba(255, 255, 174, 0.75); /* #ffffae */
+@define-color spessartine-light-glass  rgba(255, 176, 174, 0.75); /* #ffb0ae */
 
 
 /* ==== OPAQUE ==== */
