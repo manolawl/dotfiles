@@ -11,7 +11,7 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
     keyword general:gaps_out 0;\
     keyword general:border_size 0;\
     keyword decoration:rounding 0"
-  pkill waybar && waybar -s ~/.config/waybar/minimal-style.css -c ~/.config/waybar/minimal-config.jsonc
+  pkill waybar && waybar -s ~/.config/waybar/style_1.css -c ~/.config/waybar/config_1.jsonc
   hyprctl notify 1 5000 "rgb(40a02b)" "Gamemode [ON]"
   exit
 else

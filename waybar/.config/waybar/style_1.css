@@ -1,11 +1,11 @@
 @import "colors.css";
 
 * {
-  color: @tourmaline-light;
+  color: @diamond-light;
   font-family: "JetBrainsMono Nerd Font";
   font-size: 16px;
   border: none;
-  border-radius: 4px;
+  border-radius: 0;
   min-height: 0;
   min-width: 0;
   background: none;
@@ -19,14 +19,6 @@
 }
 
 window#waybar {
-  background-color: @amethyst-dark-glass;
+  background-color: @amethyst-dark;
 }
 
-#workspaces button {
-  background-color: @tourmaline-dark;
-  margin: 0.2px;
-}
-
-#workspaces button.active {
-  background-color: @tourmaline-light;
-}

@@ -27,3 +27,9 @@ function firefox
 end
 
 starship init fish | source
+
+if status is-login
+  if test (tty) = "/dev/tty1" -a -z "$WAYLAND_DISPLAY" -a -z "$DISPLAY"
+    exec start-hyprland
+  end
+end

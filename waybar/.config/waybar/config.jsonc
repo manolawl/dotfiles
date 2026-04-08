@@ -28,6 +28,9 @@
     "custom/notifications"
   ],
 
+  "modules-right":[
+  ],
+
   "custom/exit": {
     "min-length": 6,
     "tooltip": false,
@@ -47,13 +50,6 @@
     "tooltip": false,
     "format": "󰐥",
     "on-click": "systemctl poweroff"
-  }
-  ,
-  "modules-right":[
-  ],
-
-  "custom/filler": {
-    "format": "                       "
   },
 
   "user": {

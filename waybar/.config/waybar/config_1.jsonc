@@ -1,0 +1,91 @@
+{
+  "position": "top",
+  "margin": 0,
+  "spacing": 0,
+  "expand-center": true,
+  
+  "modules-left":[
+    "clock", 
+    "custom/sep", 
+    "clock#date", 
+    "custom/sep", 
+    "bluetooth", 
+    "custom/sep", 
+    "network"
+  ],
+
+  "modules-center":[
+  ],
+
+  "modules-right":[
+    "backlight", 
+    "custom/sep", 
+    "wireplumber",
+    "custom/sep", 
+    "battery"
+  ],
+
+"custom/sep": {
+    "format": "|"
+  },
+
+"clock": {
+    "min-length": 6,
+    "timezone": "Asia/Manila",
+    "locale": "en_PH.UTF-8",
+    "format": "{:%I:%M}",
+    "tooltip": false,
+    "interval": 60
+  },
+
+"clock#date": {
+    "min-length": 6,
+    "format": "{:%m-%d}"
+  },
+
+  "bluetooth": {
+    "min-length": 6,
+    "on-click": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty bluetui'",
+    "format-on": "󰂯 [ON]",
+    "format-off": "󰂲 [OFF]",
+    "format-disabled": "󰂲 [DIS]",
+    "format-connected": "󰂱 [CON]"
+  },
+
+  "network": {
+    "min-length": 6,
+    "on-click": "hyprctl dispatch exec '[float; size 900 720; move 4 32] kitty gazelle'",
+    "format": "{icon} {state}",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "interval": 30
+  },
+
+    "backlight": {
+    "min-length": 6,
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+    "tooltip": false
+  },
+
+  "wireplumber": {
+    "min-length": 6,
+    "on-click-right": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty wiremix'",
+    "format": "{icon} {volume}%",
+    "tooltip": false,
+    "format-muted": "󰝟 {volume}%",
+    "format-icons": ["󰕿", "󰖀", "󰕾"]
+  },
+
+  "battery": {
+    "min-length": 6,
+    "interval": 60,
+    "tooltip": false,
+    "format": "{icon} {capacity}%",
+    "format-icons": {
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂊", "󰂅"]
+    }
+  }
+}
+

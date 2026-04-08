@@ -20,100 +20,146 @@
 .module {
   border-style: solid;
   border-width: 4px;
+  border-color: @amethyst-dark-glass;
   color: @diamond-light;
   background-color: @amethyst-dark-glass;
 }
 
-#custom-exit {
+#custom-exit:hover {
   color: @spinel-light;
   border-color: @spinel-neutral;
+}
+
+#custom-exit {
   border-style: solid none solid solid;
   border-radius: 16px 0 0 16px;
 }
 
-#custom-reboot {
+#custom-reboot:hover {
   color: @citrine-light;
   border-color: @citrine-neutral;
+}
+
+#custom-reboot {
   border-style: solid none solid none;
 }
 
-#custom-poweroff {
+#custom-poweroff:hover {
   color: @turquoise-light;
   border-color: @turquoise-neutral;
+}
+
+#custom-poweroff {
   border-style: solid solid solid none;
   border-radius: 0 16px 16px 0;
 }
 
-#clock {
+#clock:hover {
   color: @spinel-light;
   border-color: @spinel-neutral;
+}
+
+#clock {
   border-style: solid none solid solid;
   border-radius: 16px 0 0 16px;
 }
 
-#bluetooth {
+#bluetooth:hover {
   color: @rhodolite-light;
   border-color: @rhodolite-neutral;
+}
+
+#bluetooth {
   border-style: solid none solid none;
+}
+
+#network:hover {
+  color: @ruby-light;
+  border-color: @ruby-neutral;
 }
 
 #network {
-  color: @ruby-light;
-  border-color: @ruby-neutral;
   border-style: solid none solid none;
+}
+
+#backlight:hover {
+  color: @spessartine-light;
+  border-color: @spessartine-neutral;
 }
 
 #backlight {
-  color: @spessartine-light;
-  border-color: @spessartine-neutral;
   border-style: solid none solid none;
+}
+
+#wireplumber:hover {
+  color: @citrine-light;
+  border-color: @citrine-neutral;
 }
 
 #wireplumber {
-  color: @citrine-light;
-  border-color: @citrine-neutral;
   border-style: solid none solid none;
+}
+
+#temperature:hover {
+  color: @emerald-light;
+  border-color: @emerald-neutral;
 }
 
 #temperature {
-  color: @emerald-light;
-  border-color: @emerald-neutral;
   border-style: solid none solid none;
+}
+
+#memory:hover {
+  color: @peridot-light;
+  border-color: @peridot-neutral;
 }
 
 #memory {
-  color: @peridot-light;
-  border-color: @peridot-neutral;
   border-style: solid none solid none;
+}
+
+#cpu:hover {
+  color: @tourmaline-light;
+  border-color: @tourmaline-neutral;
 }
 
 #cpu {
-  color: @tourmaline-light;
-  border-color: @tourmaline-neutral;
   border-style: solid none solid none;
+}
+
+#disk:hover {
+  color: @turquoise-light;
+  border-color: @turquoise-neutral;
 }
 
 #disk {
-  color: @turquoise-light;
-  border-color: @turquoise-neutral;
   border-style: solid none solid none;
+}
+
+#battery:hover {
+  color: @aquamarine-light;
+  border-color: @aquamarine-neutral;
 }
 
 #battery {
-  color: @aquamarine-light;
-  border-color: @aquamarine-neutral;
   border-style: solid none solid none;
+}
+
+#power-profiles-daemon:hover {
+  color: @sapphire-light;
+  border-color: @sapphire-neutral;
 }
 
 #power-profiles-daemon {
-  color: @sapphire-light;
-  border-color: @sapphire-neutral;
   border-style: solid none solid none;
 }
 
-#custom-notifications {
+#custom-notifications:hover {
   color: @tanzanite-light;
   border-color: @tanzanite-neutral;
+}
+
+#custom-notifications {
   border-style: solid solid solid none;
   border-radius: 0 16px 16px 0;
 }
