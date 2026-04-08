@@ -1,0 +1,5 @@
+[mgr]
+ratio = [2, 3, 4]
+sort_by = "alphabetical"
+linemode = "btime"
+show_hidden = true
