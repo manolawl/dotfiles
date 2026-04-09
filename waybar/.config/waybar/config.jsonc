@@ -1,7 +1,9 @@
 {
   "position": "top",
   "margin-top": 8,
+  "margin-right": 8,
   "margin-bottom": 0,
+  "margin-left": 8,
   "spacing": 0,
   "expand-center": true,
   "fixed-center": true,
@@ -32,21 +34,21 @@
   ],
 
   "custom/exit": {
-    "min-length": 6,
+    "min-length": 3,
     "tooltip": false,
     "format": "󰍃",
     "on-click": "hyprctl dispatch exit"
   },
 
   "custom/reboot": {
-    "min-length": 6,
+    "min-length": 3,
     "tooltip": false,
     "format": "󰜉",
     "on-click": "systemctl reboot"
   },
 
   "custom/poweroff": {
-    "min-length": 6,
+    "min-length": 3,
     "tooltip": false,
     "format": "󰐥",
     "on-click": "systemctl poweroff"
@@ -82,17 +84,16 @@
 
   "bluetooth": {
     "min-length": 9,
-    "on-click": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty bluetui'",
-    "format-on": "󰂯 [ON]",
-    "format-off": "󰂲 [OFF]",
-    "format-disabled": "󰂲 [DIS]",
-    "format-connected": "󰂱 [CON]",
-    "format-connected-battery": "󰂱 {device_battery_percentage}%"
+    "on-click": "hyprctl dispatch exec '[float; size 1080 540; move 420 50] kitty bluetui'",
+    "format-on": "󰂯 [N]",
+    "format-off": "󰂲 [F]",
+    "format-disabled": "󰂲 [D]",
+    "format-connected": "󰂱 [C]"
   },
 
   "network": {
     "min-length": 9,
-    "on-click": "hyprctl dispatch exec '[float; size 900 720; move 4 32] kitty gazelle'",
+    "on-click": "hyprctl dispatch exec '[float; size 1080 540; move 420 50] kitty gazelle'",
     "format": "{icon} {signalStrength}%",
     "tooltip-format": "{essid}",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -109,7 +110,7 @@
 
   "wireplumber": {
     "min-length": 9,
-    "on-click-right": "hyprctl dispatch exec '[float; size 960 540; move 4 32] kitty wiremix'",
+    "on-click": "hyprctl dispatch exec '[float; size 1080 540; move 420 50] kitty wiremix -v output'",
     "format": "{icon} {volume}%",
     "tooltip": false,
     "format-muted": "󰝟 {volume}%",
@@ -121,12 +122,16 @@
     "interval": 5,
     "tooltip": false,
     "format": "{icon} {temperatureC}°C",
+    "on-click": "hyprctl dispatch exec '[float; size 1080 540; move 420 50] kitty btop'",
+    "warning-threshold": 60,
+    "critical-threshold": 80,
     "format-icons": ["󱃃", "󰔏", "󱃂"]
   },
 
   "memory": {
     "min-length": 9,
     "interval": 5,
+    "on-click": "hyprctl dispatch exec '[float; size 1080 540; move 420 50] kitty btop'",
     "tooltip": "{used}GiB",
     "format": "󰓌 {percentage}%"
   },
@@ -135,11 +140,13 @@
     "min-length": 9,
     "interval": 5,
     "tooltip": false,
+    "on-click": "hyprctl dispatch exec '[float; size 1080 540; move 420 50] kitty btop'",
     "format": "󰍛 {usage}%"
   },
 
   "disk": {
     "min-length": 9,
+    "on-click": "hyprctl dispatch exec '[float; size 1080 540; move 420 50] kitty ncdu'",
     "interval": 60,
     "format": "󰋊 {percentage_used}%"
   },
@@ -150,6 +157,14 @@
     "tooltip": false,
     "format": "{icon} {capacity}%",
     "format-time": "{H}h {M}m",
+    "states": {
+      "high": 100,
+      "midhigh": 80,
+      "mid": 60,
+      "midlow": 40,
+      "low": 20
+    },
+
     "format-icons": {
       "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
       "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂊", "󰂅"]
@@ -159,13 +174,12 @@
   "power-profiles-daemon": {
     "min-length": 9,
     "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
+    "tooltip": false,
     "format-icons": {
       "default": "󱐌",
-      "performance": "󱐋 [PRF]",
-      "balanced": "󰗑 [BAL]",
-      "power-saver": "󰌪 [SAV]"
+      "performance": "󱐋 [P]",
+      "balanced": "󰗑 [B]",
+      "power-saver": "󰌪 [S]"
     }
   },
 
