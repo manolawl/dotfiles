@@ -85,16 +85,18 @@
   "bluetooth": {
     "min-length": 9,
     "on-click": "hyprctl dispatch exec '[float; size 1080 540; move 420 50] kitty bluetui'",
-    "format-on": "󰂯 [N]",
-    "format-off": "󰂲 [F]",
-    "format-disabled": "󰂲 [D]",
-    "format-connected": "󰂱 [C]"
+    "format-on": "󰂯 [#]",
+    "format-off": "󰂲 [-]",
+    "format-disabled": "󰂲 [ ]",
+    "format-connected": "󰂱 [*]"
   },
 
   "network": {
     "min-length": 9,
     "on-click": "hyprctl dispatch exec '[float; size 1080 540; move 420 50] kitty gazelle'",
-    "format": "{icon} {signalStrength}%",
+    "format-wifi": "{icon} [*]",
+    "format-disabled": "{icon} [ ]",
+    "format-disconnected": "{icon} [#]",
     "tooltip-format": "{essid}",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "interval": 5
@@ -177,9 +179,9 @@
     "tooltip": false,
     "format-icons": {
       "default": "󱐌",
-      "performance": "󱐋 [P]",
-      "balanced": "󰗑 [B]",
-      "power-saver": "󰌪 [S]"
+      "performance": "󱐋 [+]",
+      "balanced": "󰗑 [=]",
+      "power-saver": "󰌪 [-]"
     }
   },
 
