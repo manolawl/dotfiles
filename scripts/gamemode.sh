@@ -28,7 +28,7 @@ else
   sleep 0.25
 
   waybar
-  swaybg -c 26203a
+  swaybg -c 000000
 
   swaync-client -R && swaync-client -rs
   exit 0
