@@ -1,0 +1,22 @@
+{
+  "name": "dock",
+  "output": "HDMI-A-2",
+  "position": "bottom",
+  "margin": 0,
+  "spacing": 0,
+  "expand-center": true,
+  "fixed-center": true,
+  "reload_on_style_change": true,
+
+  "include": "~/.config/waybar/modules.json",
+  
+  "modules-left":[
+  ],
+
+  "modules-center":[
+  ],
+
+  "modules-right":[
+  ]
+}
+

@@ -10,8 +10,8 @@ function dots
   cd ~/dotfiles && git status
 end
 
-function ll
-  ls -A -C -lh --color=auto
+function ezl
+  eza -l -a
 end
 
 function tr

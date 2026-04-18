@@ -1,7 +1,7 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "ignore-gtk-theme": true,
-  "positionX": "right",
+  "positionX": "center",
   "positionY": "top",
   "layer": "overlay",
   "control-center-layer": "top",
@@ -21,8 +21,8 @@
   "timeout-critical": 0,
   "fit-to-screen": false,
   "relative-timestamps": true,
-  "control-center-width": 250,
-  "control-center-height": 600,
+  "control-center-width": 1080,
+  "control-center-height": 540,
   "notification-window-width": 500,
   "keyboard-shortcuts": true,
   "notification-grouping": false,
@@ -51,9 +51,9 @@
     },
     
     "title": {
-      "text": "Notifications",
+      "text": "",
       "clear-all-button": true,
-      "button-text": "[CLEAR]"
-    }
+      "button-text": "󰗩"
+     }
   }
 }

@@ -1,8 +1,9 @@
 @import "colors.css";
 
 * {
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 12pt;
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 12px;
+  color: #ffffff;
   border: none;
   border-radius: 0;
   min-height: 0;
@@ -17,157 +18,21 @@
   -gtk-icon-effect: none;
 }
 
-.module {
-  border-style: solid;
-  border-width: 4px;
-  border-color: @bg0-glass;
-  color: @diamond-light;
+window#waybar {
   background-color: @bg0-glass;
 }
 
-#custom-exit:hover {
-  border-color: @spinel-neutral;
+menu, tooltip {
+  background-color: @bg0-glass;
+  border-radius: 4px;
 }
 
-#custom-exit {
-  color: @spinel-light;
-  border-style: solid none solid solid;
-  border-radius: 16px 0 0 16px;
+menuitem {
+  margin: 0 4px;
 }
 
-#custom-reboot:hover {
-  border-color: @citrine-neutral;
-}
-
-#custom-reboot {
-  color: @citrine-light;
-  border-style: solid none solid none;
-}
-
-#custom-poweroff:hover {
-  border-color: @turquoise-neutral;
-}
-
-#custom-poweroff {
-  color: @turquoise-light;
-  border-style: solid solid solid none;
-  border-radius: 0 16px 16px 0;
-}
-
-#clock:hover {
-  border-color: @spinel-neutral;
-}
-
-#clock {
-  color: @spinel-light;
-  border-style: solid none solid solid;
-  border-radius: 16px 0 0 16px;
-}
-
-#bluetooth:hover {
-  border-color: @rhodolite-neutral;
-}
-
-#bluetooth {
-  color: @rhodolite-light;
-  border-style: solid none solid none;
-}
-
-#network:hover {
-  border-color: @ruby-neutral;
-}
-
-#network {
-  color: @ruby-light;
-  border-style: solid none solid none;
-}
-
-#backlight:hover {
-  border-color: @spessartine-neutral;
-}
-
-#backlight {
-  color: @spessartine-light;
-  border-style: solid none solid none;
-}
-
-#wireplumber:hover {
-  border-color: @citrine-neutral;
-}
-
-#wireplumber {
-  color: @citrine-light;
-  border-style: solid none solid none;
-}
-
-#temperature:hover {
-  border-color: @emerald-neutral;
-}
-
-#temperature {
-  color: @emerald-light;
-  border-style: solid none solid none;
-}
-
-#memory:hover {
-  border-color: @peridot-neutral;
-}
-
-#memory {
-  color: @peridot-light;
-  border-style: solid none solid none;
-}
-
-#cpu:hover {
-  border-color: @tourmaline-neutral;
-}
-
-#cpu {
-  color: @tourmaline-light;
-  border-style: solid none solid none;
-}
-
-#disk:hover {
-  border-color: @turquoise-neutral;
-}
-
-#disk {
-  color: @turquoise-light;
-  border-style: solid none solid none;
-}
-
-#battery:hover {
-  border-color: @aquamarine-neutral;
-}
-
-#battery {
-  color: @aquamarine-light;
-  border-style: solid none solid none;
-}
-
-#power-profiles-daemon:hover {
-  border-color: @sapphire-neutral;
-}
-
-#power-profiles-daemon {
-  color: @sapphire-light;
-  border-style: solid none solid none;
-}
-
-#custom-notifications:hover {
-  border-color: @tanzanite-neutral;
-}
-
-#custom-notifications {
-  color: @tanzanite-light;
-  border-style: solid solid solid none;
-  border-radius: 0 16px 16px 0;
-}
-
-#mpris.paused, 
-#bluetooth.off, 
-#bluetooth.disabled, 
-#network.disabled,
-#wireplumber.muted {
+#wireplumber.muted,
+#bluetooth.disabled,
+#network.disabled {
   color: @diamond-dark;
 }

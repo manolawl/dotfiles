@@ -1,0 +1,37 @@
+{
+  "name": "main",
+  "output": "eDP-1",
+  "position": "top",
+  "margin": 0,
+  "spacing": 0,
+  "expand-center": true,
+  "fixed-center": true,
+  "reload_on_style_change": true,
+
+  "include": "~/.config/waybar/modules.json",
+  
+  "modules-left":[
+    "custom/power",
+    "temperature",
+    "memory",
+    "cpu",
+    "disk",
+  ],
+
+  "modules-center":[
+    "clock",
+    "custom/notifications",
+    "clock#date",
+  ],
+
+  "modules-right":[
+    "idle_inhibitor",
+    "backlight",
+    "wireplumber",
+    "bluetooth",
+    "network",
+    "battery",
+    "power-profiles-daemon",
+  ]
+}
+

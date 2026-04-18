@@ -2,20 +2,19 @@
 
 * {
   font-family: 'JetBrainsMono Nerd Font';
+  font-size: 16px;
   background: none;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: none;
-  color: @tanzanite-light;
+  color: @diamond-light;
   transition: 250ms;
 }
 
 .control-center {
   background-color: @bg0-glass;
-  border: solid 4px @tanzanite-neutral;
 }
 
 .notification {
   background-color: @bg0-glass;
-  border: 4px solid @tanzanite-neutral;
 }
