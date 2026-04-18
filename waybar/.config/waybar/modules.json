@@ -115,7 +115,7 @@
     "timezone": "Asia/Manila",
     "locale": "en_PH.UTF-8",
     "tooltip": false,
-    "format": "{:%m:%d}",
+    "format": "{:%m-%d}",
   },
 
   "bluetooth": {
