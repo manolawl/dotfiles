@@ -14,16 +14,29 @@ function ezl
   eza -l -a
 end
 
-function tr
-  tree -a -C
+function nvimcd
+  cd ~/.config/nvim/
+  tree
 end
 
-function ff
-  fastfetch
+function fishcd
+  cd ~/.config/fish/
+  tree
 end
 
-function firefox
-  zen-browser
+function kittycd
+  cd ~/.config/kitty/
+  tree
+end
+
+function hyprcd
+  cd ~/.config/hypr/
+  tree
+end
+
+function wbrcd
+  cd ~/.config/waybar/
+  tree
 end
 
 starship init fish | source
