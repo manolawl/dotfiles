@@ -1,11 +1,77 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = false
-
-format = '$all'
+ format = """
+$os\
+$hostname\
+$username\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$sudo\
+$cmd_duration\
+$battery\
+$line_break\
+$shell\
+$directory\
+$character"""
 
 [character]
-success_symbol = '[-->](bold #71ffae)'
-error_symbol = '[~~>](bold #ff60ae)'
-vimcmd_symbol = '[>->](bold #ffffae)'
+success_symbol = '[->](bold #71ffae)'
+error_symbol = '[~>](bold #ff60ae)'
+vimcmd_symbol = '[>-](bold #ffffae)'
 
+[battery]
+full_symbol = '󰁹'
+charging_symbol = '󰂏'
+discharging_symbol = '󰂌'
+unknown_symbol = '󰂑'
+empty_symbol = '󰂎'
+format = '[$symbol $percentage] '
+
+[directory]
+style = '#71ffff'
+truncation_length = 2
+truncation_symbol = '.../'
+format = '[$path]($style)[$read_only]($read_only_style) '
+
+[username]
+show_always = true
+style_user = '#ffb0ae'
+style_root = '#ff60d7'
+format = '[$user]($style) '
+
+[hostname]
+ssh_only = false
+style = '#7160ff'
+format = '[$ssh_symbol$hostname]($style) '
+
+[shell]
+disabled = false
+fish_indicator = 'fish'
+zsh_indicator = 'zsh'
+bash_indicator = 'bash'
+style = '#b860ff'
+format = '[$indicator]($style) '
+
+[os]
+disabled = false
+style = '#71b0ff'
+format = '[$symbol]($style) '
+[os.symbols]
+Arch = '󰣇'
+Mint = '󰣭'
+Macos = '󰀵'
+Linux = '󰌽'
+Windows = '󰖳'
+
+[git_branch]
+style = 'italic #ffffae'
+symbol ='󰘬'
+format = '[$symbol $branch(:$remote_branch)]($style) '
+
+[git_status]
+style = 'bold #ff60ae'
+deleted = 'x'
+format ='([\[$all_status$ahead_behind\]]($style) )'
