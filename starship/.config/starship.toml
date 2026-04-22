@@ -31,9 +31,9 @@ empty_symbol = '󰂎'
 format = '[$symbol $percentage] '
 
 [directory]
-style = '#71ffff'
-truncation_length = 2
-truncation_symbol = '.../'
+style = 'bold #71ffff'
+truncation_length = 3
+truncation_symbol = '::/'
 format = '[$path]($style)[$read_only]($read_only_style) '
 
 [username]
@@ -52,11 +52,11 @@ disabled = false
 fish_indicator = 'fish'
 zsh_indicator = 'zsh'
 bash_indicator = 'bash'
-style = '#b860ff'
+style = 'italic #b860ff'
 format = '[$indicator]($style) '
 
 [os]
-disabled = false
+disabled = true
 style = '#71b0ff'
 format = '[$symbol]($style) '
 [os.symbols]
