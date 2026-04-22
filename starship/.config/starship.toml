@@ -33,7 +33,7 @@ format = '[$symbol $percentage] '
 [directory]
 style = 'bold #71ffff'
 truncation_length = 3
-truncation_symbol = '::/'
+truncation_symbol = '>/'
 format = '[$path]($style)[$read_only]($read_only_style) '
 
 [username]

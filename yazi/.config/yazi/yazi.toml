@@ -1,5 +1,7 @@
 [mgr]
-ratio = [2, 3, 4]
-sort_by = "alphabetical"
-linemode = "btime"
+ratio = [4, 5, 8]
 show_hidden = true
+sort_reverse = true
+sort_by = "mtime"
+linemode = "mtime"
+tab_size = 2
