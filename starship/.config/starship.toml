@@ -1,26 +1,15 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
- format = """
-$os\
-$hostname\
-$username\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
-$sudo\
-$cmd_duration\
-$battery\
-$line_break\
-$shell\
-$directory\
-$character"""
+ format = '''
+$os$hostname$username$sudo$cmd_duration$battery
+$git_branch$git_commit$git_state$git_metrics$git_status$directory
+$shell$character'''
 
 [character]
 success_symbol = '[->](bold #71ffae)'
 error_symbol = '[~>](bold #ff60ae)'
 vimcmd_symbol = '[>-](bold #ffffae)'
+format = '$symbol '
 
 [battery]
 full_symbol = '󰁹'
@@ -49,14 +38,14 @@ format = '[$ssh_symbol$hostname]($style) '
 
 [shell]
 disabled = false
-fish_indicator = 'fish'
+fish_indicator = '󰈺'
 zsh_indicator = 'zsh'
-bash_indicator = 'bash'
-style = 'italic #b860ff'
+bash_indicator = ''
+style = 'bold #b860ff'
 format = '[$indicator]($style) '
 
 [os]
-disabled = true
+disabled = false
 style = '#71b0ff'
 format = '[$symbol]($style) '
 [os.symbols]
@@ -74,4 +63,4 @@ format = '[$symbol $branch(:$remote_branch)]($style) '
 [git_status]
 style = 'bold #ff60ae'
 deleted = 'x'
-format ='([\[$all_status$ahead_behind\]]($style) )'
+format ='([\[$all_status$ahead_behind\]]($style)) '
