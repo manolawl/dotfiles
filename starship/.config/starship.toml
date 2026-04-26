@@ -2,7 +2,7 @@
 
  format = '''
 $hostname$username$sudo$cmd_duration$battery
-$git_branch$git_commit$git_state$git_metrics$git_status$directory
+$git_branch$git_status$directory
 $character'''
 
 [character]
