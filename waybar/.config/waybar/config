@@ -30,8 +30,8 @@
     "wireplumber",
     "bluetooth",
     "network",
-    "battery",
     "power-profiles-daemon",
+    "battery",
   ]
 }
 
