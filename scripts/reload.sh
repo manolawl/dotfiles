@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/sbin/env bash
 
 hyprctl reload
 swaync-client -R && swaync-client -rs

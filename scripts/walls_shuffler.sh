@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/sbin/env bash
 
 # config
 DIR="$HOME/dotfiles/backgrounds/mountains"
