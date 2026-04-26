@@ -11,7 +11,7 @@ function dots
 end
 
 function glaz
-  git add . && git commit -m 'asdf' && git push  
+  git add . && git commit -m $SECONDS && git push  
 end
 
 function ezl
