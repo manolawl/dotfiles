@@ -3,7 +3,7 @@
  format = '''
 $hostname$username$sudo$cmd_duration$battery
 $git_branch$git_commit$git_state$git_metrics$git_status$directory
-(#ffffff)$character'''
+$character'''
 
 [character]
 success_symbol = '[-->](bold #71ffae)'
