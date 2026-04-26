@@ -10,8 +10,8 @@ function dots
   cd ~/dotfiles && git status
 end
 
-function glaz
-  git add . && git commit -m $SECONDS && git push  
+function glazy
+  git add . && git commit -m test && git push  
 end
 
 function ezl
