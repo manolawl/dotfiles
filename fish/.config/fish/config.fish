@@ -10,6 +10,10 @@ function dots
   cd ~/dotfiles && git status
 end
 
+function glaz
+  git add . && git commit -m 'asdf' && git push  
+end
+
 function ezl
   eza -l -a
 end
