@@ -134,8 +134,8 @@
 
   "network": {
     "on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty gazelle'",
-    "interval": 5,
-    "tooltip-format": "{essid}",
+    "interval": 1,
+    "tooltip-format": "{essid} {signalStrength}%",
     "format": "[ {icon} ]",
     "format-icons": {
       "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -149,14 +149,16 @@
     "device": "intel_backlight",
     "on-scroll-up": "brightnessctl set 25%+ && dcutil setvcp 10 + 25 --noverify --sleep-multiplier=0.2",
     "on-scroll-down": "brightnessctl set 25%- && dcutil setvcp 10 - 25 --noverify --sleep-multiplier=0.2",
-    "tooltip": false,
+    "tooltip": true,
+    "tooltip-format": "{percent}%",
     "format": "[ {icon} ]",
     "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
   },
 
   "wireplumber": {
     "on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty wiremix -v output'",
-    "tooltip": false,
+    "tooltip": true,
+    "tooltip-format": "{volume}%",
     "format": "[ {icon} ]",
     "format-muted": "[ 󰝟 ]",
     "format-icons": ["󰕿", "󰖀", "󰕾"]
@@ -165,7 +167,7 @@
   "temperature": {
     "on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty btop'",
     "tooltip": false,
-    "interval": 5,
+    "interval": 1,
     "format": "[ {icon} {temperatureC}° ]",
     "format-icons": ["󱃃", "󰔏", "󱃂"]
   },
@@ -173,26 +175,28 @@
   "memory": {
     "on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty btop'",
     "tooltip": false,
-    "interval": 5,
+    "interval": 1,
     "format": "[ 󰓌 {percentage}% ]"
   },
 
   "cpu": {
     "on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty btop'",
     "tooltip": false,
-    "interval": 5,
+    "interval": 1,
     "format": "[ 󰍛 {usage}% ]"
   },
 
   "disk": {
     "on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty ncdu'",
-    "interval": 60,
+    "interval": 1,
     "format": "[ 󰋊 {percentage_used}% ]"
   },
 
   "battery": {
-    "tooltip": false,
+    "tooltip": true,
+    "tooltip-format": "{time}\n{capacity}%",
     "format": "[ {icon} ]",
+    "format-time": "{H}h {M}m",
     "format-icons": {
       "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
       "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂊", "󰂅"]
