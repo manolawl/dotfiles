@@ -112,7 +112,7 @@
 
 @define-color bg0-glass rgba(0, 0, 0, 0.75);
 @define-color bg0 #000000;
-@define-color bg1-glass rgba(64, 64, 64, 0.75);
-@define-color bg1 #404040;
-@define-color bg2-glass rgba(128, 128, 128, 0.75);
-@define-color bg2 #808080;
+@define-color bg1-glass rgba(32, 32, 32, 0.75);
+@define-color bg1 #202020;
+@define-color bg2-glass rgba(64, 64, 64, 0.75);
+@define-color bg2 #404040;
