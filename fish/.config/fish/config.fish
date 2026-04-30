@@ -11,7 +11,7 @@ function dots
 end
 
 function glazy
-  git add . && git commit -m test && git push  
+  git add . && git commit -m 'lazy commit' && git push  
 end
 
 function ezl
