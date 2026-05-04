@@ -22,6 +22,12 @@ hl.config({
 	}
 })
 
+local terminal = "kitty"
+local browser = "zen-browser"
+local file_manager = "kitty yazi"
+local app_launcher = "rofi -show drun"
+local system_monitor = "kitty btop"
+
 -- MAIN PROGRAMS
 hl.bind("SUPER + T", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(file_manager))
@@ -29,12 +35,12 @@ hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
 hl.bind("SUPER + space", hl.dsp.exec_cmd(app_launcher))
 hl.bind("XF86Presentation", hl.dsp.exec_cmd(system_monitor))
 
-hl.bind("SUPER + F", hl.dsp.window.float({ action = toggle }))
-hl.bind("SUPER + SHIFT + F", hl.dsp.window.fullscreen({ action = toggle }))
+hl.bind("SUPER + SHIFT + F", hl.dsp.window.float({ action = toggle }))
+hl.bind("SUPER + F", hl.dsp.window.fullscreen({ action = toggle }))
 hl.bind("SUPER + Q", hl.dsp.window.kill())
 hl.bind("SUPER + Escape", hl.dsp.exec_cmd("hyprlock"))
 
--- WINDOW FOCUSING
+-- CHANGE WINDOW FOCUS (VIM MOTIONS)
 hl.bind("SUPER + H", hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + J", hl.dsp.focus({ direction = "down" }))
 hl.bind("SUPER + K", hl.dsp.focus({ direction = "up" }))

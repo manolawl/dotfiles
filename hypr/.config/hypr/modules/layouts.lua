@@ -13,23 +13,45 @@ hl.config({
 				angle = 0,
 				colors = {
 					"rgba(000000bf)",
-					"rgb(e240f9)",
-					"rgb(e24074)",
-					"rgb(e29074)",
-					"rgb(97df74)",
-					"rgb(4bdf74)",
-					"rgb(4bdff9)",
-					"rgb(4b90f9)",
-					"rgb(9740f9)",
+					"rgba(e240f9ff)",
+					"rgba(e24074ff)",
+					"rgba(e29074ff)",
+					"rgba(97df74ff)",
+					"rgba(4bdf74ff)",
+					"rgba(4bdff9ff)",
+					"rgba(4b90f9ff)",
+					"rgba(9740f9ff)",
 					"rgba(000000bf)"
 				}
 			},
 		}
 	},
 
+	decoration = {
+		rounding = 4,
+		rounding_power = 2,
+		active_opacity = 1,
+		inactive_opacity = 1,
+
+		shadow = {
+			enabled = false,
+			range = 4,
+			render_power = 2,
+			color = "rgb(202020)"
+		},
+
+		blur {
+			enabled = true,
+			size = 8,
+			passes = 4,
+			vibrancy = 0
+		}
+	},
+
 	dwindle = {
 		pseudotile = true,
 	},
+
 	scrolling = {
 		fullscreen_on_one_column = true,
 		focus_fit_method = 0,
