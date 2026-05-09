@@ -1,4 +1,4 @@
-#!/usr/sbin/env bash
+#!/usr/bin/env bash
 
 hyprctl reload
 swaync-client -R && swaync-client -rs
@@ -9,4 +9,4 @@ kill $(pgrep -f walls_shuffler.sh)
 sleep 0.25
 
 waybar
-exec ~/dotfiles/scripts/walls_shuffler.sh
+exec $SCRIPTS_DIR/walls_shuffler.sh

@@ -1,5 +1,5 @@
 [mgr]
-ratio = [4, 5, 8]
+ratio = [2, 5, 8]
 show_hidden = true
 sort_reverse = true
 sort_by = "mtime"

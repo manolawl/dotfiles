@@ -14,6 +14,7 @@ vim.opt.foldenable = true
 vim.opt.foldlevelstart = 99
 vim.opt.list = true
 vim.opt.termguicolors = true
+vim.opt.conceallevel = 1 
 vim.opt.listchars = {
 	space = "·",
 	tab = "->"

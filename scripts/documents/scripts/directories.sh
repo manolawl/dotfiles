@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# XDG BASE DIRECTORIES
+mkdir -p $XDG_CACHE_HOME
+mkdir -p $XDG_CONFIG_HOME
+mkdir -p $XDG_DATA_HOME
+mkdir -p $XDG_STATE_HOME
+
+# XDG USER DIRECTORIES
+mkdir -p $XDG_DOCUMENTS_DIR
+mkdir -p $XDG_DOWNLOAD_DIR
+mkdir -p $XDG_MUSIC_DIR
+mkdir -p $XDG_PICTURES_DIR
+mkdir -p $XDG_PROJECTS_DIR
+mkdir -p $XDG_PUBLICSHARE_DIR
+mkdir -p $XDG_TEMPLATES_DIR
+mkdir -p $XDG_VIDEOS_DIR
+mkdir -p $XDG_DESKTOP_DIR
+
+mkdir -p $BACKGROUNDS_DIR
+mkdir -p $SCREENSHOTS_DIR
+mkdir -p $SCRIPTS_DIR

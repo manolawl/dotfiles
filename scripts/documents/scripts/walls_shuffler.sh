@@ -1,8 +1,8 @@
-#!/usr/sbin/env bash
+#!/usr/bin/env bash
 
 # config
 #DIR="$HOME/dotfiles/backgrounds/mountains"
-DIR="$HOME/dotfiles/backgrounds/4k_wallpapers_from_reddit"
+DIR="$BACKGROUNDS_DIR/4k_wallpapers_from_reddit"
 INTERVAL=300   # seconds
 MODE="fill"    # fill | fit | stretch | center | tile
 

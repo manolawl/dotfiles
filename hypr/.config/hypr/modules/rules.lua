@@ -25,7 +25,7 @@ hl.window_rule({
 
 hl.layer_rule({
 	name = "waybar_blur",
-	match = { namespace = "waybar" },
+	match = { namespace = "main" },
 	blur = true,
 	ignore_alpha = 0.2,
 })

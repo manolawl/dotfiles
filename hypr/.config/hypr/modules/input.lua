@@ -7,9 +7,8 @@ hl.config({
 		kb_rules = "",
 		accel_profile = "flat", -- no mouse acceleration
 		follow_mouse = 1, -- focus always follows mouse
-		repeat_delay = 125,
+		repeat_delay = 125, -- milliseconds
 		sensitivity = 0,
-
 		touchpad = {
 			natural_scroll = true,
 			scroll_factor = 0.5,
@@ -18,7 +17,7 @@ hl.config({
 
 	cursor = {
 		default_monitor = "eDP-1",
-		no_hardware_cursors = 1 -- no using hardware cursor
+		no_hardware_cursors = 1 -- always
 	}
 })
 

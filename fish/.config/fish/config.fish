@@ -6,41 +6,7 @@ if status is-interactive
 # Commands to run in interactive sessions can go here
 end
 
-function dots
-  cd ~/dotfiles && git status
-end
-
-function glazy
-  git add . && git commit -m 'lazy commit' && git push  
-end
-
-function ezl
-  eza -l -a
-end
-
-function nvimcd
-  cd ~/.config/nvim/
-  tree
-end
-
-function fishcd
-  cd ~/.config/fish/
-  tree
-end
-
-function kittycd
-  cd ~/.config/kitty/
-  tree
-end
-
-function hyprcd
-  cd ~/.config/hypr/
-  tree
-end
-
-function wbrcd
-  cd ~/.config/waybar/
-  tree
-end
+source $XDG_DOCUMENTS_DIR/scripts/environment_variables.sh
+source $XDG_CONFIG_HOME/fish/functions
 
 starship init fish | source

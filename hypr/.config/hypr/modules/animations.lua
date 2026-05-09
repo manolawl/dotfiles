@@ -1,6 +1,4 @@
-hl.config({
-	animations = { enabled = true },
-})
+hl.config({ animations = { enabled = true } })
 
 hl.curve("bounce", { type = "bezier", points = { {0.5, 1.5}, {0.5, -0.5} } })
 hl.curve("jump", { type = "bezier", points = { {1, 0}, {0, 0} } })
