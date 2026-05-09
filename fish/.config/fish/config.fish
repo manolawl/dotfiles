@@ -6,7 +6,7 @@ if status is-interactive
 # Commands to run in interactive sessions can go here
 end
 
-source $XDG_DOCUMENTS_DIR/scripts/environment_variables.sh
-source $XDG_CONFIG_HOME/fish/functions
+source ~/documents/scripts/environment_variables.sh
+source ~/.config/fish/functions
 
 starship init fish | source

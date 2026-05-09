@@ -17,15 +17,14 @@ charging_symbol = '󰂏'
 discharging_symbol = '󰂌'
 unknown_symbol = '󰂑'
 empty_symbol = '󰂎'
-format = '[$symbol $percentage] '
 
 [directory]
 style = 'bold #71ffff'
 truncation_length = 99
 truncation_symbol = ''
-read_only_style = '#ff60ae'
+read_only_style = '#e2df74'
 read_only = '󰌾'
-format = '[$path]($style)[$read_only]($read_only_style) '
+format = '[$path]($style) [$read_only]($read_only_style) '
 
 [username]
 show_always = true
