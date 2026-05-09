@@ -22,7 +22,7 @@ format = '[$symbol $percentage] '
 [directory]
 style = 'bold #71ffff'
 truncation_length = 99
-truncation_symbol = '>/'
+truncation_symbol = ''
 read_only_style = '#ff60ae'
 read_only = '󰌾'
 format = '[$path]($style)[$read_only]($read_only_style) '
