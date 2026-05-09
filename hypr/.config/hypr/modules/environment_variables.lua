@@ -33,9 +33,3 @@ hl.env("AQ_DRM_DEVICES", "/dev/dri/card1:/dev/dri/card0")
 --hl.env("AQ_FORCE_LINEAR_BLIT", "0")
 --hl.env("AQ_MGPU_NO_EXPLICIT", "1")
 --hl.env("AQ_NO_MODIFIERS", "1")
-
--- MISCELLANEOUS
---hl.env("HYPRSHOT_DIR", "~/screenshots")
-hl.env("GRIM_DEFAULT_DIR", "~/screenshots")
---hl.env("EDITOR", "vim")
-hl.env("EDITOR", "nvim")
