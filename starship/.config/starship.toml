@@ -1,14 +1,15 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+#$hostname$username$sudo$cmd_duration$battery
  format = '''
-$hostname$username$sudo$cmd_duration$battery
 $git_branch$git_status$directory
-$character'''
+$character
+'''
 
 [character]
-success_symbol = '[-->](bold #71ffae)'
-error_symbol = '[~~>](bold #ff60ae)'
-vimcmd_symbol = '[>--](bold #ffffae)'
+success_symbol = '[->](bold #71ffae)'
+error_symbol = '[~>](bold #ff60ae)'
+vimcmd_symbol = '[>-](bold #ffffae)'
 format = '$symbol '
 
 [battery]

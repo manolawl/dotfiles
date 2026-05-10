@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # XDG BASE DIRECTORIES
 mkdir -p $XDG_CACHE_HOME
 mkdir -p $XDG_CONFIG_HOME

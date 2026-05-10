@@ -6,7 +6,8 @@ if status is-interactive
 # Commands to run in interactive sessions can go here
 end
 
-source ~/documents/scripts/environment_variables.sh
+source ~/.config/scripts/environment_variables.sh
+source ~/.config/scripts/directories.sh
 source ~/.config/fish/functions
 
 starship init fish | source
