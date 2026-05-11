@@ -46,4 +46,5 @@ hl.layer_rule({
 	name = "swaync_blur",
 	match = { namespace = "swaync-control-center" },
 	blur = true,
+	ignore_alpha = 0.2,
 })

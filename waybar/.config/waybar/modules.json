@@ -103,7 +103,7 @@
 	},
 
 	"clock": {
-		"on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty calcurse'",
+		"on-click": "hyprctl dispatch exec ' kitty calcurse'",
 		"timezone": "Asia/Manila",
 		"locale": "en_PH.UTF-8",
 		"tooltip": false,
@@ -112,7 +112,7 @@
 	},
 
 	"clock#date": {
-		"on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty calcurse'",
+		"on-click": "hyprctl dispatch exec ' kitty calcurse'",
 		"timezone": "Asia/Manila",
 		"locale": "en_PH.UTF-8",
 		"tooltip": false,
@@ -120,7 +120,7 @@
 	},
 
 	"bluetooth": {
-		"on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty bluetui'",
+		"on-click": "hyprctl dispatch exec ' kitty bluetui'",
 		"tooltip": true,
 		"tooltip-format": "{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}",
@@ -134,7 +134,7 @@
 	},
 
 	"network": {
-		"on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty gazelle'",
+		"on-click": "hyprctl dispatch exec ' kitty gazelle'",
 		"interval": 1,
 		"tooltip-format": "{essid} {signalStrength}%",
 		"format": "[ {icon} ]",
@@ -157,7 +157,7 @@
 	},
 
 	"wireplumber": {
-		"on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty wiremix -v output'",
+		"on-click": "hyprctl dispatch exec ' kitty wiremix -v output'",
 		"tooltip": true,
 		"tooltip-format": "{volume}%",
 		"format": "[ {icon} {volume}% ]",
@@ -166,7 +166,7 @@
 	},
 
 	"temperature": {
-		"on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty btop'",
+		"on-click": "hyprctl dispatch exec ' kitty btop'",
 		"tooltip": false,
 		"interval": 1,
 		"format": "[ {icon} {temperatureC}° ]",
@@ -174,21 +174,21 @@
 	},
 
 	"memory": {
-		"on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty btop'",
+		"on-click": "hyprctl dispatch exec ' kitty btop'",
 		"tooltip": false,
 		"interval": 1,
 		"format": "[ 󰓌 {percentage}% ]"
 	},
 
 	"cpu": {
-		"on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty btop'",
+		"on-click": "hyprctl dispatch exec ' kitty btop'",
 		"tooltip": false,
 		"interval": 1,
 		"format": "[ 󰍛 {usage}% ]"
 	},
 
 	"disk": {
-		"on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty ncdu'",
+		"on-click": "hyprctl dispatch exec ' kitty ncdu'",
 		"interval": 1,
 		"format": "[ 󰋊 {percentage_used}% ]"
 	},

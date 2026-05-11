@@ -9,10 +9,12 @@ function monitor(s, w, h, f)
 	m.scaled_width = w / s
 	m.scaled_height = h / s
 
+	m.mode = w .. "x" .. h .. "@" .. f
+
 	return m
 end
 
-mon1 = monitor(4 / 3, 1920, 1080, 165)
+mon1 = monitor(4/3, 1920, 1080, 165)
 mon2 = monitor(1, 1920, 1080, 75)
 
 position = {
@@ -46,13 +48,13 @@ position = {
 hl.monitor({
 	output = "eDP-1",
 	scale = mon1.scale,
-	mode = mon1.width .. "x" .. mon1.height .. "@" .. mon1.frequency,
+	mode = mon1.mode,
 	position = "0x0"
 })
 
 hl.monitor({
 	output = "HDMI-A-2",
 	scale = mon2.scale,
-	mode = mon2.width .. "x" .. mon2.height .. "@" .. mon2.frequency,
+	mode = mon2.mode,
 	position = position.top(mon1, mon2)
 })
