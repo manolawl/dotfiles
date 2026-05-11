@@ -23,6 +23,18 @@ hl.window_rule({
 	float = true,
 })
 
+hl.window_rule({
+	name = "zen_fullscreen",
+	match = { class = "zen" },
+	fullscreen = true
+})
+
+hl.window_rule({
+	name = "inkscape_fullscreen",
+	match = { class = "org.inkscape.Inkscape" },
+	fullscreen = true
+})
+
 hl.layer_rule({
 	name = "waybar_blur",
 	match = { namespace = "main" },
@@ -34,6 +46,4 @@ hl.layer_rule({
 	name = "swaync_blur",
 	match = { namespace = "swaync-control-center" },
 	blur = true,
-	ignore_alpha = 0.2,
 })
-

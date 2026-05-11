@@ -1,9 +1,9 @@
 hl.config({
 	general = {
 		layout = "scrolling",
-		gaps_in = 4,
-		gaps_out = 8,
-		border_size = 2,
+		gaps_in = { top = 4, bottom = 4, left = 8, right = 8 },
+		gaps_out = { top = 0, bottom = 0, left = 16, right = 16 },
+		border_size = 0,
 		resize_on_border = false,
 		allow_tearing = true,
 
@@ -29,7 +29,7 @@ hl.config({
 
 	decoration = {
 		rounding = 4,
-		rounding_power = 2,
+		rounding_power = 0,
 		active_opacity = 1,
 		inactive_opacity = 1,
 
@@ -42,8 +42,8 @@ hl.config({
 
 		blur = {
 			enabled = true,
-			size = 8,
-			passes = 4,
+			size = 4,
+			passes = 2,
 			vibrancy = 0
 		}
 	},
@@ -52,8 +52,8 @@ hl.config({
 
 	scrolling = {
 		fullscreen_on_one_column = false,
-		focus_fit_method = 1, -- 0 = center, 1 = fit
+		focus_fit_method = 1, -- 0=center 1=fit
 		column_width = 1/3,
-		direction = right,
+		direction = "right",
 	},
 })

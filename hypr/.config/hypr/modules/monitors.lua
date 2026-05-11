@@ -44,13 +44,6 @@ position = {
 
 -- MONITORS
 hl.monitor({
-	output = "",
-	scale = 1,
-	mode = "preferred",
-	position = mon1.scaled_width .. "x0",
-})
-
-hl.monitor({
 	output = "eDP-1",
 	scale = mon1.scale,
 	mode = mon1.width .. "x" .. mon1.height .. "@" .. mon1.frequency,
