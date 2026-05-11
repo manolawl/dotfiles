@@ -47,7 +47,7 @@ hl.monitor({
 	output = "",
 	scale = 1,
 	mode = "preferred",
-	position = mon1.scaled_width,
+	position = mon1.scaled_width .. "x0",
 })
 
 hl.monitor({

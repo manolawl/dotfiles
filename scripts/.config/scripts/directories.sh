@@ -18,3 +18,4 @@ mkdir -p $XDG_DESKTOP_DIR
 mkdir -p $BACKGROUNDS_DIR
 mkdir -p $SCREENSHOTS_DIR
 mkdir -p $SCRIPTS_DIR
+ln -sf /run/media/adonaios $MOUNT_SYMLINK_DIR

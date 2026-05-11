@@ -7,7 +7,6 @@ if status is-interactive
 end
 
 source ~/.config/scripts/environment_variables.sh
-source ~/.config/scripts/directories.sh
 source ~/.config/fish/functions
 
 starship init fish | source

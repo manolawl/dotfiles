@@ -25,12 +25,12 @@
   ],
 
   "modules-right":[
-    "idle_inhibitor",
-    "backlight",
-    "wireplumber",
     "bluetooth",
     "network",
+    "idle_inhibitor",
     "power-profiles-daemon",
+    "wireplumber",
+    "backlight",
     "battery",
   ]
 }

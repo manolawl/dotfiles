@@ -152,7 +152,7 @@
 		"on-scroll-down": "brightnessctl set 25%- && dcutil setvcp 10 - 25 --noverify --sleep-multiplier=0.2",
 		"tooltip": true,
 		"tooltip-format": "{percent}%",
-		"format": "[ {icon} ]",
+		"format": "[ {icon} {percent}% ]",
 		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
 	},
 
@@ -160,7 +160,7 @@
 		"on-click": "hyprctl dispatch exec '[float; size 1280 720; center] kitty wiremix -v output'",
 		"tooltip": true,
 		"tooltip-format": "{volume}%",
-		"format": "[ {icon} ]",
+		"format": "[ {icon} {volume}% ]",
 		"format-muted": "[ 󰝟 ]",
 		"format-icons": ["󰕿", "󰖀", "󰕾"]
 	},
@@ -196,7 +196,7 @@
 	"battery": {
 		"tooltip": true,
 		"tooltip-format": "{time}\n{capacity}%",
-		"format": "[ {icon} ]",
+		"format": "[ {icon} {capacity}% ]",
 		"format-time": "{H}h {M}m",
 		"format-icons": {
 			"default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],

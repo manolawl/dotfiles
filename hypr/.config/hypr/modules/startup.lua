@@ -1,6 +1,6 @@
 -- STARTUP
 hl.on("hyprland.start", function()
-	hl.exec_cmd("./dotfiles/scripts/walls_shuffler.sh")
+	hl.exec_cmd("~/.config/scripts/walls_shuffler.sh")
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("hyprsunset")

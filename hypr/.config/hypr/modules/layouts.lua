@@ -1,6 +1,6 @@
 hl.config({
 	general = {
-		layout = scrolling
+		layout = "scrolling",
 		gaps_in = 4,
 		gaps_out = 8,
 		border_size = 2,
@@ -9,7 +9,7 @@ hl.config({
 
 		col = {
 			inactive_border = "rgba(000000bf)",
-			active_border = {
+			active_border = "rgba(000000bf)"  --[[{
 				angle = 0,
 				colors = {
 					"rgba(000000bf)",
@@ -23,7 +23,7 @@ hl.config({
 					"rgba(9740f9ff)",
 					"rgba(000000bf)"
 				}
-			},
+			},]]
 		}
 	},
 
@@ -40,7 +40,7 @@ hl.config({
 			color = "rgb(202020)"
 		},
 
-		blur {
+		blur = {
 			enabled = true,
 			size = 8,
 			passes = 4,
@@ -48,14 +48,12 @@ hl.config({
 		}
 	},
 
-	dwindle = {
-		pseudotile = true,
-	},
+	dwindle = {},
 
 	scrolling = {
-		fullscreen_on_one_column = true,
-		focus_fit_method = 0,
-		column_width = 0.666666666,
+		fullscreen_on_one_column = false,
+		focus_fit_method = 1, -- 0 = center, 1 = fit
+		column_width = 1/3,
 		direction = right,
 	},
 })

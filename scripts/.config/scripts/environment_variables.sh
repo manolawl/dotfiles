@@ -19,7 +19,8 @@ export XDG_DESKTOP_DIR="$HOME/desktop"
 
 export BACKGROUNDS_DIR="$XDG_PICTURES_DIR/backgrounds"
 export SCREENSHOTS_DIR="$XDG_PICTURES_DIR/screenshots"
-export SCRIPTS_DIR="$XDG_DOCUMENTS_DIR/scripts"
+export SCRIPTS_DIR="$XDG_CONFIG_HOME/scripts"
+export MOUNT_SYMLINK_DIR="$XDG_DESKTOP_DIR/mounted"
 
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
