@@ -1,0 +1,8 @@
+require("config.options")
+require("config.keybinds")
+require("plugins.nvim-lspconfig")
+require("plugins.nvim-treesitter")
+require("plugins.nvim-autopairs")
+require("plugins.nvim-tree")
+require("plugins.nvim-surround")
+require("plugins.lualine")

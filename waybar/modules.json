@@ -1,0 +1,217 @@
+{
+	// ==> GROUPS
+	"group/pmenu":{
+		"modules": [
+			"custom/exit",
+			"custom/reboot",
+			"custom/poweroff"
+		]
+	},
+
+	"group/hardware":{
+		"modules": [
+			"memory",
+			"cpu",
+			"temperature",
+			"disk"
+		]
+	},
+
+	// ==> CUSTOM MODULES
+	"custom/power": {
+		"format" : "[ 󰐥 ]",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "~/.config/waybar/power_menu.xml",
+		"menu-actions": {
+			"shutdown": "shutdown now",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate",
+			"exit": "hyprctl dispatch exit",
+		},
+	},
+
+	"custom/sep": {
+		"format": " | "
+	},
+
+	"custom/exit": {
+		"on-click": "hyprctl dispatch exit",
+		"tooltip": false,
+		"format": "[ 󰍃 ]",
+	},
+
+	"custom/reboot": {
+		"on-click": "systemctl reboot",
+		"tooltip": false,
+		"format": "[ 󰜉 ]",
+	},
+
+	"custom/poweroff": {
+		"on-click": "systemctl poweroff",
+		"tooltip": false,
+		"format": "[ 󰤂 ]",
+	},
+
+	"custom/notifications": {
+		"tooltip-format": "{0}",
+		"format": "[ {icon} ]",
+		"format-icons": {
+			"notification": "󰂚",
+			"none": "󰂜",
+			"dnd-notification": "󰂠",
+			"dnd-none": "󰪓",
+			"inhibited-notification": "󰂛",
+			"inhibited-none": "󰪑",
+			"dnd-inhibited-notification": "󰂛",
+			"dnd-inhibited-none": "󰪑"
+		},
+
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
+
+	// ==> NATIVE MODULES
+	"user": {
+		"format": "{work_H}h {work_M}m"
+	},
+
+	"idle_inhibitor": {
+		"tooltip": false,
+		"format": "[ {icon} ]",
+		"format-icons": {
+			"activated": "󰈈",
+			"deactivated": "󰛐",
+		},
+	},
+
+	"hyprland/workspaces": {
+		"format": "  "
+	},
+
+	"hyprland/window": {
+		"format": "{title}"
+	},
+
+	"mpris": {
+		"format": "󰝚 {title} by {artist} 󰝚"
+	},
+
+	"clock": {
+		"on-click": "kitty calcurse",
+		"timezone": "Asia/Manila",
+		"locale": "en_PH.UTF-8",
+		"tooltip": false,
+		"interval": 1,
+		"format": "{:%I:%M:%S}",
+	},
+
+	"clock#date": {
+		"on-click": "kitty calcurse",
+		"timezone": "Asia/Manila",
+		"locale": "en_PH.UTF-8",
+		"tooltip": false,
+		"format": "{:%y-%m-%d}",
+	},
+
+	"bluetooth": {
+		"on-click": "kitty bluetui",
+		"tooltip": true,
+		"tooltip-format": "{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+		"format": "[ {icon} ]",
+		"format-icons": {
+			"on": "󰂯",
+			"connected": "󰂱",
+			"off": "󰂲",
+			"disabled": "󰂲"
+		},
+	},
+
+	"network": {
+		"on-click": "kitty gazelle",
+		"interval": 1,
+		"tooltip-format": "{essid} {signalStrength}%",
+		"format": "[ {icon} ]",
+		"format-icons": {
+			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+			"ethernet": "󰈀",
+			"disconnected": "󰤮",
+			"disabled": "󰤮"
+		},
+	},
+
+	"backlight": {
+		"device": "intel_backlight",
+		"on-scroll-up": "brightnessctl set 25%+ && dcutil setvcp 10 + 25 --noverify --sleep-multiplier=0.2",
+		"on-scroll-down": "brightnessctl set 25%- && dcutil setvcp 10 - 25 --noverify --sleep-multiplier=0.2",
+		"tooltip": true,
+		"tooltip-format": "{percent}%",
+		"format": "[ {icon} {percent}% ]",
+		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+	},
+
+	"wireplumber": {
+		"on-click": "kitty wiremix -v output",
+		"tooltip": true,
+		"tooltip-format": "{volume}%",
+		"format": "[ {icon} {volume}% ]",
+		"format-muted": "[ 󰝟 ]",
+		"format-icons": ["󰕿", "󰖀", "󰕾"]
+	},
+
+	"temperature": {
+		"on-click": "kitty btop",
+		"tooltip": false,
+		"interval": 1,
+		"format": "[ {icon} {temperatureC}° ]",
+		"format-icons": ["󱃃", "󰔏", "󱃂"]
+	},
+
+	"memory": {
+		"on-click": "kitty btop",
+		"tooltip": false,
+		"interval": 1,
+		"format": "[ 󰓌 {percentage}% ]"
+	},
+
+	"cpu": {
+		"on-click": "kitty btop",
+		"tooltip": false,
+		"interval": 1,
+		"format": "[ 󰍛 {usage}% ]"
+	},
+
+	"disk": {
+		"on-click": "kitty ncdu",
+		"interval": 1,
+		"format": "[ 󰋊 {percentage_used}% ]"
+	},
+
+	"battery": {
+		"tooltip": true,
+		"tooltip-format": "{time}",
+		"format": "[ {icon} {capacity}% ]",
+		"format-time": "{H}h {M}m",
+		"format-icons": {
+			"default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+			"charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂊", "󰂅"]
+		}
+	},
+
+	"power-profiles-daemon": {
+		"tooltip": false,
+		"format": "[ {icon} ]",
+		"format-icons": {
+			"default": "󱐌",
+			"performance": "󱐋",
+			"balanced": "󰗑",
+			"power-saver": "󰌪"
+		}
+	},
+}
