@@ -1,8 +1,7 @@
 function monitor(s, w, h, f)
 	local m = {}
 
-	m.scale = s
-	m.width = w
+	m.scale = s m.width = w
 	m.height = h
 	m.frequency = f
 

@@ -27,7 +27,7 @@ local file_manager = "kitty yazi"
 local app_launcher = "rofi -show drun"
 local system_monitor = "kitty btop"
 
-hl.bind("SUPER + SHIFT + F23", hl.dsp.exec_cmd(terminal)) 
+hl.bind("SUPER + SHIFT + F23", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(file_manager))
 hl.bind("SUPER + space", hl.dsp.exec_cmd(app_launcher))
@@ -36,8 +36,8 @@ hl.bind("SUPER + C", hl.dsp.exec_cmd("hyprpicker -a -f hex -n -u 256 -s 10"))
 hl.bind("print", hl.dsp.exec_cmd("grim -t png -g $(slurp)"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
 
-hl.bind("SUPER + SHIFT + F", hl.dsp.window.float({ action = toggle }))
-hl.bind("SUPER + F", hl.dsp.window.fullscreen({ action = toggle }))
+hl.bind("SUPER + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind("SUPER + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + Escape", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("SUPER + F1", hl.dsp.exec_cmd("~/.config/scripts/gamemode.sh"))
