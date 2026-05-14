@@ -1,7 +1,7 @@
 hl.config({
 	general = {
 		layout = "scrolling",
-		gaps_in = 16,
+		gaps_in = 8,
 		gaps_out = 16,
 		border_size = 0,
 		resize_on_border = false,
@@ -56,6 +56,6 @@ hl.config({
 		fullscreen_on_one_column = false,
 		focus_fit_method = 1, -- 0=center 1=fit
 		column_width = 2/3,
-		direction = "up",
+		direction = "down",
 	},
 })
