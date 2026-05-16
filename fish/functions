@@ -10,7 +10,7 @@ function lz
 	eza -l -a
 end
 
-function ce
+function edit
 	cd $XDG_CONFIG_HOME/$argv
 	nvim .
 end
