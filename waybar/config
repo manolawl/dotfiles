@@ -3,6 +3,7 @@
 	"output": "eDP-1",
 	"layer": "top",
 	"position": "top",
+	"height": 24,
 	"margin": 0,
 	"spacing": 0,
 	"expand-center": true,

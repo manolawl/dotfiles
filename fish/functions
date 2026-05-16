@@ -3,40 +3,14 @@ function dots
 end
 
 function glazy
-	git add . && git commit -m 'lazy commit' && git push
+	git add . && git commit -m $argv && git push
 end
 
 function lz
 	eza -l -a
 end
 
-function nvimcd
-	cd $XDG_CONFIG_HOME/nvim
-	tree
+function ce
+	cd $XDG_CONFIG_HOME/$argv
+	nvim .
 end
-
-function fishcd
-	cd $XDG_CONFIG_HOME/fish
-	tree
-end
-
-function kittycd
-	cd $XDG_CONFIG_HOME/kitty
-	tree
-end
-
-function hyprcd
-	cd $XDG_CONFIG_HOME/hypr
-	tree
-end
-
-function waybarcd
-	cd $XDG_CONFIG_HOME/waybar
-	tree
-end
-
-function fishcd
-	cd $XDG_CONFIG_HOME/fish
-	tree
-end
-

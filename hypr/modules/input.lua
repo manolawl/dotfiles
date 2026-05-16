@@ -7,7 +7,7 @@ hl.config({
 		kb_rules = "",
 		accel_profile = "flat", -- no mouse acceleration
 		follow_mouse = 1, -- focus always follows mouse
-		repeat_delay = 275, -- milliseconds
+		repeat_delay = 200, -- milliseconds
 		sensitivity = 0,
 		touchpad = {
 			natural_scroll = true, -- scrolls opposite to finger swipe
@@ -26,6 +26,7 @@ local browser = "zen-browser"
 local file_manager = "kitty yazi"
 local app_launcher = "rofi -show drun"
 local system_monitor = "kitty btop"
+local screenshot = "hyprshot -m region -o ~/pictures/screenshots"
 
 hl.bind("SUPER + SHIFT + F23", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
@@ -33,7 +34,7 @@ hl.bind("SUPER + E", hl.dsp.exec_cmd(file_manager))
 hl.bind("SUPER + space", hl.dsp.exec_cmd(app_launcher))
 hl.bind("XF86Presentation", hl.dsp.exec_cmd(system_monitor))
 hl.bind("SUPER + C", hl.dsp.exec_cmd("hyprpicker -a -f hex -n -u 256 -s 10"))
-hl.bind("print", hl.dsp.exec_cmd("grim -t png -g $(slurp)"))
+hl.bind("print", hl.dsp.exec_cmd(screenshot))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
 
 hl.bind("SUPER + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
