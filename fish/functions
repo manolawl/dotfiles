@@ -7,7 +7,7 @@ function glazy
 end
 
 function lz
-	eza -l -a
+	eza -l -a $argv
 end
 
 function edit
