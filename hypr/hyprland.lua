@@ -5,6 +5,7 @@ require("modules.layout")
 require("modules.rules")
 require("modules.animations")
 require("modules.monitors")
+require("modules.background_shuffler")
 require("modules.startup")
 
 hl.config({
