@@ -108,7 +108,7 @@
 		"locale": "en_PH.UTF-8",
 		"tooltip": false,
 		"interval": 1,
-		"format": "{:%I:%M:%S}",
+		"format": "{:%I:%M}",
 	},
 
 	"clock#date": {
@@ -116,7 +116,7 @@
 		"timezone": "Asia/Manila",
 		"locale": "en_PH.UTF-8",
 		"tooltip": false,
-		"format": "{:%y-%m-%d}",
+		"format": "{:%m-%d}",
 	},
 
 	"bluetooth": {

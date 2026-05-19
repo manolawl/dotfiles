@@ -32,14 +32,8 @@ local function set_wallpaper()
 		return
 	end
 
-	os.execute("pkill -x swaybg")
-	os.execute(
-		'swaybg -i "' ..
-		wall ..
-		'" -m "' ..
-		mode ..
-		'" &'
-	)
+	os.execute("pkill swaybg")
+	os.execute('swaybg -i "' .. wall .. '" -m "' .. mode .. '" &')
 end
 
 set_wallpaper()

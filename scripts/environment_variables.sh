@@ -1,4 +1,5 @@
 export EDITOR=nvim
+export VISUAL=nvim
 
 # XDG BASE DIRECTORIES
 export XDG_CACHE_HOME="$HOME/.cache"
