@@ -6,10 +6,10 @@ hl.curve('linear', { type = 'bezier', points = { {0, 0}, {1, 1} } })
 hl.curve('bow', { type = 'bezier', points = { {0, 0}, {0, 1} } })
 hl.curve('wob', { type = 'bezier', points = { {1, 0}, {1, 0} } })
 
-hl.animation({ enabled = true, speed = 5, bezier = 'linear', leaf = 'global' })
+hl.animation({ enabled = true, speed = 0.5, bezier = 'linear', leaf = 'global' })
 hl.animation({ enabled = true, speed = 2, bezier = 'bow', leaf = 'windowsIn', style = 'slide' })
-hl.animation({ enabled = true, speed = 2.5, bezier = 'wob', leaf = 'windowsOut', style = 'slide' })
-hl.animation({ enabled = true, speed = 2.5, bezier = 'bow', leaf = 'windowsMove' })
+hl.animation({ enabled = true, speed = 2.5, bezier = 'wob', leaf = 'windowsOut', style = 'gnomed' })
+hl.animation({ enabled = true, speed = 1.5, bezier = 'bow', leaf = 'windowsMove' })
 
 hl.animation({ enabled = true, speed = 1.5, bezier = 'boost', leaf = 'fadeLayersIn' })
 hl.animation({ enabled = true, speed = 4.5, bezier = 'bow', leaf = 'fadeLayersOut' })

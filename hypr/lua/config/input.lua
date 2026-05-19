@@ -7,7 +7,7 @@ local screenshot = 'hyprshot -m region -o ~/pictures/screenshots'
 local clipboard = 'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
 
 local function full_reload()
-	hl.exec_cmd('kill -s 9 -a swaybg && hyprctl reload')
+	hl.exec_cmd('hyprctl reload')
 	hl.exec_cmd('pkill waybar; waybar')
 end
 
