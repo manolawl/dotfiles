@@ -46,7 +46,7 @@ hl.bind('SUPER + B', hl.dsp.exec_cmd(browser))
 hl.bind('SUPER + E', hl.dsp.exec_cmd(file_manager))
 hl.bind('XF86Presentation', hl.dsp.exec_cmd(system_monitor), { long_press = true })
 hl.bind('SUPER + C', hl.dsp.exec_cmd(color_picker))
-hl.bind('Print', hl.dsp.exec_cmd(screenshot))
+hl.bind('Print', hl.dsp.exec_cmd(screenshot), { long_press = true })
 hl.bind('SUPER + V', hl.dsp.exec_cmd(clipboard))
 hl.bind('SUPER + W', hl.dsp.exec_cmd('pkill waybar || waybar'))
 
