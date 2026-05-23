@@ -6,14 +6,21 @@ local system_monitor = 'kitty btop'
 local screenshot = 'hyprshot -m region -o ~/pictures/screenshots'
 local clipboard = 'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
 local color_picker = 'hyprpicker -a -f hex -n -u 256 -s 10'
+local emoji_picker = 'rofi -modi emoji -show emoji'
 
 local function full_reload()
-	hl.exec_cmd('hyprctl reload')
-	hl.exec_cmd('pkill waybar; waybar')
+	hl.exec_cmd(' \
+		hyprctl reload \
+		swaync-client -R -rs \
+		pkill waybar \
+		waybar'
+	)
 end
 
 local function backlight(sign, val)
-	hl.exec_cmd('brightnessctl set ' ..val.. '%' ..sign.. ' && ddcutil setvcp 10 ' ..sign.. ' ' ..val.. ' --noverify --sleep-multiplier=0.2')
+	hl.exec_cmd(' \
+	brightnessctl set ' ..val.. '%' ..sign.. ' && \
+	ddcutil setvcp 10 ' ..sign.. ' ' ..val.. ' --noverify --sleep-multiplier=0.2')
 end
 
 hl.config({
@@ -30,7 +37,7 @@ hl.config({
 		sensitivity = 0, -- [-1, 1]
 		touchpad = {
 			natural_scroll = true, -- scrolls opposite to finger swipe
-			scroll_factor = 0.5,
+			scroll_factor = 0.75,
 		},
 	},
 
@@ -40,18 +47,24 @@ hl.config({
 	}
 })
 
+hl.device({
+	name = 'pixa3848:00-093a:3848-touchpad',
+	sensitivity = 1
+})
+
 hl.bind('SUPER + SHIFT + F23', hl.dsp.exec_cmd(terminal), { long_press = true }) -- copilot
 hl.bind('Menu', hl.dsp.exec_cmd(app_launcher)) -- fn + copilot
 hl.bind('SUPER + B', hl.dsp.exec_cmd(browser))
-hl.bind('SUPER + E', hl.dsp.exec_cmd(file_manager))
+hl.bind('SUPER + F', hl.dsp.exec_cmd(file_manager))
+hl.bind('SUPER + E', hl.dsp.exec_cmd(emoji_picker))
 hl.bind('XF86Presentation', hl.dsp.exec_cmd(system_monitor), { long_press = true })
 hl.bind('SUPER + C', hl.dsp.exec_cmd(color_picker))
 hl.bind('Print', hl.dsp.exec_cmd(screenshot), { long_press = true })
 hl.bind('SUPER + V', hl.dsp.exec_cmd(clipboard))
 hl.bind('SUPER + W', hl.dsp.exec_cmd('pkill waybar || waybar'))
 
-hl.bind('SUPER + SHIFT + F', hl.dsp.window.float({ action = 'toggle' }))
-hl.bind('SUPER + F', hl.dsp.window.fullscreen({ action = 'toggle' }))
+hl.bind('SHIFT + F11', hl.dsp.window.float({ action = 'toggle' }))
+hl.bind('F11', hl.dsp.window.fullscreen({ action = 'toggle' }))
 hl.bind('SUPER + Q', hl.dsp.window.close())
 hl.bind('SUPER + Escape', hl.dsp.exec_cmd('hyprlock'))
 
@@ -61,6 +74,11 @@ hl.bind('SUPER + H', hl.dsp.focus({ direction = 'left' }), { repeating = true })
 hl.bind('SUPER + J', hl.dsp.focus({ direction = 'down' }), { repeating = true })
 hl.bind('SUPER + K', hl.dsp.focus({ direction = 'up' }), { repeating = true })
 hl.bind('SUPER + L', hl.dsp.focus({ direction = 'right' }), { repeating = true })
+
+hl.bind('SUPER + CTRL + H', hl.dsp.window.move({ direction = 'left' }))
+hl.bind('SUPER + CTRL + J', hl.dsp.window.move({ direction = 'down' }))
+hl.bind('SUPER + CTRL + K', hl.dsp.window.move({ direction = 'up' }))
+hl.bind('SUPER + CTRL + L', hl.dsp.window.move({ direction = 'right' }))
 
 hl.bind('SUPER + SHIFT + H', hl.dsp.window.swap({ direction = 'left' }))
 hl.bind('SUPER + SHIFT + J', hl.dsp.window.swap({ direction = 'down' }))

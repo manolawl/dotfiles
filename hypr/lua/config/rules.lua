@@ -49,3 +49,10 @@ hl.layer_rule({
 	blur = true,
 	ignore_alpha = 0.2,
 })
+
+hl.layer_rule({
+	name = 'notification_blur',
+	match = { namespace = 'swaync-notification-window' },
+	blur = true,
+	ignore_alpha = 0.2,
+})

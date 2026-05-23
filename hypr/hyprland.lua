@@ -9,3 +9,4 @@ require('lua.config.appearance')
 require('lua.config.animation')
 require('lua.config.monitors')
 require('lua.config.startup')
+

@@ -1,59 +1,59 @@
 {
-  "$schema": "/etc/xdg/swaync/configSchema.json",
-  "ignore-gtk-theme": true,
-  "positionX": "center",
-  "positionY": "top",
-  "layer": "overlay",
-  "control-center-layer": "top",
-  "layer-shell": true,
-  "layer-shell-cover-screen": true,
-  "cssPriority": "user",
-  "control-center-margin-top": 4,
-  "control-center-margin-bottom": 4,
-  "control-center-margin-right": 4,
-  "control-center-margin-left": 4,
-  "notification-2fa-action": true,
-  "notification-inline-replies": false,
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 200,
-  "timeout": 6,
-  "timeout-low": 3,
-  "timeout-critical": 0,
-  "fit-to-screen": false,
-  "relative-timestamps": true,
-  "control-center-width": 1080,
-  "control-center-height": 540,
-  "notification-window-width": 500,
-  "keyboard-shortcuts": true,
-  "notification-grouping": false,
-  "image-visibility": "when-available",
-  "transition-time": 500,
-  "hide-on-clear": true,
-  "hide-on-action": true,
-  "text-empty": "Nothing...",
-  "script-fail-notify": true,
-  "notification-visibility": {
-    "example-name": {
-      "state": "muted",
-      "urgency": "Normal",
-      "app-name": "example.app.id"
-    }
-  },
+	"$schema": "/etc/xdg/swaync/configSchema.json",
+	"ignore-gtk-theme": true,
+	"positionX": "center",
+	"positionY": "top",
+	"layer": "overlay",
+	"control-center-layer": "top",
+	"layer-shell": true,
+	"layer-shell-cover-screen": true,
+	"cssPriority": "user",
+	"control-center-margin-top": 12,
+	"control-center-margin-bottom": 4,
+	"control-center-margin-right": 4,
+	"control-center-margin-left": 4,
+	"notification-2fa-action": true,
+	"notification-inline-replies": false,
+	"notification-body-image-height": 100,
+	"notification-body-image-width": 200,
+	"timeout": 6,
+	"timeout-low": 3,
+	"timeout-critical": 0,
+	"fit-to-screen": false,
+	"relative-timestamps": true,
+	"control-center-width": 1080,
+	"control-center-height": 540,
+	"notification-window-width": 500,
+	"keyboard-shortcuts": true,
+	"notification-grouping": false,
+	"image-visibility": "when-available",
+	"transition-time": 500,
+	"hide-on-clear": true,
+	"hide-on-action": true,
+	"text-empty": "Nothing...",
+	"script-fail-notify": true,
+	"notification-visibility": {
+		"example-name": {
+			"state": "muted",
+			"urgency": "Normal",
+			"app-name": "example.app.id"
+		}
+	},
 
-  "widgets": [
-    "title",
-    "notifications"
-  ],
+	"widgets": [
+		"title",
+		"notifications"
+	],
 
-  "widget-config": {
-    "notifications": {
-      "vexpand": true
-    },
-    
-    "title": {
-      "text": "",
-      "clear-all-button": true,
-      "button-text": "󰗩"
-     }
-  }
+	"widget-config": {
+		"notifications": {
+			"vexpand": true
+		},
+
+		"title": {
+			"text": "",
+			"clear-all-button": true,
+			"button-text": "󰗩"
+		}
+	}
 }
