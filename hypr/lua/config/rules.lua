@@ -31,7 +31,7 @@ hl.window_rule({
 
 hl.window_rule({
 	name = 'steam_placement',
-	match = { class = 'steam' },
+	match = { title = 'Steam' },
 	workspace = '+1'
 })
 

@@ -85,6 +85,9 @@ hl.bind('SUPER + CTRL + J', hl.dsp.window.move({ direction = 'down' }))
 hl.bind('SUPER + CTRL + K', hl.dsp.window.move({ direction = 'up' }))
 hl.bind('SUPER + CTRL + L', hl.dsp.window.move({ direction = 'right' }))
 
+hl.bind('SUPER + CTRL + Return', hl.dsp.window.move({ workspace = '+1' }))
+hl.bind('SUPER + CTRL + BackSpace', hl.dsp.window.move({ workspace = '-1' }))
+
 hl.bind('SUPER + SHIFT + H', hl.dsp.window.swap({ direction = 'left' }))
 hl.bind('SUPER + SHIFT + J', hl.dsp.window.swap({ direction = 'down' }))
 hl.bind('SUPER + SHIFT + K', hl.dsp.window.swap({ direction = 'up' }))
