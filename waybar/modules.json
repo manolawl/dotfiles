@@ -91,7 +91,8 @@
 	},
 
 	"hyprland/workspaces": {
-		"format": "  "
+		"active-only": true,
+		"format": "[  {name} ]",
 	},
 
 	"hyprland/window": {

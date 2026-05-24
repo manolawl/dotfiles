@@ -5,6 +5,13 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name = 'tea',
+	match = { class = '.*' },
+	size = '{ 960 540 }',
+	center = true
+})
+
+hl.window_rule({
 	name = 'fix_xwayland_drags',
 	match = {
 		class = '^$',
@@ -27,6 +34,12 @@ hl.window_rule({
 	name = 'inkscape_fullscreen',
 	match = { class = 'org.inkscape.Inkscape' },
 	fullscreen = true
+})
+
+hl.window_rule({
+	name = 'steam_placement',
+	match = { class = 'steam' },
+	workspace = '+1'
 })
 
 hl.layer_rule({

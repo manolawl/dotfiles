@@ -11,6 +11,9 @@ hl.animation({ enabled = true, speed = 2, bezier = 'bow', leaf = 'windowsIn', st
 hl.animation({ enabled = true, speed = 2.5, bezier = 'wob', leaf = 'windowsOut', style = 'gnomed' })
 hl.animation({ enabled = true, speed = 1.5, bezier = 'bow', leaf = 'windowsMove' })
 
+hl.animation({ enabled = true, speed = 1, bezier = 'linear', leaf = 'workspacesIn', style = 'slidevert' })
+hl.animation({ enabled = true, speed = 1, bezier = 'linear', leaf = 'workspacesOut', style = 'slidevert' })
+
 hl.animation({ enabled = true, speed = 1.5, bezier = 'boost', leaf = 'fadeLayersIn' })
 hl.animation({ enabled = true, speed = 4.5, bezier = 'bow', leaf = 'fadeLayersOut' })
 
