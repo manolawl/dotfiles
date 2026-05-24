@@ -40,3 +40,5 @@ menuitem {
 #power-profiles-daemon.power-saver { color: @peridot-light; }
 #power-profiles-daemon.balanced { color: @citrine-light; }
 #power-profiles-daemon.performance { color: @ruby-light; }
+
+#workspaces label { color: @tourmaline-light; }

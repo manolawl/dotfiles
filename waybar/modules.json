@@ -10,10 +10,10 @@
 
 	"group/hardware":{
 		"modules": [
+			"disk",
+			"temperature",
 			"memory",
 			"cpu",
-			"temperature",
-			"disk"
 		]
 	},
 
@@ -137,7 +137,7 @@
 	"network": {
 		"on-click": "kitty gazelle",
 		"interval": 1,
-		"tooltip-format": "ip: {ipaddr}\nnetwork: {essid}\nup: {bandwidthUpBytes}\ndown: {bandwidthDownBytes}",
+		"tooltip-format": "network: {essid}\nip: {ipaddr}\nup: {bandwidthUpBytes}\ndown: {bandwidthDownBytes}",
 		"format": "[ {icon} ]",
 		"format-icons": {
 			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
