@@ -41,7 +41,7 @@ prompt {
 }
 
 entry {
-  placeholder: "search to launch";
+  placeholder: "type here...";
   placeholder-color: @fg2;
   padding: 8px;
   text-color: @fg0;

@@ -137,7 +137,7 @@
 	"network": {
 		"on-click": "kitty gazelle",
 		"interval": 1,
-		"tooltip-format": "{essid} {signalStrength}%",
+		"tooltip-format": "ip: {ipaddr}\nnetwork: {essid}\nup: {bandwidthUpBytes}\ndown: {bandwidthDownBytes}",
 		"format": "[ {icon} ]",
 		"format-icons": {
 			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],

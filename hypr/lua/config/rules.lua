@@ -5,13 +5,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	name = 'tea',
-	match = { class = '.*' },
-	size = '{ 960 540 }',
-	center = true
-})
-
-hl.window_rule({
 	name = 'fix_xwayland_drags',
 	match = {
 		class = '^$',
@@ -46,6 +39,7 @@ hl.layer_rule({
 	name = 'waybar_blur',
 	match = { namespace = 'waybar' },
 	blur = true,
+	blur_popups = true,
 	ignore_alpha = 0.2,
 })
 

@@ -25,6 +25,7 @@ window#waybar {
 
 menu, tooltip {
 	background-color: @bg0-glass;
+	font-family: "JetBrainsMono Nerd Font";
 }
 
 menuitem {
@@ -32,7 +33,10 @@ menuitem {
 }
 
 #wireplumber.muted,
+#idle_inhibitor.deactivated,
 #bluetooth.disabled,
-#network.disabled {
-	color: @diamond-dark;
-}
+#network.disabled { color: @diamond-dark; }
+
+#power-profiles-daemon.power-saver { color: @peridot-light; }
+#power-profiles-daemon.balanced { color: @citrine-light; }
+#power-profiles-daemon.performance { color: @ruby-light; }
