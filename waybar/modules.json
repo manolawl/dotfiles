@@ -152,6 +152,12 @@
 		"on-scroll-up": "brightnessctl set 25%+ && dcutil setvcp 10 + 25 --noverify --sleep-multiplier=0.2",
 		"on-scroll-down": "brightnessctl set 25%- && dcutil setvcp 10 - 25 --noverify --sleep-multiplier=0.2",
 		"tooltip": true,
+		"states": {
+			"q1": 0,
+			"q2": 26,
+			"q3": 51,
+			"q4": 76,
+		},
 		"tooltip-format": "{percent}%",
 		"format": "[ {icon} {percent}% ]",
 		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
@@ -161,6 +167,12 @@
 		"on-click": "kitty wiremix -v output",
 		"tooltip": true,
 		"tooltip-format": "{volume}%",
+		"states": {
+			"q1": 0,
+			"q2": 26,
+			"q3": 51,
+			"q4": 76,
+		},
 		"format": "[ {icon} {volume}% ]",
 		"format-muted": "[ 󰝟 ]",
 		"format-icons": ["󰕿", "󰖀", "󰕾"]
@@ -197,6 +209,12 @@
 	"battery": {
 		"tooltip": true,
 		"tooltip-format": "{time}",
+		"states": {
+			"q1": 25,
+			"q2": 50,
+			"q3": 75,
+			"q4": 100,
+		},
 		"format": "[ {icon} {capacity}% ]",
 		"format-time": "{H}h {M}m",
 		"format-icons": {

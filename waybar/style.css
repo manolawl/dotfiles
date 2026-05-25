@@ -42,3 +42,25 @@ menuitem {
 #power-profiles-daemon.performance { color: @ruby-light; }
 
 #workspaces label { color: @tourmaline-light; }
+
+#battery.q1 { color: @spessartine-light; }
+#battery.q2 { color: @citrine-light; }
+#battery.q3 { color: @emerald-light; }
+#battery.q4 { color: @peridot-light; }
+
+#backlight.q1 { color: @sapphire-light; }
+#backlight.q2 { color: @aquamarine-light; }
+#backlight.q3 { color: @turquoise-light; }
+#backlight.q4 { color: @tourmaline-light; }
+
+#wireplumber.q1 { color: @sapphire-light; }
+#wireplumber.q2 { color: @aquamarine-light; }
+#wireplumber.q3 { color: @turquoise-light; }
+#wireplumber.q4 { color: @tourmaline-light; }
+
+#bluetooth { color: @sapphire-light; }
+#network { color: @spinel-light; }
+
+#clock { color: @spessartine-light; }
+
+#custom-notifications { color: @tourmaline-light; }

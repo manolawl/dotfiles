@@ -10,18 +10,19 @@ local color_picker = 'hyprpicker -a -f hex -n -u 256 -s 10'
 local emoji_picker = 'rofi -modi emoji -show emoji'
 
 local function full_reload()
-	hl.exec_cmd(' \
-		hyprctl reload \
-		swaync-client -R -rs \
-		pkill waybar \
-		waybar'
-	)
+	hl.exec_cmd('\
+		hyprctl reload\
+		swaync-client -R -rs\
+		pkill waybar\
+		waybar\
+	')
 end
 
 local function backlight(sign, val)
-	hl.exec_cmd(' \
-	brightnessctl set ' ..val.. '%' ..sign.. ' && \
-	ddcutil setvcp 10 ' ..sign.. ' ' ..val.. ' --noverify --sleep-multiplier=0.2')
+	hl.exec_cmd('\
+		brightnessctl set ' ..val.. '%' ..sign.. ' &&\
+		ddcutil setvcp 10 ' ..sign.. ' ' ..val.. ' --noverify --sleep-multiplier=0.2\
+	')
 end
 
 hl.config({
@@ -53,6 +54,11 @@ hl.device({
 	sensitivity = 1
 })
 
+--hl.gesture({ fingers = 2, direction = 'pinch', action = 'resize' })
+hl.gesture({ fingers = 2, direction = 'pinchout', mods = 'SUPER', action = 'close' })
+hl.gesture({ fingers = 3, direction = 'vertical', action = 'workspace' })
+hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
+
 hl.bind('SUPER + SHIFT + F23', hl.dsp.exec_cmd(terminal), { long_press = true }) -- copilot
 hl.bind('Menu', hl.dsp.exec_cmd(app_launcher)) -- fn + copilot
 hl.bind('SUPER + B', hl.dsp.exec_cmd(browser))
@@ -65,8 +71,8 @@ hl.bind('SHIFT + Print', hl.dsp.exec_cmd(screenshot_region))
 hl.bind('SUPER + V', hl.dsp.exec_cmd(clipboard))
 hl.bind('SUPER + W', hl.dsp.exec_cmd('pkill waybar || waybar'))
 
-hl.bind('SHIFT + F11', hl.dsp.window.float({ action = 'toggle' }))
-hl.bind('F11', hl.dsp.window.fullscreen({ action = 'toggle' }))
+hl.bind('SUPER + Space', hl.dsp.window.float({ action = 'toggle' }))
+hl.bind('ALT + Space', hl.dsp.window.fullscreen({ action = 'toggle' }))
 hl.bind('SUPER + Q', hl.dsp.window.close())
 hl.bind('SUPER + Escape', hl.dsp.exec_cmd('hyprlock'))
 
