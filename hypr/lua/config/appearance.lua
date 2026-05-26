@@ -2,28 +2,36 @@ hl.config({
 	general = {
 		allow_tearing = true,
 
-		gaps_in = 6,
-		gaps_out = 12,
+		gaps_in = { top = 4, right = 8, bottom = 4, left = 8 },
+		gaps_out = { top = 0, right = 16, bottom = 8, left = 16 },
 
-		border_size = 0,
+		border_size = 4,
+		col = { active_border = 'rgb(71ffd7)', inactive_border = 'rgb(26705c)' }
 	},
 
 	decoration = {
-		rounding = 6,
-		rounding_power = 3,
+		rounding = 8,
+		rounding_power = 2,
 
 		active_opacity = 1,
 		inactive_opacity = 1,
 
 		blur = {
 			enabled = true,
-			size = 6,
-			passes = 3,
+			size = 8,
+			passes = 2,
 			vibrancy = 1
 		},
 
+		shadow = {
+			enabled = true,
+			offset = { 4, 4 },
+			range = 4,
+			render_power = 1,
+			color = 'rgba(202020bf)'
+		},
+
 		glow = { enabled = false },
-		shadow = { enabled = false },
 	},
 
 	misc = {

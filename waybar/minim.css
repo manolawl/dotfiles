@@ -1,11 +1,11 @@
 @import "../colors.css";
 
 * {
-	font-family: "JetBrainsMono Nerd Font Propo";
+	font-family: "JetBrainsMono Nerd Font";
 	font-size: 16px;
 	color: #ffffff;
 	border: none;
-	border-radius: 16px;
+	border-radius: 0;
 	min-height: 0;
 	min-width: 0;
 	background: none;
@@ -13,14 +13,14 @@
 	margin: 0;
 	text-shadow: none;
 	box-shadow: none;
-	transition: 250ms;
 	-gtk-icon-shadow: none;
 	-gtk-icon-effect: none;
 }
 
+window#waybar, tooltip { background-color: @bg0-glass; }
+
 menu {
 	background-color: @bg0-glass;
-	font-family: "JetBrainsMono Nerd Font";
 }
 
 menuitem {
@@ -28,22 +28,10 @@ menuitem {
 }
 
 .module, tooltip label {
-	background-color: @bg0-glass;
-	margin: 8px 4px;
-	padding: 0 16px;
-	border: 4px solid;
+	margin: 0 8px;
+	padding: 0 4px;
 	font-weight: bold;
-	box-shadow: 2px 2px 2px 2px @bg1-glass;
 }
-
-tooltip label { padding-top: 2px; padding-bottom: 2px; border-color: @amethyst-light; }
-
-.module:hover, tooltip label {
-	border-radius: 4px;
-}
-
-#workspaces { margin-left: 16px; }
-#battery { margin-right: 16px; }
 
 #workspaces label { color: @tourmaline-light; }
 #workspaces { border-color: @tourmaline-light; }
@@ -51,7 +39,6 @@ tooltip label { padding-top: 2px; padding-bottom: 2px; border-color: @amethyst-l
 #power-profiles-daemon.power-saver { color: @peridot-light; border-color: @peridot-light; }
 #power-profiles-daemon.balanced { color: @citrine-light; border-color: @citrine-light; }
 #power-profiles-daemon.performance { color: @ruby-light; border-color: @ruby-light; }
-
 
 #battery.p1 { color: @ruby-light; border-color: @ruby-light; }
 #battery.p2 { color: @spessartine-light; border-color: @spessartine-light; }
@@ -79,10 +66,6 @@ tooltip label { padding-top: 2px; padding-bottom: 2px; border-color: @amethyst-l
 #custom-notifications { color: @tanzanite-light; border-color: @tanzanite-light; }
 
 #idle_inhibitor.activated { color: @rhodolite-light; border-color: @rhodolite-light; }
-
-#temperature { color: @turquoise-neutral; border-color: @turquoise-neutral; }
-#memory { color: @spinel-neutral; border-color: @spinel-neutral; }
-#cpu { color: @citrine-neutral; border-color: @citrine-neutral; }
 
 #wireplumber.muted,
 #idle_inhibitor.deactivated,

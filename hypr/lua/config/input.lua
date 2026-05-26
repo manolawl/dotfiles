@@ -9,10 +9,10 @@ local clipboard = 'cliphist list | rofi -dmenu -display-columns 2 | cliphist dec
 local color_picker = 'hyprpicker -a -f hex -n -u 256 -s 10'
 local emoji_picker = 'rofi -modi emoji -show emoji'
 
-local function full_reload()
+local function shell_reload()
 	hl.exec_cmd('\
 		hyprctl reload\
-		swaync-client -R -rs\
+		swaync-client -rs -R\
 		pkill waybar\
 		waybar\
 	')
@@ -22,6 +22,38 @@ local function backlight(sign, val)
 	hl.exec_cmd('\
 		brightnessctl set ' ..val.. '%' ..sign.. ' &&\
 		ddcutil setvcp 10 ' ..sign.. ' ' ..val.. ' --noverify --sleep-multiplier=0.2\
+	')
+end
+
+local function toggle_minim()
+	-- TOGGLE OFF
+	if hl.get_config('animations.enabled') == false then
+		hl.exec_cmd('\
+		hyprctl reload\
+		pkill waybar\
+		waybar\
+		')
+	end
+
+	-- TOGGLE ON
+	hl.config({
+		general = {
+			border_size = 2,
+			layout = 'dwindle',
+			gaps_in = 4,
+			gaps_out = 8
+		},
+		animations = {enabled = false },
+		decoration = {
+			rounding = 0,
+			blur = { enabled = false },
+			shadow = { enabled = false }
+		}
+	})
+
+	hl.exec_cmd('\
+		pkill waybar\
+		waybar -s ~/.config/waybar/minim.css -c ~/.config/waybar/minim.json\
 	')
 end
 
@@ -54,13 +86,19 @@ hl.device({
 	sensitivity = 1
 })
 
---hl.gesture({ fingers = 2, direction = 'pinch', action = 'resize' })
-hl.gesture({ fingers = 2, direction = 'pinchout', mods = 'SUPER', action = 'close' })
+
 hl.gesture({ fingers = 3, direction = 'vertical', action = 'workspace' })
 hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
 
+hl.bind('Menu', function()
+	if hl.get_config('animations.enabled') == false then
+		hl.exec_cmd(app_launcher .. ' -config ~/.config/rofi/minim.rasi')
+	else
+		hl.exec_cmd(app_launcher)
+	end
+end)
+
 hl.bind('SUPER + SHIFT + F23', hl.dsp.exec_cmd(terminal), { long_press = true }) -- copilot
-hl.bind('Menu', hl.dsp.exec_cmd(app_launcher)) -- fn + copilot
 hl.bind('SUPER + B', hl.dsp.exec_cmd(browser))
 hl.bind('SUPER + F', hl.dsp.exec_cmd(file_manager))
 hl.bind('SUPER + E', hl.dsp.exec_cmd(emoji_picker))
@@ -76,7 +114,8 @@ hl.bind('ALT + Space', hl.dsp.window.fullscreen({ action = 'toggle' }))
 hl.bind('SUPER + Q', hl.dsp.window.close())
 hl.bind('SUPER + Escape', hl.dsp.exec_cmd('hyprlock'))
 
-hl.bind('SUPER + R', full_reload)
+hl.bind('SUPER + M', toggle_minim)
+hl.bind('SUPER + R', shell_reload)
 
 hl.bind('SUPER + H', hl.dsp.focus({ direction = 'left' }), { repeating = true })
 hl.bind('SUPER + J', hl.dsp.focus({ direction = 'down' }), { repeating = true })

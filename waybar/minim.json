@@ -3,12 +3,11 @@
 	"layer": "top",
 	"position": "top",
 	"spacing": 0,
-	"height": 32,
 	"expand-center": true,
 	"fixed-center": true,
 	"reload_on_style_change": true,
 
-	"include": "modules.json",
+	"include": "~/.config/waybar/modules.json",
 
 	"modules-left":[
 		"hyprland/workspaces",

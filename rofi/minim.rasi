@@ -11,4 +11,4 @@ configuration {
 	}
 }
 
-@theme "style.rasi"
+@theme "minim_style.rasi"

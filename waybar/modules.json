@@ -56,7 +56,7 @@
 
 	"custom/notifications": {
 		"tooltip-format": "{0}",
-		"format": "[ {icon} ]",
+		"format": "{icon}",
 		"format-icons": {
 			"notification": "󰂚",
 			"none": "󰂜",
@@ -83,7 +83,7 @@
 
 	"idle_inhibitor": {
 		"tooltip": false,
-		"format": "[ {icon} ]",
+		"format": "{icon}",
 		"format-icons": {
 			"activated": "󰈈",
 			"deactivated": "󰛐",
@@ -92,7 +92,7 @@
 
 	"hyprland/workspaces": {
 		"active-only": true,
-		"format": "[  {name} ]",
+		"format": " {name}",
 	},
 
 	"hyprland/window": {
@@ -104,7 +104,6 @@
 	},
 
 	"clock": {
-		"on-click": "kitty calcurse",
 		"timezone": "Asia/Manila",
 		"locale": "en_PH.UTF-8",
 		"tooltip": false,
@@ -113,7 +112,7 @@
 	},
 
 	"clock#date": {
-		"on-click": "kitty calcurse",
+		"on-click": "pkill calcurse || kitty calcurse",
 		"timezone": "Asia/Manila",
 		"locale": "en_PH.UTF-8",
 		"tooltip": false,
@@ -121,11 +120,11 @@
 	},
 
 	"bluetooth": {
-		"on-click": "kitty bluetui",
+		"on-click": "pkill bluetui || kitty bluetui",
 		"tooltip": true,
 		"tooltip-format": "{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}",
-		"format": "[ {icon} ]",
+		"format": "{icon}",
 		"format-icons": {
 			"on": "󰂯",
 			"connected": "󰂱",
@@ -135,10 +134,10 @@
 	},
 
 	"network": {
-		"on-click": "kitty gazelle",
+		"on-click": "pkill impala || kitty impala",
 		"interval": 1,
 		"tooltip-format": "network: {essid}\nip: {ipaddr}\nup: {bandwidthUpBytes}\ndown: {bandwidthDownBytes}",
-		"format": "[ {icon} ]",
+		"format": "{icon}",
 		"format-icons": {
 			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
 			"ethernet": "󰈀",
@@ -151,71 +150,75 @@
 		"device": "intel_backlight",
 		"on-scroll-up": "brightnessctl set 25%+ && dcutil setvcp 10 + 25 --noverify --sleep-multiplier=0.2",
 		"on-scroll-down": "brightnessctl set 25%- && dcutil setvcp 10 - 25 --noverify --sleep-multiplier=0.2",
-		"tooltip": true,
+		"tooltip": false,
 		"states": {
-			"q1": 0,
-			"q2": 26,
-			"q3": 51,
-			"q4": 76,
+			"p1": 0,
+			"p2": 21,
+			"p3": 41,
+			"p4": 61,
+			"p5": 81,
 		},
 		"tooltip-format": "{percent}%",
-		"format": "[ {icon} {percent}% ]",
+		"format": "{icon} {percent}%",
 		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
 	},
 
 	"wireplumber": {
-		"on-click": "kitty wiremix -v output",
-		"tooltip": true,
+		"on-click": "pkill wiremix || kitty wiremix -v output",
+		"tooltip": false,
 		"tooltip-format": "{volume}%",
 		"states": {
-			"q1": 0,
-			"q2": 26,
-			"q3": 51,
-			"q4": 76,
+			"p1": 0,
+			"p2": 21,
+			"p3": 41,
+			"p4": 61,
+			"p5": 81,
 		},
-		"format": "[ {icon} {volume}% ]",
-		"format-muted": "[ 󰝟 ]",
+		"format": "{icon} {volume}%",
+		"format-muted": "󰝟 {volume}%",
 		"format-icons": ["󰕿", "󰖀", "󰕾"]
 	},
 
 	"temperature": {
-		"on-click": "kitty btop",
+		"on-click": "pkill btop || kitty btop",
 		"tooltip": false,
 		"interval": 1,
-		"format": "[ {icon} {temperatureC}° ]",
+		"format": "{icon} {temperatureC}°",
 		"format-icons": ["󱃃", "󰔏", "󱃂"]
 	},
 
 	"memory": {
-		"on-click": "kitty btop",
-		"tooltip": false,
+		"on-click": "pkill btop || kitty btop",
 		"interval": 1,
-		"format": "[ 󰓌 {percentage}% ]"
+		"tooltip": true,
+		"tooltip-format": "format: GiB\ntotal : {total}\nunused: {avail}\nused  : {used}",
+		"format": "󰓌 {percentage}%"
 	},
 
 	"cpu": {
-		"on-click": "kitty btop",
-		"tooltip": false,
+		"on-click": "pkill btop || kitty btop",
 		"interval": 1,
-		"format": "[ 󰍛 {usage}% ]"
+		"tooltip": false,
+		"format": "󰍛 {usage}%"
 	},
 
 	"disk": {
-		"on-click": "kitty ncdu",
+		"on-click": "pkill ncdu || kitty ncdu",
 		"interval": 1,
-		"format": "[ 󰋊 {percentage_used}% ]"
+		"format": "󰋊 {percentage_used}%"
 	},
 
 	"battery": {
 		"tooltip": true,
 		"tooltip-format": "{time}",
 		"states": {
-			"q1": 25,
-			"q2": 50,
-			"q3": 75,
-			"q4": 100,
+			"p1": 20,
+			"p2": 40,
+			"p3": 60,
+			"p4": 80,
+			"p5": 100,
 		},
-		"format": "[ {icon} {capacity}% ]",
+		"format": "{icon} {capacity}%",
 		"format-time": "{H}h {M}m",
 		"format-icons": {
 			"default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -225,7 +228,7 @@
 
 	"power-profiles-daemon": {
 		"tooltip": false,
-		"format": "[ {icon} ]",
+		"format": "{icon}",
 		"format-icons": {
 			"default": "󱐌",
 			"performance": "󱐋",

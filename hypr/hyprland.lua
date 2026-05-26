@@ -8,5 +8,5 @@ require('lua.config.rules')
 require('lua.config.appearance')
 require('lua.config.animation')
 require('lua.config.monitors')
-require('lua.config.startup')
+require('lua.config.run_on_events')
 
