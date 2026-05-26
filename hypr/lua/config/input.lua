@@ -1,12 +1,13 @@
 local terminal = 'kitty'
 local browser = 'zen-browser'
 local file_manager = 'kitty yazi'
-local app_launcher = 'rofi -show drun'
 local system_monitor = 'kitty btop'
 local screenshot_region = 'hyprshot -m region -o ~/pictures/screenshots'
 local screenshot_window = 'hyprshot -m window -o ~/pictures/screenshots'
 local clipboard = 'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
 local color_picker = 'hyprpicker -a -f hex -n -u 256 -s 10'
+local app_launcher = 'rofi -show drun'
+local window_searcher = 'rofi -show window'
 local emoji_picker = 'rofi -modi emoji -show emoji'
 
 local function shell_reload()
@@ -57,17 +58,27 @@ local function toggle_minim()
 	')
 end
 
+local function rofi_minim(to_run)
+	local minim = ' -config ~/.config/rofi/minim.rasi'
+
+	if hl.get_config('animations.enabled') then
+		hl.exec_cmd(to_run)
+	else
+		hl.exec_cmd(to_run .. minim)
+	end
+end
+
 hl.config({
 	input = {
 		kb_layout = 'us',
 		kb_variant = '',
 		kb_model = '',
-		kb_options = 'caps:escape', -- maps caps lock to escape
+		kb_options = 'caps:escape', -- maps caps-lock to escape
 		kb_rules = '',
 		accel_profile = 'flat', -- no mouse acceleration
 		follow_mouse = 1, -- focus always follows mouse
 		repeat_delay = 200, -- milliseconds
-		repeat_rate = 50,
+		repeat_rate = 50, -- keys per second
 		sensitivity = 0, -- [-1, 1]
 		touchpad = {
 			natural_scroll = true, -- scrolls opposite to finger swipe
@@ -76,7 +87,7 @@ hl.config({
 	},
 
 	cursor = {
-		default_monitor = 'eDP-1',
+		default_monitor = 'eDP-1', --monitor name
 		no_hardware_cursors = 1 -- always true
 	}
 })
@@ -86,71 +97,79 @@ hl.device({
 	sensitivity = 1
 })
 
-
+-- TOUCHPAD GESTURES
 hl.gesture({ fingers = 3, direction = 'vertical', action = 'workspace' })
 hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
 
-hl.bind('Menu', function()
-	if hl.get_config('animations.enabled') == false then
-		hl.exec_cmd(app_launcher .. ' -config ~/.config/rofi/minim.rasi')
-	else
-		hl.exec_cmd(app_launcher)
-	end
-end)
+-- MOUSE
+hl.bind('SUPER + mouse:272', hl.dsp.window.drag(), { mouse = true })
+hl.bind('SUPER + mouse:273', hl.dsp.window.resize(), { mouse = true })
 
-hl.bind('SUPER + SHIFT + F23', hl.dsp.exec_cmd(terminal), { long_press = true }) -- copilot
-hl.bind('SUPER + B', hl.dsp.exec_cmd(browser))
-hl.bind('SUPER + F', hl.dsp.exec_cmd(file_manager))
-hl.bind('SUPER + E', hl.dsp.exec_cmd(emoji_picker))
-hl.bind('XF86Presentation', hl.dsp.exec_cmd(system_monitor), { long_press = true })
-hl.bind('SUPER + C', hl.dsp.exec_cmd(color_picker))
+-- ROFI
+hl.bind('menu', function() rofi_minim(app_launcher) end)
+hl.bind('SUPER + E', function() rofi_minim(emoji_picker) end)
+hl.bind('SUPER + Tab', function() rofi_minim(window_searcher) end)
+hl.bind('SUPER + V', hl.dsp.exec_cmd(clipboard))
+
+-- SYSTEM SCREENSHOT
 hl.bind('Print', hl.dsp.exec_cmd(screenshot_window), { long_press = true })
 hl.bind('SHIFT + Print', hl.dsp.exec_cmd(screenshot_region))
-hl.bind('SUPER + V', hl.dsp.exec_cmd(clipboard))
+
+hl.bind('SUPER + SHIFT + F23', hl.dsp.exec_cmd(terminal), { long_press = true }) -- copilot
+hl.bind('XF86Presentation', hl.dsp.exec_cmd(system_monitor), { long_press = true })
+hl.bind('SUPER + B', hl.dsp.exec_cmd(browser))
+hl.bind('SUPER + F', hl.dsp.exec_cmd(file_manager))
+hl.bind('SUPER + C', hl.dsp.exec_cmd(color_picker))
+
+hl.bind('SUPER + Escape', hl.dsp.exec_cmd('hyprlock'))
 hl.bind('SUPER + W', hl.dsp.exec_cmd('pkill waybar || waybar'))
 
 hl.bind('SUPER + Space', hl.dsp.window.float({ action = 'toggle' }))
 hl.bind('ALT + Space', hl.dsp.window.fullscreen({ action = 'toggle' }))
 hl.bind('SUPER + Q', hl.dsp.window.close())
-hl.bind('SUPER + Escape', hl.dsp.exec_cmd('hyprlock'))
 
 hl.bind('SUPER + M', toggle_minim)
 hl.bind('SUPER + R', shell_reload)
 
+-- CHANGE WINDOW FOCUS
 hl.bind('SUPER + H', hl.dsp.focus({ direction = 'left' }), { repeating = true })
 hl.bind('SUPER + J', hl.dsp.focus({ direction = 'down' }), { repeating = true })
-hl.bind('SUPER + K', hl.dsp.focus({ direction = 'up' }), { repeating = true })
+hl.bind('SUPER + K', hl.dsp.focus({ direction = 'up' }),  { repeating = true })
 hl.bind('SUPER + L', hl.dsp.focus({ direction = 'right' }), { repeating = true })
 
-hl.bind('SUPER + Return', hl.dsp.focus({ workspace = '+1' }), { repeating = true })
-hl.bind('SUPER + BackSpace', hl.dsp.focus({ workspace = '-1' }), { repeating = true })
-
+-- MOVE WINDOW
 hl.bind('SUPER + CTRL + H', hl.dsp.window.move({ direction = 'left' }))
 hl.bind('SUPER + CTRL + J', hl.dsp.window.move({ direction = 'down' }))
 hl.bind('SUPER + CTRL + K', hl.dsp.window.move({ direction = 'up' }))
 hl.bind('SUPER + CTRL + L', hl.dsp.window.move({ direction = 'right' }))
 
+-- MOVE TO ADJACENT WORKSPACE
 hl.bind('SUPER + CTRL + Return', hl.dsp.window.move({ workspace = '+1' }))
 hl.bind('SUPER + CTRL + BackSpace', hl.dsp.window.move({ workspace = '-1' }))
 
+-- FOCUS TO ADJACENT WORKSPACE
+hl.bind('SUPER + Return', hl.dsp.focus({ workspace = '+1' }), { repeating = true })
+hl.bind('SUPER + BackSpace', hl.dsp.focus({ workspace = '-1' }), { repeating = true })
+
+-- SWAP WINDOWS
 hl.bind('SUPER + SHIFT + H', hl.dsp.window.swap({ direction = 'left' }))
 hl.bind('SUPER + SHIFT + J', hl.dsp.window.swap({ direction = 'down' }))
 hl.bind('SUPER + SHIFT + K', hl.dsp.window.swap({ direction = 'up' }))
 hl.bind('SUPER + SHIFT + L', hl.dsp.window.swap({ direction = 'right' }))
 
-hl.bind('SUPER + mouse:272', hl.dsp.window.drag(), { mouse = true })
-hl.bind('SUPER + mouse:273', hl.dsp.window.resize(), { mouse = true })
-
-hl.bind('SUPER + bracketright', hl.dsp.layout('colresize +' .. 1/2))
-hl.bind('SUPER + bracketleft', hl.dsp.layout('colresize -' .. 1/2))
-hl.bind('SUPER + comma', hl.dsp.layout('consume'))
+-- SCROLLING SPECIFIC
+hl.bind('SUPER + bracketright', hl.dsp.layout('colresize +' .. 1/3))
+hl.bind('SUPER + bracketleft',  hl.dsp.layout('colresize -' .. 1/3))
+hl.bind('SUPER + comma',  hl.dsp.layout('consume'))
 hl.bind('SUPER + period', hl.dsp.layout('expel'))
 
+-- BACKLIGHT
 hl.bind('XF86MonBrightnessUp', function() backlight('+', 25) end)
 hl.bind('XF86MonBrightnessDown', function() backlight('-', 25) end)
 hl.bind('SHIFT + XF86MonBrightnessUp', function() backlight('', 100) end)
 hl.bind('SHIFT + XF86MonBrightnessDown', function() backlight('', 0) end)
 
+-- AUDIO
 hl.bind('XF86AudioRaiseVolume', hl.dsp.exec_cmd('wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+'), { repeating = true })
 hl.bind('XF86AudioLowerVolume', hl.dsp.exec_cmd('wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-'), { repeating = true })
 hl.bind('XF86AudioMute', hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'))
