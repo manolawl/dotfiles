@@ -40,8 +40,8 @@ local function toggle_minim()
 	hl.config({
 		general = {
 			layout = 'dwindle',
-			gaps_in = 8,
-			gaps_out = 32
+			gaps_in = 4,
+			gaps_out = { top = 32, right = 16, bottom = 32, left = 16}
 		},
 		animations = {enabled = false },
 		decoration = {
