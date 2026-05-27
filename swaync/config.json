@@ -21,8 +21,8 @@
 	"timeout-critical": 0,
 	"fit-to-screen": false,
 	"relative-timestamps": true,
-	"control-center-width": 960,
-	"control-center-height": 540,
+	"control-center-width": 300,
+	"control-center-height": 270,
 	"notification-window-width": 500,
 	"keyboard-shortcuts": true,
 	"notification-grouping": false,
@@ -51,7 +51,7 @@
 		},
 
 		"title": {
-			"text": "",
+			"text": "notifications...",
 			"clear-all-button": true,
 			"button-text": "󰗩"
 		}

@@ -1,7 +1,7 @@
 @import "../colors.css";
 
 * {
-	font-family: "JetBrainsMono Nerd Font";
+	font-family: "JetBrainsMono Nerd Font Propo";
 	font-size: 16px;
 	color: #ffffff;
 	border: none;
@@ -29,8 +29,10 @@ menuitem {
 
 .module, tooltip label {
 	margin: 0 8px;
-	padding: 0 4px;
+	padding: 0 8px;
 	font-weight: bold;
+	border-style: solid;
+	border-width:  4px 0 0 0;
 }
 
 #workspaces label { color: @tourmaline-light; }

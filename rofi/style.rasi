@@ -1,87 +1,87 @@
 * {
-  bg0:      #000000bf;
+	bg0: #000000bf;
 
-  fg0:      #ffffff;
-  fg1:      #ff0000;
-  fg2:      #7160ae;
+	fg0: #ffffff;
+	fg1: #ff0000;
+	fg2: #7160ae;
 
-  accent:   #7160ae40;
+	accent: #7160ae40;
 
-  background-color: transparent;
-  text-color:       @fg0;
+	background-color: transparent;
+	text-color: @fg0;
 
-  font: "JetBrainsMono Nerd Font 12";
+	font: "JetBrainsMono Nerd Font 12";
 
-  margin:  0;
-  padding: 0;
-  spacing: 0;
+	margin: 0;
+	padding: 0;
+	spacing: 0;
 }
 
 window {
-  location: center;
-  width:    650px;
-  padding:  25px;
-  border-radius: 6px;
-  background-color: @bg0;
-  transparency: "real";
+	location: center;
+	width: 540px;
+	height: 270px;
+	padding: 0;
+	border-radius: 4px;
+	background-color: @bg0;
+	transparency: "real";
 }
 
 mainbox {
-  children: [ inputbar, listview ];
+	children: [ inputbar, listview ];
 }
 
 inputbar {
-  children: [ prompt, entry ];
-  padding: 12px;
-  margin-bottom: 25px;
+	children: [ prompt, entry ];
+	padding: 16px;
 }
 
 prompt {
-  enabled: false;
+	enabled: false;
 }
 
 entry {
-  placeholder: "type here...";
-  placeholder-color: @fg2;
-  padding: 8px;
-  text-color: @fg0;
-  font: "JetBrainsMono Nerd Font 16";
+	placeholder: "type here...";
+	placeholder-color: @fg2;
+	padding: 0px;
+	text-color: @fg0;
+	font: "JetBrainsMono Nerd Font 12";
 }
 
 listview {
-  columns: 1;
-  lines: 8;
-  layout: vertical;
-  fixed-height: true;
+	columns: 1;
+	lines: 4;
+	layout: vertical;
+	fixed-height: true;
 }
 
 element {
-  padding: 10px;
-  border-radius: 6px;
-  text-color: @fg1;
+	padding: 4px 32px;
+	border-radius: 4px;
+	text-color: @fg1;
 }
 
 element-icon {
-  size: 28px;
-  padding: 0 12px 0 0;
+	size: 28px;
+	padding: 0 12px 0 0;
 }
 
 element-text {
-  text-color: inherit;
+	text-color: inherit;
 }
 
 element selected {
-  background-color: @accent;
-  text-color: @fg0;
+	background-color: @accent;
+	text-color: @fg0;
 }
 
 element normal.normal {
-    background-color: transparent;
-    text-color:       inherit;
+	background-color: transparent;
+	text-color: inherit;
 }
 
 element alternate.normal {
-    background-color: transparent;
-    text-color:       inherit;
+	background-color: transparent;
+	text-color: inherit;
 }
 

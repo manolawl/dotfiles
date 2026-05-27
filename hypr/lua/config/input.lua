@@ -7,7 +7,7 @@ local screenshot_window = 'hyprshot -m window -o ~/pictures/screenshots'
 local clipboard = 'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
 local color_picker = 'hyprpicker -a -f hex -n -u 256 -s 10'
 local app_launcher = 'rofi -show drun'
-local window_searcher = 'rofi -show window'
+local window_selector = 'rofi -show window'
 local emoji_picker = 'rofi -modi emoji -show emoji'
 
 local function shell_reload()
@@ -39,14 +39,12 @@ local function toggle_minim()
 	-- TOGGLE ON
 	hl.config({
 		general = {
-			border_size = 2,
 			layout = 'dwindle',
-			gaps_in = 4,
-			gaps_out = 8
+			gaps_in = 8,
+			gaps_out = 32
 		},
 		animations = {enabled = false },
 		decoration = {
-			rounding = 0,
 			blur = { enabled = false },
 			shadow = { enabled = false }
 		}
@@ -56,16 +54,6 @@ local function toggle_minim()
 		pkill waybar\
 		waybar -s ~/.config/waybar/minim.css -c ~/.config/waybar/minim.json\
 	')
-end
-
-local function rofi_minim(to_run)
-	local minim = ' -config ~/.config/rofi/minim.rasi'
-
-	if hl.get_config('animations.enabled') then
-		hl.exec_cmd(to_run)
-	else
-		hl.exec_cmd(to_run .. minim)
-	end
 end
 
 hl.config({
@@ -106,9 +94,9 @@ hl.bind('SUPER + mouse:272', hl.dsp.window.drag(), { mouse = true })
 hl.bind('SUPER + mouse:273', hl.dsp.window.resize(), { mouse = true })
 
 -- ROFI
-hl.bind('menu', function() rofi_minim(app_launcher) end)
-hl.bind('SUPER + E', function() rofi_minim(emoji_picker) end)
-hl.bind('SUPER + Tab', function() rofi_minim(window_searcher) end)
+hl.bind('menu', hl.dsp.exec_cmd(app_launcher))
+hl.bind('SUPER + E', hl.dsp.exec_cmd(emoji_picker))
+hl.bind('SUPER + Tab', hl.dsp.exec_cmd(window_selector))
 hl.bind('SUPER + V', hl.dsp.exec_cmd(clipboard))
 
 -- SYSTEM SCREENSHOT
@@ -128,8 +116,8 @@ hl.bind('SUPER + Space', hl.dsp.window.float({ action = 'toggle' }))
 hl.bind('ALT + Space', hl.dsp.window.fullscreen({ action = 'toggle' }))
 hl.bind('SUPER + Q', hl.dsp.window.close())
 
-hl.bind('SUPER + M', toggle_minim)
-hl.bind('SUPER + R', shell_reload)
+hl.bind('SUPER + SHIFT + M', toggle_minim)
+hl.bind('SUPER + SHIFT + R', shell_reload)
 
 -- CHANGE WINDOW FOCUS
 hl.bind('SUPER + H', hl.dsp.focus({ direction = 'left' }), { repeating = true })
@@ -157,9 +145,30 @@ hl.bind('SUPER + SHIFT + J', hl.dsp.window.swap({ direction = 'down' }))
 hl.bind('SUPER + SHIFT + K', hl.dsp.window.swap({ direction = 'up' }))
 hl.bind('SUPER + SHIFT + L', hl.dsp.window.swap({ direction = 'right' }))
 
+-- WINDOW SIZING
+hl.bind('SUPER + bracketleft', function()
+	if hl.get_config('general.layout') == 'scrolling' then
+		hl.dispatch(hl.dsp.layout('colresize -' .. 1/3))
+	end
+	if hl.get_config('general.layout') == 'dwindle' then
+		hl.dispatch(hl.dsp.layout('splitratio -' .. 1/16))
+	end
+end)
+
+hl.bind('SUPER + bracketright', function()
+	if hl.get_config('general.layout') == 'scrolling' then
+		hl.dispatch(hl.dsp.layout('colresize +' .. 1/3))
+	end
+	if hl.get_config('general.layout') == 'dwindle' then
+		hl.dispatch(hl.dsp.layout('splitratio +' .. 1/16))
+	end
+end)
+
+-- DWINDLE SPECIFIC
+hl.bind('SUPER + P', hl.dsp.window.pseudo())
+hl.bind('SUPER + S', hl.dsp.layout('togglesplit'))
+
 -- SCROLLING SPECIFIC
-hl.bind('SUPER + bracketright', hl.dsp.layout('colresize +' .. 1/3))
-hl.bind('SUPER + bracketleft',  hl.dsp.layout('colresize -' .. 1/3))
 hl.bind('SUPER + comma',  hl.dsp.layout('consume'))
 hl.bind('SUPER + period', hl.dsp.layout('expel'))
 
