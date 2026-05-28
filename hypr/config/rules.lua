@@ -21,7 +21,7 @@ hl.window_rule({ match = { class = 'wev' }, float = true })
 hl.window_rule({ match = { class = 'org.inkscape.Inkscape' }, fullscreen = true })
 hl.window_rule({ match = { class = 'steam', title = 'Steam' }, workspace = 'special:gaming' })
 
--- PROPER BLURRING
+-- BLURRING
 hl.layer_rule({ match = { namespace = 'waybar' }, blur = true, blur_popups = true, ignore_alpha = 0.2 })
 hl.layer_rule({ match = { namespace = 'rofi' }, blur = true, ignore_alpha = 0.2 })
 hl.layer_rule({ match = { namespace = 'swaync-control-center' }, blur = true, ignore_alpha = 0.2 })
