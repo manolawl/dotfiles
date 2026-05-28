@@ -2,6 +2,7 @@
 
 require('lua.config.environment')
 require('lua.config.permissions')
+require('lua.config.devices')
 require('lua.config.input')
 require('lua.config.layout')
 require('lua.config.rules')

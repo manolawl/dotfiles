@@ -1,39 +1,19 @@
 @import "../colors.css";
-
-* {
-	font-family: "JetBrainsMono Nerd Font Propo";
-	font-size: 16px;
-	color: #ffffff;
-	border: none;
-	border-radius: 0;
-	min-height: 0;
-	min-width: 0;
-	background: none;
-	padding: 0;
-	margin: 0;
-	text-shadow: none;
-	box-shadow: none;
-	-gtk-icon-shadow: none;
-	-gtk-icon-effect: none;
-}
-
-window#waybar, tooltip { background-color: @bg0-glass; }
-
-menu {
-	background-color: @bg0-glass;
-}
-
-menuitem {
-	margin: 0 4px;
-}
+@import "defaults.css";
 
 .module, tooltip label {
-	margin: 0 8px;
-	padding: 0 8px;
+	background-color: @bg0-glass;
+	margin: 8px 4px;
+	padding: 0 16px;
+	border: 4px solid;
 	font-weight: bold;
-	border-style: solid;
-	border-width:  4px 0 0 0;
+	box-shadow: 2px 2px 2px 2px @bg1-glass;
 }
+
+tooltip label { padding-top: 2px; padding-bottom: 2px; border-color: @amethyst-light; }
+
+#workspaces { margin-left: 8px; }
+#battery { margin-right: 8px; }
 
 #workspaces label { color: @tourmaline-light; }
 #workspaces { border-color: @tourmaline-light; }
@@ -41,6 +21,7 @@ menuitem {
 #power-profiles-daemon.power-saver { color: @peridot-light; border-color: @peridot-light; }
 #power-profiles-daemon.balanced { color: @citrine-light; border-color: @citrine-light; }
 #power-profiles-daemon.performance { color: @ruby-light; border-color: @ruby-light; }
+
 
 #battery.p1 { color: @ruby-light; border-color: @ruby-light; }
 #battery.p2 { color: @spessartine-light; border-color: @spessartine-light; }
@@ -68,6 +49,10 @@ menuitem {
 #custom-notifications { color: @tanzanite-light; border-color: @tanzanite-light; }
 
 #idle_inhibitor.activated { color: @rhodolite-light; border-color: @rhodolite-light; }
+
+#temperature { color: @turquoise-neutral; border-color: @turquoise-neutral; }
+#memory { color: @spinel-neutral; border-color: @spinel-neutral; }
+#cpu { color: @citrine-neutral; border-color: @citrine-neutral; }
 
 #wireplumber.muted,
 #idle_inhibitor.deactivated,

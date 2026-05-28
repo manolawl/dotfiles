@@ -3,7 +3,6 @@
 	"layer": "top",
 	"position": "top",
 	"spacing": 0,
-	"height": 32,
 	"expand-center": true,
 	"fixed-center": true,
 	"reload_on_style_change": true,
@@ -12,16 +11,11 @@
 
 	"modules-left":[
 		"hyprland/workspaces",
-		"temperature",
-		"memory",
-		"cpu",
 	],
 
 	"modules-center":[
 		"idle_inhibitor",
-		"clock",
 		"custom/notifications",
-		"clock#date",
 		"power-profiles-daemon",
 	],
 
@@ -31,6 +25,7 @@
 		"wireplumber",
 		"backlight",
 		"battery",
+		"clock",
 	]
 }
 

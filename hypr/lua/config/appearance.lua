@@ -2,15 +2,15 @@ hl.config({
 	general = {
 		allow_tearing = true,
 
-		gaps_in = { top = 4, right = 8, bottom = 4, left = 8 },
-		gaps_out = { top = 0, right = 16, bottom = 8, left = 16 },
+		gaps_in = 4,
+		gaps_out = 8,
 
-		border_size = 4,
+		border_size = 0,
 		col = { active_border = 'rgb(71ffd7)', inactive_border = 'rgb(26705c)' }
 	},
 
 	decoration = {
-		rounding = 4,
+		rounding = 0,
 		rounding_power = 2,
 
 		active_opacity = 1,
@@ -23,14 +23,7 @@ hl.config({
 			vibrancy = 1
 		},
 
-		shadow = {
-			enabled = true,
-			offset = { 4, 4 },
-			range = 4,
-			render_power = 1,
-			color = 'rgba(202020bf)'
-		},
-
+		shadow = { enabled = false },
 		glow = { enabled = false },
 	},
 

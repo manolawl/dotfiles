@@ -96,7 +96,7 @@
 	},
 
 	"hyprland/window": {
-		"format": "{title}"
+		"format": "{class}"
 	},
 
 	"mpris": {

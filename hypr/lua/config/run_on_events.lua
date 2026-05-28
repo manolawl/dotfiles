@@ -1,5 +1,5 @@
 hl.on('hyprland.start', function()
-	hl.exec_cmd('swaybg -m fill -i ~/pictures/backgrounds/4k_wallpapers_from_reddit/Black_Forest_Germany.jpg')
+	hl.exec_cmd('swaybg -m fill -i ~/pictures/backgrounds/4k_wallpapers_from_reddit/painting.jpg')
 	hl.exec_cmd('waybar')
 	hl.exec_cmd('systemctl --user start hyprpolkitagent')
 	hl.exec_cmd('hyprsunset')
