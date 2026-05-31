@@ -26,6 +26,7 @@ hl.device({
 	name = 'pixa3848:00-093a:3848-touchpad',
 	sensitivity = 1
 })
+
 local terminal = 'kitty'
 local browser = 'zen-browser'
 local file_manager = 'kitty yazi'
@@ -37,6 +38,7 @@ local color_picker = 'hyprpicker -a -f hex -n -u 256 -s 10'
 local app_launcher = 'rofi -show drun'
 local window_selector = 'rofi -show window'
 local emoji_picker = 'rofi -modi emoji -show emoji'
+local power_menu = "printf 'systemctl suspend\nhyprshutdown\nhyprshutdown --post-cmd reboot\nhyprshutdown --post-cmd \"shutdown now\"' | rofi -dmenu | $SHELL"
 
 local window_offset = 32
 
@@ -73,6 +75,7 @@ hl.bind('ALT + Space', hl.dsp.exec_cmd(app_launcher))
 hl.bind('ALT + E', hl.dsp.exec_cmd(emoji_picker))
 hl.bind('ALT + Tab', hl.dsp.exec_cmd(window_selector))
 hl.bind('ALT + V', hl.dsp.exec_cmd(clipboard))
+hl.bind('ALT + P', hl.dsp.exec_cmd(power_menu))
 
 
 
@@ -161,8 +164,10 @@ hl.bind('ALT + SHIFT + ' ..right_click, hl.dsp.window.resize({ x = window_offset
 -- FOCUS ON ADJACENT WORKSPACE
 hl.bind('SUPER + semicolon', hl.dsp.focus({ workspace = '-1' }), { repeating = true })
 hl.bind('SUPER + apostrophe', hl.dsp.focus({ workspace = '+1' }), { repeating = true })
+-- MOUSE
 hl.bind('SUPER + mouse_down', hl.dsp.focus({ workspace = '-1' }))
 hl.bind('SUPER + mouse_up', hl.dsp.focus({ workspace = '+1' }))
+-- TOUCHPAD
 hl.gesture({ fingers = 3, direction = 'vertical', action = 'workspace' })
 
 
@@ -176,7 +181,7 @@ hl.bind('SUPER + CTRL + mouse_up', hl.dsp.window.move({ workspace = '+1' }))
 
 
 -- SPECIAL WORKSPACES
-hl.bind('SUPER + G', hl.dsp.workspace.toggle_special('gaming'))
+hl.bind('CTRL + ALT + SHIFT + G', hl.dsp.workspace.toggle_special('gaming'))
 
 
 
@@ -186,31 +191,7 @@ hl.bind('SUPER + SHIFT + M', function() toggle_layout('master') end)
 
 
 
--- LAYOUT SPECIFIC SIZING
-hl.bind('SUPER + bracketleft', function()
-	if hl.get_config('general.layout') == 'scrolling' then
-		hl.dispatch(hl.dsp.layout('colresize -' .. 1/3))
-	end
-
-	if hl.get_config('general.layout') == 'dwindle' then
-		hl.dispatch(hl.dsp.layout('splitratio -' .. 1/16))
-	end
-end)
-
-hl.bind('SUPER + bracketright', function()
-	if hl.get_config('general.layout') == 'scrolling' then
-		hl.dispatch(hl.dsp.layout('colresize +' .. 1/3))
-	end
-
-	if hl.get_config('general.layout') == 'dwindle' then
-		hl.dispatch(hl.dsp.layout('splitratio +' .. 1/16))
-	end
-end)
-
-
-
 -- DWINDLE SPECIFIC
-hl.bind('SUPER + P', hl.dsp.window.pseudo())
 hl.bind('SUPER + S', hl.dsp.layout('togglesplit'))
 
 

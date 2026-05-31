@@ -1,5 +1,4 @@
 {
-	"output": "eDP-1",
 	"layer": "top",
 	"position": "top",
 	"spacing": 0,
@@ -15,7 +14,7 @@
 
 	"modules-center":[
 		"idle_inhibitor",
-		"custom/notifications",
+		"clock",
 		"power-profiles-daemon",
 	],
 
@@ -25,7 +24,7 @@
 		"wireplumber",
 		"backlight",
 		"battery",
-		"clock",
+		"custom/notifications",
 	]
 }
 

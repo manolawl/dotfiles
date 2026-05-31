@@ -107,7 +107,7 @@
 		"timezone": "Asia/Manila",
 		"locale": "en_PH.UTF-8",
 		"tooltip": false,
-		"interval": 1,
+		"interval": 60,
 		"format": "{:%I:%M}",
 	},
 
@@ -135,7 +135,7 @@
 
 	"network": {
 		"on-click": "pkill impala || kitty impala",
-		"interval": 1,
+		"interval": 5,
 		"tooltip-format": "network: {essid}\nip: {ipaddr}\nup: {bandwidthUpBytes}\ndown: {bandwidthDownBytes}",
 		"format": "{icon}",
 		"format-icons": {

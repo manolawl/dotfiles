@@ -25,13 +25,13 @@
 }
 
 .widget-title {
-	border: solid @diamond-light;
+	border: solid @diamond-dark;
 	border-width: 0 0 4px 0;
 }
 
 .widget-title label { 
-	color: @diamond-ligh ;
+	color: @diamond-dark;
 	font-weight: bold;
-	font-size: 32px;
+	font-size: 20px;
 	margin: 8px 16px;
 }

@@ -10,6 +10,6 @@ hl.on('hyprland.start', function()
 end)
 
 hl.on('hyprland.shutdown', function()
-	hl.exec_cmd('hyprshutdown -t "shutting down..." --post-cmd "shutdown -P 0"')
+	hl.exec_cmd('hyprshutdown -t "shutting down..."')
 end)
 

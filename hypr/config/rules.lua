@@ -1,7 +1,7 @@
 hl.window_rule({
 	name = 'suppress_maximize_events',
 	match = { class = '.*' },
-	suppress_event = 'maximize'
+	suppress_event = 'maximize',
 })
 
 hl.window_rule({
@@ -17,12 +17,11 @@ hl.window_rule({
 	no_initial_focus = true
 })
 
+hl.window_rule({ match = { workspace = 'special:gaming' }, fullscreen = true, confine_pointer = true })
+
 hl.window_rule({ match = { class = 'wev' }, float = true })
-hl.window_rule({ match = { class = 'org.inkscape.Inkscape' }, fullscreen = true })
-hl.window_rule({ match = { class = 'steam', title = 'Steam' }, workspace = 'special:gaming' })
+hl.window_rule({ match = { class = 'org.inkscape.Inkscape' }, fullscreen = true, })
+hl.window_rule({ match = { class = 'steam', }, workspace = 'special:gaming' })
 
 -- BLURRING
-hl.layer_rule({ match = { namespace = 'waybar' }, blur = true, blur_popups = true, ignore_alpha = 0.2 })
-hl.layer_rule({ match = { namespace = 'rofi' }, blur = true, ignore_alpha = 0.2 })
-hl.layer_rule({ match = { namespace = 'swaync-control-center' }, blur = true, ignore_alpha = 0.2 })
-hl.layer_rule({ match = { namespace = 'swaync-notification-window' }, blur = true, ignore_alpha = 0.2 })
+hl.layer_rule({ match = { namespace = '.*' }, blur = true, blur_popups = true, ignore_alpha = 0.2, })
