@@ -135,8 +135,8 @@
 
 	"network": {
 		"on-click": "pkill impala || kitty impala",
-		"interval": 5,
-		"tooltip-format": "network: {essid}\nip: {ipaddr}\nup: {bandwidthUpBytes}\ndown: {bandwidthDownBytes}",
+		"interval": 1,
+		"tooltip-format": "iplocal: {ipaddr}\nnetwork: {essid}\nul-rate: {bandwidthUpBytes}\ndl-rate: {bandwidthDownBytes}",
 		"format": "{icon}",
 		"format-icons": {
 			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
