@@ -17,7 +17,7 @@ hl.window_rule({
 	no_initial_focus = true
 })
 
-hl.window_rule({ match = { workspace = 'special:gaming' }, fullscreen = true, confine_pointer = true })
+hl.window_rule({ match = { workspace = 'special:gaming', float = false }, fullscreen = true, confine_pointer = true })
 
 hl.window_rule({ match = { class = 'wev' }, float = true })
 hl.window_rule({ match = { class = 'org.inkscape.Inkscape' }, fullscreen = true, })
