@@ -13,3 +13,4 @@ require('config.misc.environment')
 require('config.misc.permissions')
 require('config.misc.run_on_events')
 
+--require('config.plugins.hymission')

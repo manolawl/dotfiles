@@ -21,39 +21,39 @@ local mouse_prev_ws = 'mouse_up' -- scroll up
 
 
 
-local function move(dir)
+local function move(direction)
 	local offset = 16
 
 	if not hl.get_active_window().floating then
-		hl.dispatch(hl.dsp.window.move({ direction = dir }))
+		hl.dispatch(hl.dsp.window.move({ direction = direction }))
 
-	elseif dir == 'l' then
+	elseif direction == 'l' then
 		hl.dispatch(hl.dsp.window.move({ x = -offset, y = 0, relative = true }))
 
-	elseif dir == 'd' then
+	elseif direction == 'd' then
 		hl.dispatch(hl.dsp.window.move({ x = 0, y = offset, relative = true }))
 
-	elseif dir == 'u' then
+	elseif direction == 'u' then
 		hl.dispatch(hl.dsp.window.move({ x = 0, y = -offset, relative = true }))
 
-	elseif dir == 'r' then
+	elseif direction == 'r' then
 		hl.dispatch(hl.dsp.window.move({ x = offset, y = 0, relative = true }))
 	end
 end
 
-local function resize(transform)
+local function resize(action)
 	local offset = 16
 
-	if transform == 'shrink_w' then
+	if action == 'shrink_w' then
 		hl.dispatch(hl.dsp.window.resize({ x = -offset, y = 0, relative = true }))
 
-	elseif transform =='shrink_h' then
+	elseif action =='shrink_h' then
 		hl.dispatch(hl.dsp.window.resize({ x = 0, y = -offset, relative = true }))
 
-	elseif transform == 'extend_h' then
+	elseif action == 'extend_h' then
 		hl.dispatch(hl.dsp.window.resize({ x = 0, y = offset, relative = true }))
 
-	elseif transform == 'extend_w' then
+	elseif action == 'extend_w' then
 		hl.dispatch(hl.dsp.window.resize({ x = offset, y = 0, relative = true }))
 	end
 end
@@ -65,6 +65,19 @@ local function toggle_layout(layout)
 
 	hl.config({ ['general.layout'] = layout })
 end
+
+
+
+-- TOUCHPAD GESTURES
+hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
+hl.gesture({ fingers = 3, direction = 'vertical', action = 'workspace' })
+
+
+
+-- LAYOUT TOGGLES
+hl.bind('ALT + SHIFT + S', function() toggle_layout('scrolling') end)
+hl.bind('ALT + SHIFT + D', function() toggle_layout('dwindle') end)
+hl.bind('ALT + SHIFT + M', function() toggle_layout('master') end)
 
 
 
@@ -120,8 +133,6 @@ hl.bind(focus_mod .. key_next_ws, hl.dsp.focus({ workspace = '+1' }), { repeatin
 -- MOUSE
 hl.bind(focus_mod .. mouse_prev_ws, hl.dsp.focus({ workspace = '+1' }))
 hl.bind(focus_mod .. mouse_next_ws, hl.dsp.focus({ workspace = '-1' }))
--- TOUCHPAD
-hl.gesture({ fingers = 3, direction = 'vertical', action = 'workspace' })
 
 
 
@@ -139,19 +150,5 @@ hl.bind('CTRL + ALT + SHIFT + G', hl.dsp.workspace.toggle_special('gaming'))
 
 
 
--- LAYOUTS
-hl.bind('ALT + SHIFT + S', function() toggle_layout('scrolling') end)
-hl.bind('ALT + SHIFT + D', function() toggle_layout('dwindle') end)
-hl.bind('ALT + SHIFT + M', function() toggle_layout('master') end)
-
-
-
 -- DWINDLE SPECIFIC
 hl.bind('SUPER + S', hl.dsp.layout('togglesplit'))
-
-
-
--- SCROLLING SPECIFIC
---hl.bind('SUPER + comma', hl.dsp.layout('consume'))
---hl.bind('SUPER + period', hl.dsp.layout('expel'))
-hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
