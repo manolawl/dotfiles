@@ -17,12 +17,13 @@ hl.window_rule({
 	no_initial_focus = true
 })
 
-hl.window_rule({ match = { workspace = 'special:gaming', float = false }, fullscreen = true, confine_pointer = true })
+hl.window_rule({ match = { workspace = 'special:gaming', float = false }, fullscreen = true, confine_pointer = false })
 
 hl.window_rule({ match = { class = 'wev' }, float = true })
 hl.window_rule({ match = { class = 'hyprland-share-picker' }, float = true })
 hl.window_rule({ match = { class = 'org.inkscape.Inkscape' }, fullscreen = true, })
 hl.window_rule({ match = { class = 'steam', }, workspace = 'special:gaming' })
+hl.window_rule({ match = { title = 'Steam', }, workspace = 'special:gaming' })
 
 -- BLURRING
 hl.layer_rule({ match = { namespace = '.*' }, blur = true, blur_popups = true, ignore_alpha = 0.2, })

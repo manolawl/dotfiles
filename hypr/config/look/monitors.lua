@@ -1,3 +1,9 @@
+hl.config({
+	['render.direct_scanout'] = 0, -- 0=off 1=on 2=auto
+	['render.cm_auto_hdr'] = 1, -- 0=off 1=hdr 2=hdredid
+	['quirks.prefer_hdr'] = 1, -- 0=off 1=always 2=gamescope
+})
+
 hl.monitor({
 	scale = 1,
 	output = 'eDP-1',

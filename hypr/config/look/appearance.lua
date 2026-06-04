@@ -6,10 +6,12 @@ hl.config({
 		gaps_out = 8,
 
 		border_size = 0,
-		col = { active_border = 'rgb(71ffd7)', inactive_border = 'rgb(26705c)' }
 	},
 
 	decoration = {
+		shadow = { enabled = false },
+		glow = { enabled = false },
+
 		rounding = 0,
 		rounding_power = 2,
 
@@ -22,9 +24,6 @@ hl.config({
 			passes = 2,
 			vibrancy = 1
 		},
-
-		shadow = { enabled = false },
-		glow = { enabled = false },
 	},
 
 	misc = {
@@ -33,13 +32,6 @@ hl.config({
 		vrr = 1, -- 0=off 1=on 2=fullscreen only 3=fullscreen with video/game
 		font_family = 'JetBrainsMono Nerd Font',
 		force_default_wallpaper = 0,
-	},
-
-	quirks = { prefer_hdr = 2 }, -- 0=off 1=always 2=gamescope
-
-	render = {
-		direct_scanout = 0, -- 0=off 1=on 2=auto
-		cm_auto_hdr = 1,
 	},
 
 	xwayland = {

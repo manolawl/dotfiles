@@ -11,7 +11,6 @@ local clipboard = 'cliphist list | rofi -dmenu -display-columns 2 | cliphist dec
 local app_launcher = 'rofi -show drun'
 local window_selector = 'rofi -show window'
 local emoji_picker = 'rofi -modi emoji -show emoji'
-local power_menu = "printf 'systemctl suspend\nhyprshutdown\nhyprshutdown --post-cmd reboot\nhyprshutdown --post-cmd \"shutdown now\"' | rofi -dmenu | $SHELL"
 
 
 
@@ -20,7 +19,6 @@ hl.bind('ALT + Space', hl.dsp.exec_cmd(app_launcher))
 hl.bind('ALT + E', hl.dsp.exec_cmd(emoji_picker))
 hl.bind('ALT + Tab', hl.dsp.exec_cmd(window_selector))
 hl.bind('ALT + V', hl.dsp.exec_cmd(clipboard))
-hl.bind('ALT + P', hl.dsp.exec_cmd(power_menu))
 
 
 

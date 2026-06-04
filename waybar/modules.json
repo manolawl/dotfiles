@@ -104,6 +104,7 @@
 	},
 
 	"clock": {
+		"on-click": "pkill calcurse || kitty calcurse",
 		"timezone": "Asia/Manila",
 		"locale": "en_PH.UTF-8",
 		"tooltip": false,
