@@ -7,11 +7,12 @@ vim.opt.smartindent = true
 vim.opt.expandtab = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 vim.opt.foldmethod = "indent"
 vim.opt.foldenable = true
+vim.opt.foldcolumn = "auto"
 vim.opt.foldlevelstart = 99
 vim.opt.list = true
 vim.opt.termguicolors = true
@@ -19,7 +20,7 @@ vim.opt.conceallevel = 1
 
 vim.opt.listchars = {
 	space = "·",
-	tab = "->"
+	tab = "   "
 }
 
 vim.cmd([[

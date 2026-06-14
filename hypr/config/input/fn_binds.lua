@@ -1,26 +1,28 @@
-local key_dec_bl = 'XF86MonBrightnessDown'
-local key_inc_bl = 'XF86MonBrightnessUp'
+local DECREASE_BACKLIGHT = 'XF86MonBrightnessDown'
+local INCREASE_BACKLIGHT = 'XF86MonBrightnessUp'
 
-local key_dec_vol = 'XF86AudioLowerVolume'
-local key_inc_vol = 'XF86AudioRaiseVolume'
-local key_mute_aud = 'XF86AudioMute'
-local key_mute_mic = 'F15'
+local DECREASE_VOL = 'XF86AudioLowerVolume'
+local INCREASE_VOL = 'XF86AudioRaiseVolume'
+local MUTE_AUD = 'XF86AudioMute'
+local MUTE_MIC = 'F15'
 
-local function SET_BACKLIGHT(sign, num)
+
+local function set_backlight(sign, num)
 	hl.exec_cmd('\
 		brightnessctl set ' ..num.. '%' ..sign.. ' &&\
 		ddcutil setvcp 10 ' ..sign.. ' ' ..num.. ' --noverify --sleep-multiplier=0.2\
 	')
 end
 
+
 -- BACKLIGHT
-hl.bind(key_inc_bl, function() SET_BACKLIGHT('+', 25) end)
-hl.bind(key_dec_bl, function() SET_BACKLIGHT('-', 25) end)
-hl.bind('SHIFT + ' .. key_inc_bl, function() SET_BACKLIGHT('', 100) end)
-hl.bind('SHIFT + ' .. key_dec_bl, function() SET_BACKLIGHT('', 0) end)
+hl.bind(INCREASE_BACKLIGHT, function() set_backlight('+', 25) end)
+hl.bind(DECREASE_BACKLIGHT, function() set_backlight('-', 25) end)
+hl.bind('SHIFT + ' .. INCREASE_BACKLIGHT, function() set_backlight('', 100) end)
+hl.bind('SHIFT + ' .. DECREASE_BACKLIGHT, function() set_backlight('', 0) end)
 
 -- AUDIO
-hl.bind(key_inc_vol, hl.dsp.exec_cmd('wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'), { repeating = true })
-hl.bind(key_dec_vol, hl.dsp.exec_cmd('wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-'), { repeating = true })
-hl.bind(key_mute_aud, hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'))
-hl.bind(key_mute_mic, hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle'))
+hl.bind(INCREASE_VOL, hl.dsp.exec_cmd('wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'), { repeating = true })
+hl.bind(DECREASE_VOL, hl.dsp.exec_cmd('wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-'), { repeating = true })
+hl.bind(MUTE_AUD, hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'))
+hl.bind(MUTE_MIC, hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle'))
