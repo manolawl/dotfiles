@@ -109,7 +109,7 @@
 		"locale": "en_PH.UTF-8",
 		"tooltip": false,
 		"interval": 60,
-		"format": "{:%I:%M}",
+		"format": "{:%I:%M %a %d}",
 	},
 
 	"clock#date": {
@@ -136,8 +136,7 @@
 
 	"network": {
 		"on-click": "pkill impala || kitty impala",
-		"interval": 1,
-		"tooltip-format": "iplocal: {ipaddr}\nnetwork: {essid}\nul-rate: {bandwidthUpBytes}\ndl-rate: {bandwidthDownBytes}",
+		"tooltip-format": "network: {essid}\niplocal: {ipaddr}",
 		"format": "{icon}",
 		"format-icons": {
 			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],

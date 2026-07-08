@@ -6,7 +6,6 @@ window#waybar, tooltip { background-color: @bg0-glass; }
 .module, tooltip label {
 	margin: 0 8px;
 	padding: 0 8px;
-	font-weight: bold;
 }
 
 .module {

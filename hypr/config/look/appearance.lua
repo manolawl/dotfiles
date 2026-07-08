@@ -29,7 +29,7 @@ hl.config({
 	misc = {
 		disable_hyprland_logo = true,
 		disable_splash_rendering = true,
-		vrr = 1, -- 0=off 1=on 2=fullscreen only 3=fullscreen with video/game
+		vrr = 0, -- 0=off 1=on 2=fullscreen only 3=fullscreen with video/game
 		font_family = 'JetBrainsMono Nerd Font',
 		force_default_wallpaper = 0,
 	},

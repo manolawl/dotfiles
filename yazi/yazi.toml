@@ -2,6 +2,6 @@
 ratio = [2, 5, 8]
 show_hidden = true
 sort_reverse = true
-sort_by = "mtime"
+sort_by = "extension"
 linemode = "mtime"
 tab_size = 2
