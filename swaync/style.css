@@ -26,7 +26,6 @@
 
 .widget-title {
 	border: solid @diamond-dark;
-	border-width: 0 0 4px 0;
 }
 
 .widget-title label { 

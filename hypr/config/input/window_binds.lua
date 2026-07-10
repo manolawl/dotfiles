@@ -22,46 +22,90 @@ local MOVE_OFFSET =   16
 local RESIZE_OFFSET = 16
 
 
-local function move(dir, offset)
-	if not hl.get_active_window().floating then
-		hl.dispatch(hl.dsp.window.move({ direction = dir }))
-
-	elseif dir == 'l' then
-		hl.dispatch(hl.dsp.window.move({ x = -offset, y = 0, relative = true }))
-
-	elseif dir == 'd' then
-		hl.dispatch(hl.dsp.window.move({ x = 0, y = offset,  relative = true }))
-
-	elseif dir == 'u' then
-		hl.dispatch(hl.dsp.window.move({ x = 0, y = -offset, relative = true }))
-
-	elseif dir == 'r' then
-		hl.dispatch(hl.dsp.window.move({ x = offset, y = 0,  relative = true }))
-	end
-end
-
-local function resize(action, offset)
-	if action == 'shrink_w' then
-		hl.dispatch(hl.dsp.window.resize({ x = -offset, y = 0, relative = true }))
-
-	elseif action =='shrink_h' then
-		hl.dispatch(hl.dsp.window.resize({ x = 0, y = -offset, relative = true }))
-
-	elseif action == 'extend_h' then
-		 hl.dispatch(hl.dsp.window.resize({ x = 0, y = offset, relative = true }))
-
-	elseif action == 'extend_w' then
-		hl.dispatch(hl.dsp.window.resize({ x = offset, y = 0, relative = true }))
-	end
-end
-
 local function toggle_layout(layout)
 	if hl.get_config('general.layout') == layout then
 		hl.exec_cmd('hyprctl reload')
 	end
-
 	hl.config({ ['general.layout'] = layout })
 end
+
+
+local directions = {
+	left = {
+		id =    { direction = 'l' },
+		key =   PRESS_L,
+		click = CLICK_L,
+		move_offset =   { x = -MOVE_OFFSET,   y = 0, relative = true },
+		resize_offset = { x = -RESIZE_OFFSET, y = 0, relative = true }
+	},
+	down = {
+		id =   { direction =  'd' },
+		key =   PRESS_D,
+		click = CLICK_D,
+		move_offset =   { x = 0, y = MOVE_OFFSET,    relative = true },
+		resize_offset = { x = 0, y = -RESIZE_OFFSET, relative = true }
+	},
+	up = {
+		id =   { direction =  'u' },
+		key =   PRESS_U,
+		click = CLICK_U,
+		move_offset =   { x = 0, y = -MOVE_OFFSET,  relative = true },
+		resize_offset = { x = 0, y = RESIZE_OFFSET, relative = true }
+	},
+	right = {
+		id =   { direction =  'r' },
+		key =   PRESS_R,
+		click = CLICK_R,
+		move_offset =   { x = MOVE_OFFSET,   y = 0, relative = true },
+		resize_offset = { x = RESIZE_OFFSET, y = 0, relative = true }
+	}
+}
+-- loops and defines resize, focus, and move binds per direction
+for _, direction in pairs(directions) do
+	-- keyboard
+	hl.bind(RESIZE_MOD .. direction.key, hl.dsp.window.resize(direction.resize_offset), { repeating = true })
+	hl.bind(FOCUS_MOD ..  direction.key, hl.dsp.focus(direction.id),                    { repeating = true })
+	hl.bind(MOVE_MOD ..   direction.key, function()
+		if not hl.get_active_window().floating then
+			hl.dispatch(hl.dsp.window.move(direction.id))
+		else
+			hl.dispatch(hl.dsp.window.move(direction.move_offset))
+		end
+	end, { repeating = true })
+	--mouse
+	hl.bind(RESIZE_MOD .. direction.click, hl.dsp.window.resize(direction.resize_offset), { repeating = true })
+	hl.bind(FOCUS_MOD ..  direction.click, hl.dsp.focus(direction.id),                    { repeating = true })
+	hl.bind(MOVE_MOD ..   direction.click, function()
+		if not hl.get_active_window().floating then
+			hl.dispatch(hl.dsp.window.move(direction.id))
+		else
+			hl.dispatch(hl.dsp.window.move(direction.move_offset))
+		end
+	end, { repeating = true })
+end
+
+
+local workspaces = {
+	next_workspace = {
+		id = { workspace = '+1' },
+		mid = { workspace = '-1' },
+		key = PRESS_NEXT_WORKSPACE,
+		click = CLICK_NEXT_WORKSPACE
+	},
+	prev_workspace = {
+		id = { workspace = '-1' },
+		mid = { workspace = '+1' },
+		key = PRESS_PREV_WORKSPACE,
+		click = CLICK_PREV_WORKSPACE
+	}
+}
+for _, workspace in pairs(workspaces) do
+	hl.bind(FOCUS_MOD .. workspace.key, hl.dsp.focus(workspace.id))
+	hl.bind(MOVE_MOD .. workspace.key, hl.dsp.window.move(workspace.id))
+	hl.bind(FOCUS_MOD .. workspace.click, hl.dsp.focus(workspace.mid))
+	hl.bind(MOVE_MOD .. workspace.click, hl.dsp.focus(workspace.mid))
+end
+
 
 -- TOUCHPAD GESTURES
 hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
@@ -78,58 +122,6 @@ hl.bind('ALT + SHIFT + M', function() toggle_layout('master') end)
 hl.bind('SUPER + Q',   hl.dsp.window.close())
 hl.bind('F11',         hl.dsp.window.fullscreen({ action = 'toggle' }))
 hl.bind('SHIFT + F11', hl.dsp.window.float({ action = 'toggle' }))
-
-
--- FOCUS ON ADJACENT WINDOW
-hl.bind(FOCUS_MOD .. PRESS_L, hl.dsp.focus({ direction = 'l' }), { repeating = true })
-hl.bind(FOCUS_MOD .. PRESS_D, hl.dsp.focus({ direction = 'd' }), { repeating = true })
-hl.bind(FOCUS_MOD .. PRESS_U, hl.dsp.focus({ direction = 'u' }), { repeating = true })
-hl.bind(FOCUS_MOD .. PRESS_R, hl.dsp.focus({ direction = 'r' }), { repeating = true })
--- MOUSE
-hl.bind(FOCUS_MOD .. CLICK_L, hl.dsp.focus({ direction = 'l' }), { release = true })
-hl.bind(FOCUS_MOD .. CLICK_D, hl.dsp.focus({ direction = 'd' }), { release = true })
-hl.bind(FOCUS_MOD .. CLICK_U, hl.dsp.focus({ direction = 'u' }), { release = true })
-hl.bind(FOCUS_MOD .. CLICK_R, hl.dsp.focus({ direction = 'r' }), { release = true })
-
-
--- MOVE WINDOW
-hl.bind(MOVE_MOD .. PRESS_L, function() move('l', MOVE_OFFSET) end, { repeating = true })
-hl.bind(MOVE_MOD .. PRESS_D, function() move('d', MOVE_OFFSET) end, { repeating = true })
-hl.bind(MOVE_MOD .. PRESS_U, function() move('u', MOVE_OFFSET) end, { repeating = true })
-hl.bind(MOVE_MOD .. PRESS_R, function() move('r', MOVE_OFFSET) end, { repeating = true })
--- MOUSE
-hl.bind(MOVE_MOD .. CLICK_L, function() move('l', MOVE_OFFSET) end, { repeating = true })
-hl.bind(MOVE_MOD .. CLICK_D, function() move('d', MOVE_OFFSET) end, { repeating = true })
-hl.bind(MOVE_MOD .. CLICK_U, function() move('u', MOVE_OFFSET) end, { repeating = true })
-hl.bind(MOVE_MOD .. CLICK_R, function() move('r', MOVE_OFFSET) end, { repeating = true })
-
-
--- RESIZE WINDOWS
-hl.bind(RESIZE_MOD .. PRESS_L, function() resize('shrink_w', RESIZE_OFFSET) end, { repeating = true })
-hl.bind(RESIZE_MOD .. PRESS_D, function() resize('shrink_h', RESIZE_OFFSET) end, { repeating = true })
-hl.bind(RESIZE_MOD .. PRESS_U, function() resize('extend_h', RESIZE_OFFSET) end, { repeating = true })
-hl.bind(RESIZE_MOD .. PRESS_R, function() resize('extend_w', RESIZE_OFFSET) end, { repeating = true })
---MOUSE
-hl.bind(RESIZE_MOD .. CLICK_L, function() resize('shrink_w', RESIZE_OFFSET) end, { repeating = true })
-hl.bind(RESIZE_MOD .. CLICK_D, function() resize('shrink_h', RESIZE_OFFSET) end, { repeating = true })
-hl.bind(RESIZE_MOD .. CLICK_U, function() resize('extend_h', RESIZE_OFFSET) end, { repeating = true })
-hl.bind(RESIZE_MOD .. CLICK_R, function() resize('extend_w', RESIZE_OFFSET) end, { repeating = true })
-
-
--- FOCUS ON ADJACENT WORKSPACE
-hl.bind(FOCUS_MOD .. PRESS_PREV_WORKSPACE, hl.dsp.focus({ workspace = '-1' }), { repeating = true })
-hl.bind(FOCUS_MOD .. PRESS_NEXT_WORKSPACE, hl.dsp.focus({ workspace = '+1' }), { repeating = true })
--- MOUSE
-hl.bind(FOCUS_MOD .. CLICK_PREV_WORKSPACE, hl.dsp.focus({ workspace = '+1' }))
-hl.bind(FOCUS_MOD .. CLICK_NEXT_WORKSPACE, hl.dsp.focus({ workspace = '-1' }))
-
-
--- MOVE WINDOW TO ADJACENT WORKSPACE
-hl.bind(MOVE_MOD .. PRESS_PREV_WORKSPACE, hl.dsp.window.move({ workspace = '-1' }))
-hl.bind(MOVE_MOD .. PRESS_NEXT_WORKSPACE, hl.dsp.window.move({ workspace = '+1' }))
--- MOUSE
-hl.bind(MOVE_MOD .. CLICK_PREV_WORKSPACE, hl.dsp.window.move({ workspace = '+1' }))
-hl.bind(MOVE_MOD .. CLICK_NEXT_WORKSPACE, hl.dsp.window.move({ workspace = '-1' }))
 
 
 -- SPECIAL WORKSPACES
