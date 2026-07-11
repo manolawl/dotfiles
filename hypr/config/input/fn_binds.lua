@@ -6,8 +6,8 @@ local function set_backlight(sign, num)
 end
 
 -- BACKLIGHT
-hl.bind(INCREASE_BACKLIGHT, function() set_backlight('+', 25) end)
-hl.bind(DECREASE_BACKLIGHT, function() set_backlight('-', 25) end)
+hl.bind(INCREASE_BACKLIGHT, function() set_backlight('+', 5) end)
+hl.bind(DECREASE_BACKLIGHT, function() set_backlight('-', 5) end)
 hl.bind('SHIFT + ' .. INCREASE_BACKLIGHT, function() set_backlight('', 100) end)
 hl.bind('SHIFT + ' .. DECREASE_BACKLIGHT, function() set_backlight('', 0) end)
 

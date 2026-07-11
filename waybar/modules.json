@@ -148,8 +148,8 @@
 
 	"backlight": {
 		"device": "intel_backlight",
-		"on-scroll-up": "brightnessctl set 25%+ && dcutil setvcp 10 + 25 --noverify --sleep-multiplier=0.2",
-		"on-scroll-down": "brightnessctl set 25%- && dcutil setvcp 10 - 25 --noverify --sleep-multiplier=0.2",
+		"on-scroll-up": "brightnessctl set 5%+ && dcutil setvcp 10 + 5 --noverify --sleep-multiplier=0.2",
+		"on-scroll-down": "brightnessctl set 5%- && dcutil setvcp 10 - 5 --noverify --sleep-multiplier=0.2",
 		"tooltip": false,
 		"states": {
 			"p1": 0,
@@ -165,6 +165,8 @@
 
 	"wireplumber": {
 		"on-click": "pkill wiremix || kitty wiremix -v output",
+		"on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
 		"tooltip": false,
 		"tooltip-format": "{volume}%",
 		"states": {
