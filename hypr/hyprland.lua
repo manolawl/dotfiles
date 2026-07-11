@@ -1,6 +1,8 @@
 -- FOO_BAR : constants
 -- foo_bar : variables, functions, file names
--- fooBar  : classes 
+-- fooBar  : tables, booleans
+
+require('config.globals')
 
 require('config.input.devices')
 require('config.input.window_binds')
