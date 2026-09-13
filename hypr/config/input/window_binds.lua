@@ -1,5 +1,5 @@
 -- -- >> window binds
-local directions = {
+local cardinals = {
 	left = {
 		id =  { direction = 'l' },
 		key = PRESS_L,
@@ -24,17 +24,20 @@ local directions = {
 		move_offset =   { x = MOVE_OFFSET,   y = 0, relative = true },
 		resize_offset = { x = RESIZE_OFFSET, y = 0, relative = true }
 	}
-} for _, dir in pairs(directions) do
-	hl.bind(RESIZE_MOD .. dir.key, hl.dsp.window.resize(dir.resize_offset), { repeating = true })
-	hl.bind(FOCUS_MOD ..  dir.key, hl.dsp.focus(dir.id),                    { repeating = true })
-	hl.bind(MOVE_MOD ..   dir.key, function()
+} for _, direction in pairs(cardinals) do
+	hl.bind(RESIZE_MOD .. direction.key, hl.dsp.window.resize(direction.resize_offset), { repeating = true })
+	hl.bind(FOCUS_MOD ..  direction.key, hl.dsp.focus(direction.id),                    { repeating = true })
+	hl.bind(MOVE_MOD ..   direction.key, function()
 		if not hl.get_active_window().floating then
-			hl.dispatch(hl.dsp.window.move(dir.id))
+			hl.dispatch(hl.dsp.window.move(direction.id))
 		else
-			hl.dispatch(hl.dsp.window.move(dir.move_offset))
+			hl.dispatch(hl.dsp.window.move(direction.move_offset))
 		end
 	end, { repeating = true })
 end
+
+hl.bind(RESIZE_MOD .. CLICK_L, hl.dsp.window.resize(), { mouse = true })
+hl.bind(MOVE_MOD .. CLICK_L, hl.dsp.window.drag(), { mouse = true })
 
 -- -- >> workspace binds
 local workspaces = {

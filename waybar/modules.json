@@ -150,6 +150,7 @@
 		"device": "intel_backlight",
 		"on-scroll-up": "brightnessctl set 5%+ && dcutil setvcp 10 + 5 --noverify --sleep-multiplier=0.2",
 		"on-scroll-down": "brightnessctl set 5%- && dcutil setvcp 10 - 5 --noverify --sleep-multiplier=0.2",
+		"on-click": "pkill hyprsunset || hyprsunset",
 		"tooltip": false,
 		"states": {
 			"p1": 0,

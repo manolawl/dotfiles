@@ -1,7 +1,7 @@
 @import "../colors.css";
 @import "defaults.css";
 
-window#waybar, tooltip { background-color: @bg0-glass; }
+window#waybar, tooltip { background-color: @amethyst-dark; }
 
 .module, tooltip label {
 	margin: 0 8px;

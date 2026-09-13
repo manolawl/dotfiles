@@ -21,6 +21,13 @@ hl.window_rule({ match = { workspace = 'special:gaming', float = true }, fullscr
 
 hl.window_rule({ match = { class = 'wev' }, float = true })
 hl.window_rule({ match = { class = 'hyprland-share-picker' }, float = true })
+hl.window_rule({
+	match = { title = 'Picture-in-Picture' },
+	float = true,
+	pin = true,
+	size = { "monitor_w *  0.25", "monitor_h * 0.25" },
+	move = { "monitor_w * 0.74", "monitor_h * 0.73" }
+})
 hl.window_rule({ match = { class = 'steam', }, workspace = 'special:gaming' })
 hl.window_rule({ match = { title = 'Steam', }, workspace = 'special:gaming' })
 
