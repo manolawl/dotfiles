@@ -1,3 +1,11 @@
+local DECREASE_BACKLIGHT = 'XF86MonBrightnessDown'
+local INCREASE_BACKLIGHT = 'XF86MonBrightnessUp'
+
+local DECREASE_VOL = 'XF86AudioLowerVolume'
+local INCREASE_VOL = 'XF86AudioRaiseVolume'
+local MUTE_AUD = 'XF86AudioMute'
+local MUTE_MIC = 'F15'
+
 local function set_backlight(sign, num)
 	hl.exec_cmd('\
 		brightnessctl set ' ..num.. '%' ..sign.. ' &&\

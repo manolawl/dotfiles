@@ -14,12 +14,12 @@
 }
 
 .control-center {
-	background-color: @bg0-glass;
+	background-color: @amethyst-dark;
 	padding: 8px 16px;
 }
 
 .notification {
-	background-color: @bg0-glass;
+	background-color: @amethyst-dark;
 	margin: 8px 0;
 	padding: 8px;
 }

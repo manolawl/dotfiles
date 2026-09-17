@@ -1,3 +1,18 @@
+local LAYOUT_MOD = 'ALT + SHIFT + '
+local FOCUS_MOD =  'SUPER + '
+local MOVE_MOD =   'SUPER + CTRL + '
+local RESIZE_MOD = 'SUPER + SHIFT + '
+local PRESS_L = 'H'
+local PRESS_D = 'J'
+local PRESS_U = 'K'
+local PRESS_R = 'L'
+local CLICK_L = 'mouse:272'   -- left click
+local PRESS_PREV_WORKSPACE = 'semicolon'
+local PRESS_NEXT_WORKSPACE = 'apostrophe'
+
+local MOVE_OFFSET =   16
+local RESIZE_OFFSET = 16
+
 -- -- >> window binds
 local cardinals = {
 	left = {
@@ -37,7 +52,7 @@ local cardinals = {
 end
 
 hl.bind(RESIZE_MOD .. CLICK_L, hl.dsp.window.resize(), { mouse = true })
-hl.bind(MOVE_MOD .. CLICK_L, hl.dsp.window.drag(), { mouse = true })
+hl.bind(MOVE_MOD ..   CLICK_L, hl.dsp.window.drag(),   { mouse = true })
 
 -- -- >> workspace binds
 local workspaces = {
