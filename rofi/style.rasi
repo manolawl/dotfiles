@@ -1,11 +1,11 @@
 * {
-	bg0: #000000a4;
+	bg0: #000000;
 
 	fg0: #ffffff;
 	fg1: #ff0000;
-	fg2: #7160ae;
+	fg2: #26203a;
 
-	accent: #7160aea4;
+	accent: #26203a;
 
 	background-color: transparent;
 	text-color: @fg0;
