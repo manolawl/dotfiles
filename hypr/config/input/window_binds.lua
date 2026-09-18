@@ -1,74 +1,73 @@
-local LAYOUT_MOD = 'ALT + SHIFT + '
-local FOCUS_MOD =  'SUPER + '
-local MOVE_MOD =   'SUPER + CTRL + '
-local RESIZE_MOD = 'SUPER + SHIFT + '
-local PRESS_L = 'H'
-local PRESS_D = 'J'
-local PRESS_U = 'K'
-local PRESS_R = 'L'
-local CLICK_L = 'mouse:272'   -- left click
-local PRESS_PREV_WORKSPACE = 'semicolon'
-local PRESS_NEXT_WORKSPACE = 'apostrophe'
+local LAYOUT_MOD =         'ALT + SHIFT + '
+local FOCUS_MOD =          'SUPER + '
+local MOVE_MOD =           'SUPER + CTRL + '
+local RESIZE_MOD =         'SUPER + SHIFT + '
+local GO_LEFT =            'H'
+local GO_DOWN =            'J'
+local GO_UP =              'K'
+local GO_RIGHT =           'L'
+local MOUSE_CONTROL =      'mouse:272'   -- left click
+local PREVIOUS_WORKSPACE = 'semicolon'
+local NEXT_WORKSPACE =     'apostrophe'
+local MOVE_OFFSET =        16
+local RESIZE_OFFSET =      16
 
-local MOVE_OFFSET =   16
-local RESIZE_OFFSET = 16
-
--- -- >> window binds
+-- -- >> WINDOW BINDS
 local cardinals = {
 	left = {
-		id =  { direction = 'l' },
-		key = PRESS_L,
-		move_offset =   { x = -MOVE_OFFSET,   y = 0, relative = true },
-		resize_offset = { x = -RESIZE_OFFSET, y = 0, relative = true }
+		key =       GO_LEFT,
+		id =        { direction = 'l' },
+		move_by =   { x = -MOVE_OFFSET,   y = 0, relative = true },
+		resize_by = { x = -RESIZE_OFFSET, y = 0, relative = true }
 	},
 	down = {
-		id = { direction = 'd' },
-		key = PRESS_D,
-		move_offset =   { x = 0, y = MOVE_OFFSET,    relative = true },
-		resize_offset = { x = 0, y = -RESIZE_OFFSET, relative = true }
+		key =       GO_DOWN,
+		id =        { direction = 'd' },
+		move_by =   { x = 0, y = MOVE_OFFSET,    relative = true },
+		resize_by = { x = 0, y = -RESIZE_OFFSET, relative = true }
 	},
 	up = {
-		id =  { direction = 'u' },
-		key = PRESS_U,
-		move_offset =   { x = 0, y = -MOVE_OFFSET,  relative = true },
-		resize_offset = { x = 0, y = RESIZE_OFFSET, relative = true }
+		key =       GO_UP,
+		id =        { direction = 'u' },
+		move_by =   { x = 0, y = -MOVE_OFFSET,  relative = true },
+		resize_by = { x = 0, y = RESIZE_OFFSET, relative = true }
 	},
 	right = {
-		id =  { direction = 'r' },
-		key = PRESS_R,
-		move_offset =   { x = MOVE_OFFSET,   y = 0, relative = true },
-		resize_offset = { x = RESIZE_OFFSET, y = 0, relative = true }
+		key =       GO_RIGHT,
+		id =        { direction = 'r' },
+		move_by =   { x = MOVE_OFFSET,   y = 0, relative = true },
+		resize_by = { x = RESIZE_OFFSET, y = 0, relative = true }
 	}
 } for _, direction in pairs(cardinals) do
-	hl.bind(RESIZE_MOD .. direction.key, hl.dsp.window.resize(direction.resize_offset), { repeating = true })
-	hl.bind(FOCUS_MOD ..  direction.key, hl.dsp.focus(direction.id),                    { repeating = true })
+	hl.bind(RESIZE_MOD .. direction.key, hl.dsp.window.resize(direction.resize_by), { repeating = true })
+	hl.bind(FOCUS_MOD ..  direction.key, hl.dsp.focus(direction.id),                { repeating = true })
 	hl.bind(MOVE_MOD ..   direction.key, function()
 		if not hl.get_active_window().floating then
 			hl.dispatch(hl.dsp.window.move(direction.id))
 		else
-			hl.dispatch(hl.dsp.window.move(direction.move_offset))
+			hl.dispatch(hl.dsp.window.move(direction.move_by))
 		end
 	end, { repeating = true })
 end
 
-hl.bind(RESIZE_MOD .. CLICK_L, hl.dsp.window.resize(), { mouse = true })
-hl.bind(MOVE_MOD ..   CLICK_L, hl.dsp.window.drag(),   { mouse = true })
+hl.bind(RESIZE_MOD .. MOUSE_CONTROL, hl.dsp.window.resize(), { mouse = true })
+hl.bind(MOVE_MOD ..   MOUSE_CONTROL, hl.dsp.window.drag(),   { mouse = true })
 
--- -- >> workspace binds
+-- -- >> WORKSPACE BINDS
 local workspaces = {
-	next_workspace = { id = { workspace = '+1' }, key = PRESS_NEXT_WORKSPACE },
-	prev_workspace = { id = { workspace = '-1' }, key = PRESS_PREV_WORKSPACE }
+	next_workspace = { id = { workspace = '+1' }, key = NEXT_WORKSPACE },
+	prev_workspace = { id = { workspace = '-1' }, key = PREVIOUS_WORKSPACE }
 } for _, ws in pairs(workspaces) do
 	hl.bind(FOCUS_MOD .. ws.key, hl.dsp.focus(ws.id))
 	hl.bind(MOVE_MOD  .. ws.key, hl.dsp.window.move(ws.id))
 end
 
--- -- >> gestures
+-- -- >> GESTURES
 hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
 hl.gesture({ fingers = 3, direction = 'vertical',   action = 'workspace' })
 
 
--- -- >> layout toggles
+-- -- >> LAYOUT TOGGLES
 local layouts = {
 	scrolling = { id = 'scrolling', key = 'S' },
 	dwindle =   { id = 'dwindle',   key = 'D' },
@@ -82,13 +81,13 @@ local layouts = {
 	end)
 end
 
--- -- >> window actions
+-- -- >> WINDOW ACTIONS
 hl.bind('SUPER + Q',   hl.dsp.window.close())
 hl.bind('F11',         hl.dsp.window.fullscreen({ action = 'toggle' }))
 hl.bind('SHIFT + F11', hl.dsp.window.float({ action = 'toggle' }))
 
--- -- >> special workspaces
+-- -- >> SPECIAL WORKSPACES
 hl.bind('CTRL + ALT + SHIFT + G', hl.dsp.workspace.toggle_special('gaming'))
 
--- -- >> dwindle binds
+-- -- >> DWINDLE BINDS
 hl.bind('SUPER + S', hl.dsp.layout('togglesplit'))
