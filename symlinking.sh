@@ -1,25 +1,25 @@
 #!/usr/bin/env sh
 
-ln -sf ~/projects/dotfiles/nvim ~/.config
-ln -sf ~/projects/dotfiles/hypr ~/.config
-ln -sf ~/projects/dotfiles/fastfetch ~/.config
-ln -sf ~/projects/dotfiles/fish ~/.config
-ln -sf ~/projects/dotfiles/swaync ~/.config
-ln -sf ~/projects/dotfiles/waybar ~/.config
-ln -sf ~/projects/dotfiles/paru ~/.config
-ln -sf ~/projects/dotfiles/yazi ~/.config
-ln -sf ~/projects/dotfiles/kitty ~/.config
-ln -sf ~/projects/dotfiles/rofi ~/.config
-#ln -sf ~/projects/dotfiles/alacritty ~/.config
-ln -sf ~/projects/dotfiles/scripts ~/.config
-#ln -sf ~/projects/dotfiles/dunst ~/.config
+ln -sf ~/projects/dotfiles/configs/nvim ~/.config
+ln -sf ~/projects/dotfiles/configs/hypr ~/.config
+ln -sf ~/projects/dotfiles/configs/fastfetch ~/.config
+ln -sf ~/projects/dotfiles/configs/fish ~/.config
+ln -sf ~/projects/dotfiles/configs/swaync ~/.config
+ln -sf ~/projects/dotfiles/configs/waybar ~/.config
+ln -sf ~/projects/dotfiles/configs/paru ~/.config
+ln -sf ~/projects/dotfiles/configs/yazi ~/.config
+ln -sf ~/projects/dotfiles/configs/kitty ~/.config
+ln -sf ~/projects/dotfiles/configs/rofi ~/.config
+#ln -sf ~/projects/dotfiles/configs/alacritty ~/.config
+ln -sf ~/projects/dotfiles/configs/scripts ~/.config
+#ln -sf ~/projects/dotfiles/configs/dunst ~/.config
 
-ln -sf ~/projects/dotfiles/backgrounds ~/pictures
+ln -sf ~/projects/dotfiles/configs/backgrounds ~/pictures
 
-ln -sf ~/projects/dotfiles/starship.toml ~/.config
-ln -sf ~/projects/dotfiles/user-dirs.dirs ~/.config
-ln -sf ~/projects/dotfiles/colors.css ~/.config
-#ln -sf ~/projects/dotfiles/.vimrc ~/.config
-#ln -sf ~/projects/dotfiles/.bashrc ~/.config
-#ln -sf ~/projects/dotfiles/.zshrc ~/.config
+ln -sf ~/projects/dotfiles/configs/starship.toml ~/.config
+ln -sf ~/projects/dotfiles/configs/user-dirs.dirs ~/.config
+ln -sf ~/projects/dotfiles/configs/colors.css ~/.config
+#ln -sf ~/projects/dotfiles/configs/.vimrc ~/.config
+#ln -sf ~/projects/dotfiles/configs/.bashrc ~/.config
+#ln -sf ~/projects/dotfiles/configs/.zshrc ~/.config
 
