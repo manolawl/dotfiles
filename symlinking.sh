@@ -14,7 +14,7 @@ ln -sf ~/projects/dotfiles/configs/rofi ~/.config
 ln -sf ~/projects/dotfiles/configs/scripts ~/.config
 #ln -sf ~/projects/dotfiles/configs/dunst ~/.config
 
-ln -sf ~/projects/dotfiles/configs/backgrounds ~/pictures
+ln -sf ~/projects/dotfiles/backgrounds ~/pictures
 
 ln -sf ~/projects/dotfiles/configs/starship.toml ~/.config
 ln -sf ~/projects/dotfiles/configs/user-dirs.dirs ~/.config
