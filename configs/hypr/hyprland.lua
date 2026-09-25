@@ -1,7 +1,3 @@
--- FOO_BAR : constants
--- foo_bar : variables, functions, file names
--- fooBar  : tables, booleans
-
 require('config.input.devices')
 require('config.input.window_binds')
 require('config.input.app_binds')

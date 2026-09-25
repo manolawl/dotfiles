@@ -1,16 +1,19 @@
-local LAYOUT_MOD =         'ALT + SHIFT + '
-local FOCUS_MOD =          'SUPER + '
-local MOVE_MOD =           'SUPER + CTRL + '
-local RESIZE_MOD =         'SUPER + SHIFT + '
-local GO_LEFT =            'H'
-local GO_DOWN =            'J'
-local GO_UP =              'K'
-local GO_RIGHT =           'L'
-local MOUSE_CONTROL =      'mouse:272'   -- left click
+local LAYOUT_MOD = 'ALT + SHIFT + '
+local FOCUS_MOD =  'SUPER + '
+local MOVE_MOD =   'SUPER + CTRL + '
+local RESIZE_MOD = 'SUPER + SHIFT + '
+
+local GO_LEFT =  'H'
+local GO_DOWN =  'J'
+local GO_UP =    'K'
+local GO_RIGHT = 'L'
+local MOUSE_MOVEMENT =      'mouse:272'   -- left click
+
 local PREVIOUS_WORKSPACE = 'semicolon'
 local NEXT_WORKSPACE =     'apostrophe'
-local MOVE_OFFSET =        16
-local RESIZE_OFFSET =      16
+
+local MOVE_OFFSET =   16
+local RESIZE_OFFSET = 16
 
 -- -- >> WINDOW BINDS
 local cardinals = {
@@ -50,22 +53,22 @@ local cardinals = {
 	end, { repeating = true })
 end
 
-hl.bind(RESIZE_MOD .. MOUSE_CONTROL, hl.dsp.window.resize(), { mouse = true })
-hl.bind(MOVE_MOD ..   MOUSE_CONTROL, hl.dsp.window.drag(),   { mouse = true })
+hl.bind(RESIZE_MOD .. MOUSE_MOVEMENT, hl.dsp.window.resize(), { mouse = true })
+hl.bind(MOVE_MOD ..   MOUSE_MOVEMENT, hl.dsp.window.drag(),   { mouse = true })
 
 -- -- >> WORKSPACE BINDS
 local workspaces = {
-	next_workspace = { id = { workspace = '+1' }, key = NEXT_WORKSPACE },
-	prev_workspace = { id = { workspace = '-1' }, key = PREVIOUS_WORKSPACE }
-} for _, ws in pairs(workspaces) do
-	hl.bind(FOCUS_MOD .. ws.key, hl.dsp.focus(ws.id))
-	hl.bind(MOVE_MOD  .. ws.key, hl.dsp.window.move(ws.id))
+	next_workspace =     { id = { workspace = '+1' }, key = NEXT_WORKSPACE },
+	previous_workspace = { id = { workspace = '-1' }, key = PREVIOUS_WORKSPACE }
+} for _, workspace in pairs(workspaces) do
+	hl.bind(FOCUS_MOD .. workspace.key, hl.dsp.focus(workspace.id))
+	hl.bind(MOVE_MOD ..  workspace.key, hl.dsp.window.move(workspace.id))
 end
 
 -- -- >> GESTURES
 hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
 hl.gesture({ fingers = 3, direction = 'vertical',   action = 'workspace' })
-
+hl.gesture({ fingers = 4, direction = 'swipe',      action = 'move' })
 
 -- -- >> LAYOUT TOGGLES
 local layouts = {
