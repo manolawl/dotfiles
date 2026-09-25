@@ -10,4 +10,4 @@ alias grep='rg --color=auto'
 alias firefox='zen-browser'
 PS1='[\u@\h \W]\$ '
 
-export EDITOR=vim
+export EDITOR=nvim
