@@ -1,23 +1,46 @@
 # Dotfiles
-Window Manager - Hyprland(scrolling layout)
-Bar - Waybar
-Menu - Rofi
+- Window Manager - Hyprland(scrolling layout)
+- Bar - Waybar
+- Menu - Rofi
 
 ## Packages
-#### Official Repositories
-##### Terminal-Based
+### Official Repositories
+#### Terminal
+- kitty
 - 7zip
 - fish
+- sudo
+- bat
+- bluez
+- bluez-utils
+- ripgrep
+- reflector
+- less
+- wev
+- tree
+- udiskie
+- ufw
+- starship
+- paru(AUR)
+- git
+##### TUI
+- btop
+- bluetui
+- wiremix
+- yazi
+- nvim
+- gazelle-tui(AUR)
 
-##### Fonts
+#### Fonts
 - noto-fonts
 - noto-fonts-cjk
 - noto-fonts-emoji
 - noto-fonts-extra
 - terminus-font
 - ttf-jetbrains-mono-nerd
+- ttf-ms-fonts(AUR)
 
-##### Hypr
+#### Hypr
 - hypridle
 - hyprland
 - hyprland-protocols
@@ -26,88 +49,64 @@ Menu - Rofi
 - hyprpolkitagent
 - hyprshot
 - hyprsunset
+- xdg-desktop-portal-hyprland
 
-##### Printing
+#### Printing
 - cups
 - cups-pdf
 - system-config-printer
+- gscan2pdf
+- epson-inkjet-printer-escpr(AUR)
 
+#### Audio
 - alsa-firmware
 - alsa-tools
 - alsa-utils
+- pipewire-alsa
+- pipewire-pulse
+- sof-firmware
+
+#### System
 - amd-ucode
 - base
 - base-devel
-- bat
-- bluetui
-- bluez
-- bluez-utils
-- breeze
-- breeze-gtk
-- brightnessctl
-- btop
-- cliphist
-- deluge
-- deluge-gtk
 - efibootmgr
-- fastfetch
-- ffmpeg
-- gimp
-- git
-- grub
-- gscan2pdf
-- gthumb
-- inkscape
-- kitty
-- less
-- libreoffice-fresh
 - linux
 - linux-firmware
 - linux-headers
 - linux-lts
 - linux-lts-headers
-- man-db
-- man-pages
-- man-pages-utils
 - mesa-demos
 - mesa-utils
 - meson
-- networkmanager
+- vulkan-tools
 - nvidia-open
 - nvidia-prime
+- grub
+- networkmanager
+
+#### Miscellaneous
+- breeze
+- breeze-gtk
+- brightnessctl
+- cliphist
+- deluge
+- deluge-gtk
+- fastfetch
+- ffmpeg
+- gimp
+- gthumb
+- inkscape
+- libreoffice-fresh
+- man-db
+- man-pages
+- man-pages-utils
 - nwg-look
-- pipewire-alsa
-- pipewire-pulse
-- qt5ct
-- qt6ct
-- reflector
-- ripgrep
 - rofi
-- sof-firmware
-- starship
 - steam
-- stow
-- sudo
 - swaybg
 - swaync
-
-- tree
-- udiskie
-- ufw
-- vim
-- vlc
-- vulkan-tools
 - waybar
-- wev
-- wiremix
-- xdg-desktop-portal-hyprland
-- yazi
-#### AUR
-- epson-inkjet-printer-escpr
-- gazelle-tui
-- hyprshutdown
-- paru
-- rose-pine-cursor
-- rose-pine-hyprcursor
-- ttf-ms-fonts
-- zen-browser-bin
+- rose-pine-cursor(AUR)
+- rose-pine-hyprcursor(AUR)
+- zen-browser-bin(AUR)
