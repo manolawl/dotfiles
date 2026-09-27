@@ -1,6 +1,37 @@
+# Dotfiles
+Window Manager - Hyprland(scrolling layout)
+Bar - Waybar
+Menu - Rofi
+
 ## Packages
 #### Official Repositories
+##### Terminal-Based
 - 7zip
+- fish
+
+##### Fonts
+- noto-fonts
+- noto-fonts-cjk
+- noto-fonts-emoji
+- noto-fonts-extra
+- terminus-font
+- ttf-jetbrains-mono-nerd
+
+##### Hypr
+- hypridle
+- hyprland
+- hyprland-protocols
+- hyprlock
+- hyprpicker
+- hyprpolkitagent
+- hyprshot
+- hyprsunset
+
+##### Printing
+- cups
+- cups-pdf
+- system-config-printer
+
 - alsa-firmware
 - alsa-tools
 - alsa-utils
@@ -16,27 +47,16 @@
 - brightnessctl
 - btop
 - cliphist
-- cups
-- cups-pdf
 - deluge
 - deluge-gtk
 - efibootmgr
 - fastfetch
 - ffmpeg
-- fish
 - gimp
 - git
 - grub
 - gscan2pdf
 - gthumb
-- hypridle
-- hyprland
-- hyprland-protocols
-- hyprlock
-- hyprpicker
-- hyprpolkitagent
-- hyprshot
-- hyprsunset
 - inkscape
 - kitty
 - less
@@ -53,10 +73,6 @@
 - mesa-utils
 - meson
 - networkmanager
-- noto-fonts
-- noto-fonts-cjk
-- noto-fonts-emoji
-- noto-fonts-extra
 - nvidia-open
 - nvidia-prime
 - nwg-look
@@ -74,10 +90,8 @@
 - sudo
 - swaybg
 - swaync
-- system-config-printer
-- terminus-font
+
 - tree
-- ttf-jetbrains-mono-nerd
 - udiskie
 - ufw
 - vim
@@ -87,7 +101,7 @@
 - wev
 - wiremix
 - xdg-desktop-portal-hyprland
-- yaziositories
+- yazi
 #### AUR
 - epson-inkjet-printer-escpr
 - gazelle-tui
