@@ -1,11 +1,11 @@
 * {
-	bg0: #000000;
+	bg0: #26203aa6;
 
 	fg0: #ffffff;
 	fg1: #ff0000;
-	fg2: #26203a;
+	fg2: #4b4074;
 
-	accent: #26203a;
+	accent: #4b407459;
 
 	background-color: transparent;
 	text-color: @fg0;
@@ -22,7 +22,7 @@ window {
 	width: 540px;
 	height: 270px;
 	padding: 0;
-	border-radius: 0;
+	border-radius: 8;
 	background-color: @bg0;
 	transparency: "real";
 }

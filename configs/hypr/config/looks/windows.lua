@@ -12,14 +12,14 @@ hl.config({
 		shadow = { enabled = false },
 		glow =   { enabled = false },
 
-		rounding =       0,
+		rounding =       8,
 		rounding_power = 2,
 
 		active_opacity =   1,
 		inactive_opacity = 1,
 
 		blur = {
-			enabled =  false,
+			enabled =  true,
 			size =     8,
 			passes =   2,
 			vibrancy = 0.5,

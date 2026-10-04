@@ -32,4 +32,4 @@ hl.window_rule({ match = { class = 'steam', }, workspace = 'special:gaming' })
 hl.window_rule({ match = { title = 'Steam', }, workspace = 'special:gaming' })
 
 -- BLURRING
---hl.layer_rule({ match = { namespace = '.*' }, blur = true, blur_popups = true, ignore_alpha = 0.2, })
+hl.layer_rule({ match = { namespace = '.*' }, blur = true, blur_popups = true, ignore_alpha = 0.2, })

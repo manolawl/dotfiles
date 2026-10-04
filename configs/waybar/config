@@ -2,6 +2,8 @@
 	"layer": "top",
 	"position": "top",
 	"spacing": 0,
+	"margin-left": 8,
+	"margin-right": 8,
 	"expand-center": true,
 	"fixed-center": true,
 	"reload_on_style_change": true,

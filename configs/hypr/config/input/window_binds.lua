@@ -7,48 +7,44 @@ local GO_LEFT =  'H'
 local GO_DOWN =  'J'
 local GO_UP =    'K'
 local GO_RIGHT = 'L'
-local MOUSE_MOVEMENT =      'mouse:272'   -- left click
+
+local MOUSE_MOVEMENT = 'mouse:272'   -- left click
 
 local PREVIOUS_WORKSPACE = 'semicolon'
 local NEXT_WORKSPACE =     'apostrophe'
 
-local MOVE_OFFSET =   16
-local RESIZE_OFFSET = 16
+local OFFSET = 8
 
 -- -- >> WINDOW BINDS
-local cardinals = {
+local faces = {
 	left = {
-		key =       GO_LEFT,
-		id =        { direction = 'l' },
-		move_by =   { x = -MOVE_OFFSET,   y = 0, relative = true },
-		resize_by = { x = -RESIZE_OFFSET, y = 0, relative = true }
+		key =    GO_LEFT,
+		id =     { direction = 'l' },
+		offset = { x = -OFFSET, y = 0, relative = true },
 	},
 	down = {
-		key =       GO_DOWN,
-		id =        { direction = 'd' },
-		move_by =   { x = 0, y = MOVE_OFFSET,    relative = true },
-		resize_by = { x = 0, y = -RESIZE_OFFSET, relative = true }
+		key =    GO_DOWN,
+		id =     { direction = 'd' },
+		offset = { x = 0, y = OFFSET, relative = true },
 	},
 	up = {
-		key =       GO_UP,
-		id =        { direction = 'u' },
-		move_by =   { x = 0, y = -MOVE_OFFSET,  relative = true },
-		resize_by = { x = 0, y = RESIZE_OFFSET, relative = true }
+		key =    GO_UP,
+		id =     { direction = 'u' },
+		offset = { x = 0, y = -OFFSET, relative = true },
 	},
 	right = {
-		key =       GO_RIGHT,
-		id =        { direction = 'r' },
-		move_by =   { x = MOVE_OFFSET,   y = 0, relative = true },
-		resize_by = { x = RESIZE_OFFSET, y = 0, relative = true }
+		key =    GO_RIGHT,
+		id =     { direction = 'r' },
+		offset = { x = OFFSET, y = 0, relative = true },
 	}
-} for _, direction in pairs(cardinals) do
-	hl.bind(RESIZE_MOD .. direction.key, hl.dsp.window.resize(direction.resize_by), { repeating = true })
-	hl.bind(FOCUS_MOD ..  direction.key, hl.dsp.focus(direction.id),                { repeating = true })
-	hl.bind(MOVE_MOD ..   direction.key, function()
+} for _, face in pairs(faces) do
+	hl.bind(RESIZE_MOD .. face.key, hl.dsp.window.resize(face.offset), { repeating = true })
+	hl.bind(FOCUS_MOD ..  face.key, hl.dsp.focus(face.id),         { repeating = true })
+	hl.bind(MOVE_MOD ..   face.key, function()
 		if not hl.get_active_window().floating then
-			hl.dispatch(hl.dsp.window.move(direction.id))
+			hl.dispatch(hl.dsp.window.move(face.id))
 		else
-			hl.dispatch(hl.dsp.window.move(direction.move_by))
+			hl.dispatch(hl.dsp.window.move(face.offset))
 		end
 	end, { repeating = true })
 end
