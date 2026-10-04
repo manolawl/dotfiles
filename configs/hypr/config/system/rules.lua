@@ -17,10 +17,11 @@ hl.window_rule({
 	},
 })
 
-hl.window_rule({ match = { workspace = 'special:gaming', float = true }, fullscreen = false, confine_pointer = false })
 
 hl.window_rule({ match = { class = 'wev' }, float = true })
 hl.window_rule({ match = { class = 'hyprland-share-picker' }, float = true })
+
+-- zen browser PiP
 hl.window_rule({
 	match = { title = 'Picture-in-Picture' },
 	float = true,
@@ -28,8 +29,18 @@ hl.window_rule({
 	size = { "monitor_w *  0.25", "monitor_h * 0.25" },
 	move = { "monitor_w * 0.74", "monitor_h * 0.73" }
 })
+
+-- -- -- >> STEAM
+hl.window_rule({
+	match = {
+		workspace = 'special:gaming',
+		float =     true
+	},
+	fullscreen =      false,
+	confine_pointer = false
+})
 hl.window_rule({ match = { class = 'steam', }, workspace = 'special:gaming' })
 hl.window_rule({ match = { title = 'Steam', }, workspace = 'special:gaming' })
 
--- BLURRING
+-- blur for non-window layers
 hl.layer_rule({ match = { namespace = '.*' }, blur = true, blur_popups = true, ignore_alpha = 0.2, })
