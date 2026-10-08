@@ -7,17 +7,13 @@ window#waybar {
 
 window#waybar, tooltip {
 	background-color: @amethyst-dark-glass;
+	border: solid @diamond-neutral;
+	border-width: 0 2px 2px 2px;
 }
 
 .module, tooltip label {
 	margin: 0 8px;
 	padding: 0 8px;
-}
-
-.module {
-	border-style: solid;
-	border-width: 0 0 2px 0;
-	border-color: @diamond-light;
 }
 
 #wireplumber.muted,

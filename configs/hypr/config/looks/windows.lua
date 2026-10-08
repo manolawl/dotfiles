@@ -5,7 +5,11 @@ hl.config({
 		gaps_in =  4,
 		gaps_out = 8,
 
-		border_size = 0,
+		border_size = 2,
+		col = {
+			active_border = '#e2dff9',
+			inactive_border = '#71707d',
+		}
 	},
 
 	decoration = {
