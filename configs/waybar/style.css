@@ -1,14 +1,20 @@
 @import "../colors.css";
 @import "defaults.css";
 
-window#waybar {
-	border-radius: 0 0 8px 8px;
-}
 
 window#waybar, tooltip {
 	background-color: @amethyst-dark-glass;
 	border: solid @diamond-neutral;
+}
+
+window#waybar {
+	border-radius: 0 0 8px 8px;
 	border-width: 0 2px 2px 2px;
+}
+
+tooltip {
+	border-radius: 8px;
+	border-width: 2px;
 }
 
 .module, tooltip label {
