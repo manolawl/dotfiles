@@ -1,10 +1,10 @@
-local DECREASE_BACKLIGHT = 'XF86MonBrightnessDown'
-local INCREASE_BACKLIGHT = 'XF86MonBrightnessUp'
+local decBrightness = 'XF86MonBrightnessDown'
+local incBrightness = 'XF86MonBrightnessUp'
 
-local DECREASE_VOL = 'XF86AudioLowerVolume'
-local INCREASE_VOL = 'XF86AudioRaiseVolume'
-local MUTE_AUD =     'XF86AudioMute'
-local MUTE_MIC =     'XF86Launch6'
+local decVolume = 'XF86AudioLowerVolume'
+local incVolume = 'XF86AudioRaiseVolume'
+local muteAudio = 'XF86AudioMute'
+local muteMic =   'XF86Launch6'
 
 local function set_backlight(sign, num)
 	hl.exec_cmd('\
@@ -13,12 +13,12 @@ local function set_backlight(sign, num)
 	')
 end
 
-hl.bind(INCREASE_BACKLIGHT,               function() set_backlight('+', 5)  end)
-hl.bind(DECREASE_BACKLIGHT,               function() set_backlight('-', 5)  end)
-hl.bind('SHIFT + ' .. INCREASE_BACKLIGHT, function() set_backlight('', 100) end)
-hl.bind('SHIFT + ' .. DECREASE_BACKLIGHT, function() set_backlight('', 0)   end)
+hl.bind(incBrightness,               function() set_backlight('+', 5)  end)
+hl.bind(decBrightness,               function() set_backlight('-', 5)  end)
+hl.bind('SHIFT + ' .. incBrightness, function() set_backlight('', 100) end)
+hl.bind('SHIFT + ' .. decBrightness, function() set_backlight('', 0)   end)
 
-hl.bind(INCREASE_VOL, hl.dsp.exec_cmd('wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'), { repeating = true })
-hl.bind(DECREASE_VOL, hl.dsp.exec_cmd('wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-'),        { repeating = true })
-hl.bind(MUTE_AUD,     hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'))
-hl.bind(MUTE_MIC,     hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle'))
+hl.bind(incVolume, hl.dsp.exec_cmd('wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'), { repeating = true })
+hl.bind(decVolume, hl.dsp.exec_cmd('wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-'),        { repeating = true })
+hl.bind(muteAudio, hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'))
+hl.bind(muteMic,   hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle'))

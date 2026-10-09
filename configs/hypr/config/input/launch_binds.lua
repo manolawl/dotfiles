@@ -1,35 +1,55 @@
-local APP__ =    'SUPER + '
-local MENU__ =   'ALT + '
-local TOGGLE__ = 'CTRL + ALT + '
+local appMod =    'SUPER + '
+local menuMod =   'ALT + '
 
-local TERMINAL =   'kitty'
-local BROWSER =    'zen-browser'
-local FILE_MAN =   'kitty yazi'
-local COL_PICKER = 'hyprpicker -a -f hex -n -u 256 -s 10'
-local SYS_MON = 'pkill btop || kitty btop'
-local BAR =     'pkill waybar || waybar'
-local CLIPBOARD =    'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
-local LAUNCHER =     'rofi -show drun'
-local WIN_SELECTOR = 'rofi -show window'
-EMOJI_PICKER =       'rofi -_i emoji -show emoji'
-local SS_REG = 'hyprshot -m region -o ~/pictures/screenshots'
-local SS_WIN = 'hyprshot -m window -o ~/pictures/screenshots'
+local terminal =    'kitty'
+local browser =     'zen-browser'
+local fileManager = 'pkill yazi || kitty yazi'
+
+local systemMonitor = 'pkill btop || kitty btop'
+local calendar =      'pkill calcurse || kitty calcurse'
+local audio =         'pkill wiremix || kitty wiremix -v output'
+local network =       'pkill impala || kitty impala'
+local bluetooth =     'pkill bluetui || kitty bluetui'
+
+local bar = 'pkill waybar || waybar'
+
+local clipboard =      'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
+local launcher =       'rofi -show drun'
+local windowSelector = 'rofi -show window'
+local emojiPicker =    'rofi -_i emoji -show emoji'
+
+local screenshotRegion = 'hyprshot -m region -o ~/pictures/screenshots'
+local screenshotWindow = 'hyprshot -m window -o ~/pictures/screenshots'
+local colorPicker =      'hyprpicker -a -f hex -n -u 256 -s 10'
 
 -- -- >> LAUNCHING PROGRAMS
 local programs = {
-	{ cmd = TERMINAL,     keybind = APP__ ..    'T' },
-	{ cmd = BROWSER,      keybind = APP__ ..    'B' },
-	{ cmd = FILE_MAN,     keybind = APP__ ..    'F' },
-	{ cmd = COL_PICKER,   keybind = APP__ ..    'C' },
-	{ cmd = SYS_MON,      keybind = TOGGLE__ .. 'M' },
-	{ cmd = BAR,          keybind = TOGGLE__ .. 'W' },
-	{ cmd = CLIPBOARD,    keybind = MENU__ ..   'V' },
-	{ cmd = LAUNCHER,     keybind = MENU__ ..   'Space' },
-	{ cmd = WIN_SELECTOR, keybind = MENU__ ..   'Tab' },
-	{ cmd = EMOJI_PICKER, keybind = MENU__ ..   'E' },
-	{ cmd = SS_REG,       keybind = 'Print' },
-	{ cmd = SS_WIN,       keybind = 'SHIFT + Print' },
+	{ cmd = terminal,    keybind = appMod .. 'T' },
+	{ cmd = browser,     keybind = appMod .. 'B' },
+	{ cmd = fileManager, keybind = appMod .. 'F', floating = true },
+
+	{ cmd = systemMonitor, keybind = appMod .. 'M', floating = true },
+	{ cmd = calendar,      keybind = appMod .. 'C', floating = true },
+	{ cmd = network,       keybind = appMod .. 'N', floating = true },
+	{ cmd = bluetooth,     keybind = appMod .. '1', floating = true },
+	{ cmd = audio,         keybind = appMod .. '2', floating = true },
+
+	{ cmd = bar, keybind = appMod .. 'W' },
+
+	{ cmd = clipboard,      keybind = menuMod .. 'V' },
+	{ cmd = launcher,       keybind = menuMod .. 'Space' },
+	{ cmd = windowSelector, keybind = menuMod .. 'Tab' },
+	{ cmd = emojiPicker,    keybind = menuMod .. 'E' },
+
+	{ cmd = screenshotRegion, keybind = 'Print' },
+	{ cmd = screenshotWindow, keybind = 'SHIFT + Print' },
+	{ cmd = colorPicker,      keybind = 'CTRL + SHIFT + ALT + C' },
+
 }
 for _, program in ipairs(programs) do
-	hl.bind(program.keybind, hl.dsp.exec_cmd(program.cmd))
+	local rule = {}
+	if program.floating then
+		rule = { floating = true, size = { 'monitor_w * 0.6', 'monitor_h * 0.5' } }
+	end
+	hl.bind(program.keybind, hl.dsp.exec_cmd(program.cmd, rule))
 end
