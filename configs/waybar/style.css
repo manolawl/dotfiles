@@ -18,8 +18,8 @@ tooltip {
 }
 
 .module, tooltip label {
-	margin: 4px 8px;
-	padding: 0 8px;
+	margin: 4px;
+	padding: 0 6px;
 }
 
 #wireplumber.muted,

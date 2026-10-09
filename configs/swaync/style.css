@@ -5,7 +5,7 @@
 	font-size: 16px;
 	background: none;
 	border: none;
-	border-radius: 0px;
+	border-radius: 8px;
 	box-shadow: none;
 	color: @diamond-light;
 	transition: 250ms;
@@ -14,12 +14,12 @@
 }
 
 .control-center {
-	background-color: @amethyst-dark;
+	background-color: @amethyst-dark-glass;
 	padding: 8px 16px;
 }
 
 .notification {
-	background-color: @amethyst-dark;
+	background-color: @amethyst-dark-glass;
 	margin: 8px 0;
 	padding: 8px;
 }

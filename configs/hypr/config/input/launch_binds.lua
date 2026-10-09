@@ -49,7 +49,7 @@ local programs = {
 for _, program in ipairs(programs) do
 	local rule = {}
 	if program.floating then
-		rule = { floating = true, size = { 'monitor_w * 0.6', 'monitor_h * 0.5' } }
+		rule = { floating = true, size = {'monitor_w * 0.6', 'monitor_h * 0.5'} }
 	end
 	hl.bind(program.keybind, hl.dsp.exec_cmd(program.cmd, rule))
 end

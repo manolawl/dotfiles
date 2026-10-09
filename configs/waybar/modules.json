@@ -151,7 +151,7 @@
 		"on-scroll-up": "brightnessctl set 5%+ && dcutil setvcp 10 + 5 --noverify --sleep-multiplier=0.2",
 		"on-scroll-down": "brightnessctl set 5%- && dcutil setvcp 10 - 5 --noverify --sleep-multiplier=0.2",
 		"on-click": "pkill hyprsunset || hyprsunset",
-		"tooltip": false,
+		"tooltip": true,
 		"states": {
 			"p1": 0,
 			"p2": 21,
@@ -160,15 +160,15 @@
 			"p5": 81,
 		},
 		"tooltip-format": "{percent}%",
-		"format": "{icon} {percent}%",
+		"format": "{icon}",
 		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
 	},
 
 	"wireplumber": {
 		"on-click": "pkill wiremix || kitty wiremix -v output",
-		"on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
+		"on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
 		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
-		"tooltip": false,
+		"tooltip": true,
 		"tooltip-format": "{volume}%",
 		"states": {
 			"p1": 0,
@@ -177,8 +177,8 @@
 			"p4": 61,
 			"p5": 81,
 		},
-		"format": "{icon} {volume}%",
-		"format-muted": "󰝟 {volume}%",
+		"format": "{icon}",
+		"format-muted": "󰝟",
 		"format-icons": ["󰕿", "󰖀", "󰕾"]
 	},
 
@@ -213,7 +213,7 @@
 
 	"battery": {
 		"tooltip": true,
-		"tooltip-format": "{time}",
+		"tooltip-format": "{capacity}%",
 		"states": {
 			"p1": 20,
 			"p2": 40,
@@ -221,7 +221,7 @@
 			"p4": 80,
 			"p5": 100,
 		},
-		"format": "{icon} {capacity}%",
+		"format": "{icon}",
 		"format-time": "{H}h {M}m",
 		"format-icons": {
 			"default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],

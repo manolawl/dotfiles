@@ -10,22 +10,22 @@ local vimR = 'L'
 
 local mousing = 'mouse:272'   -- left click
 
-local prevWorkspace = 'semicolon'
-local nextWorkspace = 'apostrophe'
+local prevWorkspace = 'comma'
+local nextWorkspace = 'period'
 
 local pixelOffset = 8
 
 -- -- >> WINDOW BINDS
 local faces = {
-	{ dir = 'l', key = vimL, x = -pixelOffset, y =  0 },
-	{ dir = 'd', key = vimD, x =  0,           y =  pixelOffset },
-	{ dir = 'u', key = vimU, x =  0,           y = -pixelOffset },
-	{ dir = 'r', key = vimR, x =  pixelOffset, y =  0 },
+	{ symbol = 'l', key = vimL, x = -pixelOffset, y =  0 },
+	{ symbol = 'd', key = vimD, x =  0,           y =  pixelOffset },
+	{ symbol = 'u', key = vimU, x =  0,           y = -pixelOffset },
+	{ symbol = 'r', key = vimR, x =  pixelOffset, y =  0 },
 }
 
 for _, face in ipairs(faces) do
-	local direction = { direction = face.dir }
-	local offset =    { x = face.x, y = face.y, relative = true}
+	local direction = { direction = face.symbol }
+	local offset =    { x = face.x, y = face.y, relative = true }
 
 	hl.bind(resizeMod .. face.key, hl.dsp.window.resize(offset), { repeating = true })
 	hl.bind(focusMod ..  face.key, hl.dsp.focus(direction),      { repeating = true })
@@ -55,7 +55,8 @@ end
 -- -- >> GESTURES
 hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
 hl.gesture({ fingers = 3, direction = 'vertical',   action = 'workspace' })
-hl.gesture({ fingers = 4, direction = 'swipe',      action = 'move' })
+hl.gesture({ fingers = 2, direction = 'pinchin',    action = 'fullscreen' })
+hl.gesture({ fingers = 2, direction = 'pinchout',   action = 'float' })
 
 -- -- >> LAYOUT TOGGLES
 local layouts = {

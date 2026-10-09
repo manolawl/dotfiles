@@ -12,12 +12,11 @@
 
 	"modules-left":[
 		"hyprland/workspaces",
+		"idle_inhibitor",
 	],
 
 	"modules-center":[
-		"idle_inhibitor",
 		"clock",
-		"power-profiles-daemon",
 	],
 
 	"modules-right":[
@@ -26,6 +25,7 @@
 		"wireplumber",
 		"backlight",
 		"battery",
+		"power-profiles-daemon",
 		"custom/notifications",
 	]
 }
