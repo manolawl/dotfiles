@@ -26,8 +26,8 @@ hl.window_rule({
 	match = { title = 'Picture-in-Picture' },
 	float = true,
 	pin = true,
-	size = { "monitor_w *  0.25", "monitor_h * 0.25" },
-	move = { "monitor_w * 0.74", "monitor_h * 0.73" }
+	size = { 'monitor_w * 0.25', 'monitor_h * 0.25' },
+	move = { 'monitor_w * 0.74', 'monitor_h * 0.73' }
 })
 
 -- -- -- >> STEAM
@@ -43,4 +43,10 @@ hl.window_rule({ match = { class = 'steam', }, workspace = 'special:gaming' })
 hl.window_rule({ match = { title = 'Steam', }, workspace = 'special:gaming' })
 
 -- blur for non-window layers
-hl.layer_rule({ match = { namespace = '.*' }, blur = true, blur_popups = true, ignore_alpha = 0.2, })
+hl.layer_rule({
+	match = { namespace = '.*' },
+	blur = true,
+	xray = true,
+	blur_popups = true,
+	ignore_alpha = 0.2,
+})

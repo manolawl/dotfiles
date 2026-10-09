@@ -1,5 +1,9 @@
 hl.config({
-	general = { layout =         'scrolling', resize_on_border = false, },
+	general = {
+		layout = 'scrolling',
+		resize_on_border = false,
+	},
+
 	dwindle = { preserve_split = true, },
 
 	scrolling = {
