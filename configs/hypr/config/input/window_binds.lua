@@ -1,35 +1,35 @@
-local layoutMod = 'ALT + SHIFT + '
-local focusMod =  'SUPER + '
-local moveMod =   'SUPER + CTRL + '
-local resizeMod = 'SUPER + SHIFT + '
+local LayoutMod = 'ALT + SHIFT + '
+local FocusMod =  'SUPER + '
+local MoveMod =   'SUPER + CTRL + '
+local ResizeMod = 'SUPER + SHIFT + '
 
-local vimL = 'H'
-local vimD = 'J'
-local vimU = 'K'
-local vimR = 'L'
+local VimL = 'H'
+local VimD = 'J'
+local VimU = 'K'
+local VimR = 'L'
 
-local mousing = 'mouse:272'   -- left click
+local Mousing = 'mouse:272'   -- left click
 
-local prevWorkspace = 'comma'
-local nextWorkspace = 'period'
+local PrevWorkspace = 'comma'
+local NextWorkspace = 'period'
 
-local pixelOffset = 8
+local PixelOffset = 8
 
 -- -- >> WINDOW BINDS
 local faces = {
-	{ symbol = 'l', key = vimL, x = -pixelOffset, y =  0 },
-	{ symbol = 'd', key = vimD, x =  0,           y =  pixelOffset },
-	{ symbol = 'u', key = vimU, x =  0,           y = -pixelOffset },
-	{ symbol = 'r', key = vimR, x =  pixelOffset, y =  0 },
+	{ symbol = 'l', key = VimL, x = -PixelOffset, y =  0 },
+	{ symbol = 'd', key = VimD, x =  0,           y =  PixelOffset },
+	{ symbol = 'u', key = VimU, x =  0,           y = -PixelOffset },
+	{ symbol = 'r', key = VimR, x =  PixelOffset, y =  0 },
 }
 
 for _, face in ipairs(faces) do
 	local direction = { direction = face.symbol }
 	local offset =    { x = face.x, y = face.y, relative = true }
 
-	hl.bind(resizeMod .. face.key, hl.dsp.window.resize(offset), { repeating = true })
-	hl.bind(focusMod ..  face.key, hl.dsp.focus(direction),      { repeating = true })
-	hl.bind(moveMod ..   face.key, function()
+	hl.bind(ResizeMod .. face.key, hl.dsp.window.resize(offset), { repeating = true })
+	hl.bind(FocusMod ..  face.key, hl.dsp.focus(direction),      { repeating = true })
+	hl.bind(MoveMod ..   face.key, function()
 		if not hl.get_active_window().floating then
 			hl.dispatch(hl.dsp.window.move(direction))
 		else
@@ -38,18 +38,18 @@ for _, face in ipairs(faces) do
 	end, { repeating = true })
 end
 
-hl.bind(resizeMod .. mousing, hl.dsp.window.resize(), { mouse = true })
-hl.bind(moveMod ..   mousing, hl.dsp.window.drag(),   { mouse = true })
+hl.bind(ResizeMod .. Mousing, hl.dsp.window.resize(), { mouse = true })
+hl.bind(MoveMod ..   Mousing, hl.dsp.window.drag(),   { mouse = true })
 
 -- -- >> WORKSPACE BINDS
 local workspaces = {
-	{ rel_lvl = '+1', key = nextWorkspace },
-	{ rel_lvl = '-1', key = prevWorkspace },
+	{ rel_lvl = '+1', key = NextWorkspace },
+	{ rel_lvl = '-1', key = PrevWorkspace },
 }
 for _, ws in ipairs(workspaces) do
 	local adj_ws = { workspace = ws.rel_lvl }
-	hl.bind(focusMod .. ws.key, hl.dsp.focus(adj_ws))
-	hl.bind(moveMod ..  ws.key, hl.dsp.window.move(adj_ws))
+	hl.bind(FocusMod .. ws.key, hl.dsp.focus(adj_ws))
+	hl.bind(MoveMod ..  ws.key, hl.dsp.window.move(adj_ws))
 end
 
 -- -- >> GESTURES
@@ -65,7 +65,7 @@ local layouts = {
 	M = 'master',
 }
 for key, layout in pairs(layouts) do
-	hl.bind(layoutMod .. key, function()
+	hl.bind(LayoutMod .. key, function()
 		if hl.get_config('general.layout') == layout then
 			hl.exec_cmd('hyprctl reload')
 		end

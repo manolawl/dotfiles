@@ -10,6 +10,7 @@ ln -sf ~/projects/dotfiles/configs/paru ~/.config
 ln -sf ~/projects/dotfiles/configs/yazi ~/.config
 ln -sf ~/projects/dotfiles/configs/kitty ~/.config
 ln -sf ~/projects/dotfiles/configs/rofi ~/.config
+ln -sf ~/projects/dotfiles/configs/quickshell ~/.config
 #ln -sf ~/projects/dotfiles/configs/alacritty ~/.config
 #ln -sf ~/projects/dotfiles/scripts ~/.config
 #ln -sf ~/projects/dotfiles/configs/dunst ~/.config

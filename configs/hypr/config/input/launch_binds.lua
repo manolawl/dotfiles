@@ -1,49 +1,49 @@
-local appMod =    'SUPER + '
-local menuMod =   'ALT + '
+local AppMod =  'SUPER + '
+local MenuMod = 'ALT + '
 
-local terminal =    'kitty'
-local browser =     'zen-browser'
-local fileManager = 'pkill yazi || kitty yazi'
+local Terminal = 'kitty'
+local Browser =  'zen-browser'
+local FileMan =  'pkill yazi || kitty yazi'
 
-local systemMonitor = 'pkill btop || kitty btop'
-local calendar =      'pkill calcurse || kitty calcurse'
-local audio =         'pkill wiremix || kitty wiremix -v output'
-local network =       'pkill impala || kitty impala'
-local bluetooth =     'pkill bluetui || kitty bluetui'
+local SysMon =       'pkill btop || kitty btop'
+local Calendar =     'pkill calcurse || kitty calcurse'
+local AudioControl = 'pkill wiremix || kitty wiremix -v output'
+local Network =      'pkill impala || kitty impala'
+local Bluetooth =    'pkill bluetui || kitty bluetui'
 
-local bar = 'pkill waybar || waybar'
+local Bar = 'pkill waybar || waybar'
 
-local clipboard =      'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
-local launcher =       'rofi -show drun'
-local windowSelector = 'rofi -show window'
-local emojiPicker =    'rofi -_i emoji -show emoji'
+local Clipboard =   'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
+local Launcher =    'rofi -show drun'
+local WinSelector = 'rofi -show window'
+local EmojiPicker = 'rofi -_i emoji -show emoji'
 
-local screenshotRegion = 'hyprshot -m region -o ~/pictures/screenshots'
-local screenshotWindow = 'hyprshot -m window -o ~/pictures/screenshots'
-local colorPicker =      'hyprpicker -a -f hex -n -u 256 -s 10'
+local RegCapture =  'hyprshot -m region -o ~/pictures/screenshots'
+local WinCapture =  'hyprshot -m window -o ~/pictures/screenshots'
+local ColorPicker = 'hyprpicker -a -f hex -n -u 256 -s 10'
 
 -- -- >> LAUNCHING PROGRAMS
 local programs = {
-	{ cmd = terminal,    keybind = appMod .. 'T' },
-	{ cmd = browser,     keybind = appMod .. 'B' },
-	{ cmd = fileManager, keybind = appMod .. 'F', floating = true },
+	{ cmd = Terminal, keybind = AppMod .. 'T' },
+	{ cmd = Browser,  keybind = AppMod .. 'B' },
+	{ cmd = FileMan,  keybind = AppMod .. 'F', floating = true },
 
-	{ cmd = systemMonitor, keybind = appMod .. 'M', floating = true },
-	{ cmd = calendar,      keybind = appMod .. 'C', floating = true },
-	{ cmd = network,       keybind = appMod .. 'N', floating = true },
-	{ cmd = bluetooth,     keybind = appMod .. '1', floating = true },
-	{ cmd = audio,         keybind = appMod .. '2', floating = true },
+	{ cmd = SysMon,       keybind = AppMod .. 'M', floating = true },
+	{ cmd = Calendar,     keybind = AppMod .. 'C', floating = true },
+	{ cmd = Network,      keybind = AppMod .. 'N', floating = true },
+	{ cmd = Bluetooth,    keybind = AppMod .. '1', floating = true },
+	{ cmd = AudioControl, keybind = AppMod .. '2', floating = true },
 
-	{ cmd = bar, keybind = appMod .. 'W' },
+	{ cmd = Bar, keybind = AppMod .. 'W' },
 
-	{ cmd = clipboard,      keybind = menuMod .. 'V' },
-	{ cmd = launcher,       keybind = menuMod .. 'Space' },
-	{ cmd = windowSelector, keybind = menuMod .. 'Tab' },
-	{ cmd = emojiPicker,    keybind = menuMod .. 'E' },
+	{ cmd = Clipboard,   keybind = MenuMod .. 'V' },
+	{ cmd = Launcher,    keybind = MenuMod .. 'Space' },
+	{ cmd = WinSelector, keybind = MenuMod .. 'Tab' },
+	{ cmd = EmojiPicker, keybind = MenuMod .. 'E' },
 
-	{ cmd = screenshotRegion, keybind = 'Print' },
-	{ cmd = screenshotWindow, keybind = 'SHIFT + Print' },
-	{ cmd = colorPicker,      keybind = 'CTRL + SHIFT + ALT + C' },
+	{ cmd = RegCapture,  keybind = 'Print' },
+	{ cmd = WinCapture,  keybind = 'SHIFT + Print' },
+	{ cmd = ColorPicker, keybind = 'CTRL + SHIFT + ALT + C' },
 
 }
 for _, program in ipairs(programs) do
