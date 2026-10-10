@@ -8,8 +8,8 @@ window#waybar, tooltip {
 }
 
 window#waybar {
-	border-radius: 0 0 8px 8px;
-	border-width: 0 1px 1px 1px;
+	border-radius: 0;
+	border-width: 0 0 1px 0;
 }
 
 tooltip {
@@ -25,4 +25,20 @@ tooltip {
 #wireplumber.muted,
 #idle_inhibitor.deactivated,
 #bluetooth.disabled,
-#network.disabled { color: @diamond-dark; border-color: @diamond-dark; }
+#network.disabled {
+	color: @diamond-dark;
+	border-color: @diamond-dark;
+}
+
+#power-profiles-daemon.power-saver { color: @peridot-neutral; }
+#power-profiles-daemon.balanced { color: @citrine-neutral; }
+#power-profiles-daemon.performance { color: @ruby-neutral; }
+
+#battery.p1 { color: @ruby-neutral; }
+#battery.p2 { color: @spessartine-neutral }
+#battery.p3 { color: @citrine-neutral; }
+#battery.p4 { color: @emerald-neutral }
+#battery.p5 { color: @peridot-neutral; }
+
+#workspaces label { color: @tourmaline-neutral; }
+

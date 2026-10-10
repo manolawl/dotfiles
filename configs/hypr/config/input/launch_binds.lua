@@ -11,7 +11,7 @@ local AudioControl = 'pkill wiremix || kitty wiremix -v output'
 local Network =      'pkill impala || kitty impala'
 local Bluetooth =    'pkill bluetui || kitty bluetui'
 
-local Bar = 'pkill waybar || waybar'
+local Bar = 'killall -SIGUSR2 waybar'
 
 local Clipboard =   'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
 local Launcher =    'rofi -show drun'
