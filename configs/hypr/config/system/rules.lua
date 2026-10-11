@@ -27,7 +27,7 @@ hl.window_rule({
 	float = true,
 	pin = true,
 	size = { 'monitor_w * 0.25', 'monitor_h * 0.25' },
-	move = { 'monitor_w * 0.74', 'monitor_h * 0.73' }
+	move = { 'monitor_w * 0.75', 'monitor_h * 0.75' }
 })
 
 -- -- -- >> STEAM

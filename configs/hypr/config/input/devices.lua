@@ -5,11 +5,14 @@ hl.config({
 		kb_model =      '',
 		kb_options =    'caps:escape', -- maps caps-lock to escape
 		kb_rules =      '',
-		accel_profile = 'flat',        -- no mouse acceleration
-		follow_mouse =  1,             -- focus always follows mouse
-		repeat_delay =  200,           -- milliseconds
-		repeat_rate =   50,            -- keys per second
-		sensitivity =   0,             -- [-1, 1]
+
+		follow_mouse =  1, -- focus always follows mouse
+
+		accel_profile = 'flat', -- no mouse acceleration
+		sensitivity =   0,      -- [-1, 1]
+
+		repeat_delay =  200, -- milliseconds
+		repeat_rate =   50,  -- keys per second
 
 		touchpad = {
 			natural_scroll = true, -- scrolls opposite to finger swipe

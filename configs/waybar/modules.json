@@ -93,10 +93,12 @@
 	"hyprland/workspaces": {
 		"active-only": true,
 		"format": " {name}",
+		"on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({workspace=\"+1\"})'",
+		"on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({workspace=\"-1\"})'"
 	},
 
 	"hyprland/window": {
-		"format": "{class}"
+		"format": "{title}"
 	},
 
 	"mpris": {
@@ -104,13 +106,29 @@
 	},
 
 	"clock": {
-		"on-click": "pkill calcurse || kitty calcurse",
 		"timezone": "Asia/Manila",
 		"locale": "en_PH.UTF-8",
-		"tooltip": false,
+		"tooltip": true,
 		"interval": 60,
 		"format": "{:%I:%M %a %d}",
+		"tooltip-format": "{calendar}",
+		"calendar":{
+			"mode": "year",
+			"mode-mon-col": 6,
+			"first-day-of-week": 0,
+			"format": {
+				"today": "<span color='#71b0ff'><b><u>{}</u></b></span>",
+				"days": "<span color='#26587d'>{}</span>",
+				"weekdays": "<span color='#4b90f9'><i>{}</i></span>",
+				"months": "<span color='#4b90f9'><b>{}</b></span>"
+			},
+		},
+		
+		"actions": {
+			"on-click": "mode"
+		}
 	},
+
 
 	"clock#date": {
 		"on-click": "pkill calcurse || kitty calcurse",
@@ -136,7 +154,7 @@
 
 	"network": {
 		"on-click": "pkill impala || kitty impala",
-		"tooltip-format": "network: {essid}\niplocal: {ipaddr}",
+		"tooltip-format": "network: {essid}\niplocal: {ipaddr}\nquality: {signalStrengthApp}",
 		"format": "{icon}",
 		"format-icons": {
 			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -148,10 +166,10 @@
 
 	"backlight": {
 		"device": "intel_backlight",
-		"on-scroll-up": "brightnessctl set 5%+ && dcutil setvcp 10 + 5 --noverify --sleep-multiplier=0.2",
-		"on-scroll-down": "brightnessctl set 5%- && dcutil setvcp 10 - 5 --noverify --sleep-multiplier=0.2",
+		"on-scroll-up": "brightnessctl set 10%+ && dcutil setvcp 10 + 10 --noverify --sleep-multiplier=0.2",
+		"on-scroll-down": "brightnessctl set 10%- && dcutil setvcp 10 - 10 --noverify --sleep-multiplier=0.2",
 		"on-click": "pkill hyprsunset || hyprsunset",
-		"tooltip": true,
+		"tooltip": false,
 		"states": {
 			"p1": 20,
 			"p2": 40,
@@ -159,17 +177,17 @@
 			"p4": 80,
 			"p5": 100,
 		},
-		"tooltip-format": "{percent}%",
-		"format": "{icon}",
+		"tooltip-format": "{percent}",
+		"format": "{icon} {percent}",
 		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
 	},
 
 	"wireplumber": {
 		"on-click": "pkill wiremix || kitty wiremix -v output",
-		"on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
-		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
-		"tooltip": true,
-		"tooltip-format": "{volume}%",
+		"on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+		"tooltip": false,
+		"tooltip-format": "{volume}",
 		"states": {
 			"p1": 20,
 			"p2": 40,
@@ -177,7 +195,7 @@
 			"p4": 80,
 			"p5": 100,
 		},
-		"format": "{icon}",
+		"format": "{icon} {volume}",
 		"format-muted": "󰝟",
 		"format-icons": ["󰕿", "󰖀", "󰕾"]
 	},
@@ -213,7 +231,7 @@
 
 	"battery": {
 		"tooltip": true,
-		"tooltip-format": "{capacity}%",
+		"tooltip-format": "{capacity}",
 		"states": {
 			"p1": 20,
 			"p2": 40,
@@ -221,7 +239,7 @@
 			"p4": 80,
 			"p5": 100,
 		},
-		"format": "{icon}",
+		"format": "{icon} {capacity}",
 		"format-time": "{H}h {M}m",
 		"format-icons": {
 			"default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -234,9 +252,9 @@
 		"format": "{icon}",
 		"format-icons": {
 			"default": "󱐌",
-			"performance": "󱐋",
-			"balanced": "󰗑",
-			"power-saver": "󰌪"
+			"performance": "󰓅",
+			"balanced": "󰾅",
+			"power-saver": "󰾆"
 		}
 	},
 }

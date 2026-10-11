@@ -10,8 +10,8 @@ local VimR = 'L'
 
 local Mousing = 'mouse:272'   -- left click
 
-local PrevWorkspace = 'comma'
-local NextWorkspace = 'period'
+local PrevWorkspace = 'W'
+local NextWorkspace = 'S'
 
 local PixelOffset = 8
 
@@ -43,11 +43,11 @@ hl.bind(MoveMod ..   Mousing, hl.dsp.window.drag(),   { mouse = true })
 
 -- -- >> WORKSPACE BINDS
 local workspaces = {
-	{ rel_lvl = '+1', key = NextWorkspace },
-	{ rel_lvl = '-1', key = PrevWorkspace },
+	{ interval = '+1', key = NextWorkspace },
+	{ interval = '-1', key = PrevWorkspace },
 }
 for _, ws in ipairs(workspaces) do
-	local adj_ws = { workspace = ws.rel_lvl }
+	local adj_ws = { workspace = ws.interval }
 	hl.bind(FocusMod .. ws.key, hl.dsp.focus(adj_ws))
 	hl.bind(MoveMod ..  ws.key, hl.dsp.window.move(adj_ws))
 end
@@ -82,4 +82,6 @@ hl.bind('SHIFT + F11', hl.dsp.window.float({ action = 'toggle' }))
 hl.bind('CTRL + ALT + SHIFT + G', hl.dsp.workspace.toggle_special('gaming'))
 
 -- -- >> DWINDLE BINDS
-hl.bind('SUPER + S', hl.dsp.layout('togglesplit'))
+if hl.get_config('dwindle') then
+	hl.bind('SUPER + S', hl.dsp.layout('togglesplit'))
+end

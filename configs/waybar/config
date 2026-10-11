@@ -12,7 +12,7 @@
 
 	"modules-left":[
 		"hyprland/workspaces",
-		"idle_inhibitor",
+		"hyprland/window",
 	],
 
 	"modules-center":[
@@ -27,6 +27,7 @@
 		"battery",
 		"power-profiles-daemon",
 		"custom/notifications",
+		"idle_inhibitor",
 	]
 }
 
