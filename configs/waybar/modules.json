@@ -1,82 +1,4 @@
 {
-	// ==> GROUPS
-	"group/pmenu":{
-		"modules": [
-			"custom/exit",
-			"custom/reboot",
-			"custom/poweroff"
-		]
-	},
-
-	"group/hardware":{
-		"modules": [
-			"disk",
-			"temperature",
-			"memory",
-			"cpu",
-		]
-	},
-
-	// ==> CUSTOM MODULES
-	"custom/power": {
-		"format" : "[ 󰐥 ]",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "~/.config/waybar/power_menu.xml",
-		"menu-actions": {
-			"shutdown": "shutdown now",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate",
-			"exit": "hyprctl dispatch exit",
-		},
-	},
-
-	"custom/sep": {
-		"format": " | "
-	},
-
-	"custom/exit": {
-		"on-click": "hyprctl dispatch exit",
-		"tooltip": false,
-		"format": "[ 󰍃 ]",
-	},
-
-	"custom/reboot": {
-		"on-click": "systemctl reboot",
-		"tooltip": false,
-		"format": "[ 󰜉 ]",
-	},
-
-	"custom/poweroff": {
-		"on-click": "systemctl poweroff",
-		"tooltip": false,
-		"format": "[ 󰤂 ]",
-	},
-
-	"custom/notifications": {
-		"tooltip-format": "{0}",
-		"format": "{icon}",
-		"format-icons": {
-			"notification": "󰂚",
-			"none": "󰂜",
-			"dnd-notification": "󰂠",
-			"dnd-none": "󰪓",
-			"inhibited-notification": "󰂛",
-			"inhibited-none": "󰪑",
-			"dnd-inhibited-notification": "󰂛",
-			"dnd-inhibited-none": "󰪑"
-		},
-
-		"return-type": "json",
-		"exec-if": "which swaync-client",
-		"exec": "swaync-client -swb",
-		"on-click": "swaync-client -t -sw",
-		"on-click-right": "swaync-client -d -sw",
-		"escape": true
-	},
-
-	// ==> NATIVE MODULES
 	"user": {
 		"format": "{work_H}h {work_M}m"
 	},
@@ -114,8 +36,7 @@
 		"tooltip-format": "{calendar}",
 		"calendar":{
 			"mode": "year",
-			"mode-mon-col": 6,
-			"first-day-of-week": 0,
+			"mode-mon-col": 4,
 			"format": {
 				"today": "<span color='#71b0ff'><b><u>{}</u></b></span>",
 				"days": "<span color='#26587d'>{}</span>",
@@ -129,17 +50,7 @@
 		}
 	},
 
-
-	"clock#date": {
-		"on-click": "pkill calcurse || kitty calcurse",
-		"timezone": "Asia/Manila",
-		"locale": "en_PH.UTF-8",
-		"tooltip": false,
-		"format": "{:%m-%d}",
-	},
-
 	"bluetooth": {
-		"on-click": "pkill bluetui || kitty bluetui",
 		"tooltip": true,
 		"tooltip-format": "{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}",
@@ -153,7 +64,6 @@
 	},
 
 	"network": {
-		"on-click": "pkill impala || kitty impala",
 		"tooltip-format": "network: {essid}\niplocal: {ipaddr}\nquality: {signalStrengthApp}",
 		"format": "{icon}",
 		"format-icons": {
@@ -170,32 +80,15 @@
 		"on-scroll-down": "brightnessctl set 10%- && dcutil setvcp 10 - 10 --noverify --sleep-multiplier=0.2",
 		"on-click": "pkill hyprsunset || hyprsunset",
 		"tooltip": false,
-		"states": {
-			"p1": 20,
-			"p2": 40,
-			"p3": 60,
-			"p4": 80,
-			"p5": 100,
-		},
-		"tooltip-format": "{percent}",
-		"format": "{icon} {percent}",
+		"format": "{percent} {icon}",
 		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
 	},
 
 	"wireplumber": {
-		"on-click": "pkill wiremix || kitty wiremix -v output",
 		"on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+",
 		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
 		"tooltip": false,
-		"tooltip-format": "{volume}",
-		"states": {
-			"p1": 20,
-			"p2": 40,
-			"p3": 60,
-			"p4": 80,
-			"p5": 100,
-		},
-		"format": "{icon} {volume}",
+		"format": "{volume} {icon}",
 		"format-muted": "󰝟",
 		"format-icons": ["󰕿", "󰖀", "󰕾"]
 	},
@@ -230,8 +123,7 @@
 	},
 
 	"battery": {
-		"tooltip": true,
-		"tooltip-format": "{capacity}",
+		"tooltip": false,
 		"states": {
 			"p1": 20,
 			"p2": 40,
@@ -239,10 +131,10 @@
 			"p4": 80,
 			"p5": 100,
 		},
-		"format": "{icon} {capacity}",
+		"format":      "{capacity} {icon}",
 		"format-time": "{H}h {M}m",
 		"format-icons": {
-			"default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+			"default":  ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 			"charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂊", "󰂅"]
 		}
 	},

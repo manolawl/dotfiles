@@ -26,7 +26,6 @@
 		"backlight",
 		"battery",
 		"power-profiles-daemon",
-		"custom/notifications",
 		"idle_inhibitor",
 	]
 }
