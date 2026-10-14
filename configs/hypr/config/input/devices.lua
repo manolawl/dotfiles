@@ -28,5 +28,5 @@ hl.config({
 
 hl.device({
 	name =        'pixa3848:00-093a:3848-touchpad',  -- current acer nitro touchpad
-	sensitivity = 1
+	sensitivity = 0.45,
 })

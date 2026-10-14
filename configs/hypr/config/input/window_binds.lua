@@ -85,3 +85,20 @@ hl.bind('CTRL + ALT + SHIFT + G', hl.dsp.workspace.toggle_special('gaming'))
 if hl.get_config('dwindle') then
 	hl.bind('SUPER + S', hl.dsp.layout('togglesplit'))
 end
+
+-- -- >> DECORATION TOGGLE
+hl.bind('SUPER + A', function()
+	if hl.get_config('animations.enabled') then
+		hl.notification.create({ text = 'Decorations Disabled', font_size = 16, timeout = 3000 })
+		hl.config({
+			['animations.enabled'] = false,
+			['decoration.blur.enabled'] = false,
+			['decoration.rounding'] = 0,
+			['general.gaps_in'] = 0,
+			['general.gaps_out'] = 0,
+		})
+	else
+		hl.exec_cmd('hyprctl reload')
+		hl.notification.create({ text = 'Decorations Enabled', font_size = 16, timeout = 3000 })
+	end
+end)
