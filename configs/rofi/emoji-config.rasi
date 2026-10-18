@@ -5,11 +5,6 @@ configuration {
 		action: "kb-cancel";
 		delay:  0;
 	}
-
-	filebrowser {
-		directories-first: true;
-		sorting-method:    "name";
-	}
 }
 
 @theme "emoji-style.rasi"

@@ -10,7 +10,7 @@
 	background-color: transparent;
 	text-color: @fg0;
 
-	font: "JetBrainsMono Nerd Font 18";
+	font: "JetBrainsMono Nerd Font 16";
 
 	margin: 0;
 	padding: 0;
@@ -20,7 +20,7 @@
 window {
 	location: south;
 	y-offset: -8px;
-	width: 50%;
+	width: 45%;
 	height: 25%;
 	border-radius: 8;
 	border-color: @fg0;
@@ -49,8 +49,7 @@ entry {
 }
 
 listview {
-	columns: 12;
-	lines: 4;
+	columns: 9;
 	layout: vertical;
 	fixed-height: false;
 }
