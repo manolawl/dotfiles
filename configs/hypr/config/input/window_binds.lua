@@ -55,8 +55,6 @@ end
 -- -- >> GESTURES
 hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
 hl.gesture({ fingers = 3, direction = 'vertical',   action = 'workspace' })
-hl.gesture({ fingers = 2, direction = 'pinchin',    action = 'fullscreen' })
-hl.gesture({ fingers = 2, direction = 'pinchout',   action = 'float' })
 
 -- -- >> LAYOUT TOGGLES
 local layouts = {
@@ -75,8 +73,8 @@ end
 
 -- -- >> WINDOW ACTIONS
 hl.bind('SUPER + Q',   hl.dsp.window.close())
-hl.bind('F11',         hl.dsp.window.fullscreen({ action = 'toggle' }))
-hl.bind('SHIFT + F11', hl.dsp.window.float({ action = 'toggle' }))
+hl.bind('SUPER + F11', hl.dsp.window.fullscreen({ action = 'toggle' }))
+hl.bind('F11',         hl.dsp.window.float({ action = 'toggle' }))
 
 -- -- >> SPECIAL WORKSPACES
 hl.bind('CTRL + ALT + SHIFT + G', hl.dsp.workspace.toggle_special('gaming'))

@@ -30,6 +30,13 @@ hl.window_rule({
 	move = { 'monitor_w * 0.75', 'monitor_h * 0.75' }
 })
 
+hl.window_rule({
+	match = { title = 'xdg-desktop-portal-gtk' },
+	float = true,
+	size = { 'monitor_w * 0.90', 'monitor_h * 0.50' },
+	move = { 'monitor_w', 'monitor_h' }
+})
+
 -- -- -- >> STEAM
 hl.window_rule({
 	match = {
