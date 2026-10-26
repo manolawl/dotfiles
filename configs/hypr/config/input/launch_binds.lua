@@ -12,7 +12,6 @@ local Bluetooth =    'pkill bluetui || kitty bluetui'
 
 local Clipboard =   'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
 local Launcher =    'rofi -show drun'
-local EmojiPicker = 'rofi -i -config emoji-config.rasi -show emoji'
 
 local RegCapture =  'hyprshot -m region -o ~/pictures/screenshots'
 local WinCapture =  'hyprshot -m window -o ~/pictures/screenshots'
@@ -29,7 +28,6 @@ local programs = {
 	{ cmd = AudioControl, keybind = AppMod .. '3', floating = true },
 
 	{ cmd = Clipboard,   keybind = MenuMod .. 'V' },
-	{ cmd = EmojiPicker, keybind = MenuMod .. 'E' },
 	{ cmd = Launcher,    keybind = MenuMod .. 'Space' },
 
 	{ cmd = RegCapture,  keybind = 'Print' },
