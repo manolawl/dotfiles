@@ -7,10 +7,7 @@ local muteAudio = 'XF86AudioMute'
 local muteMic =   'XF86Launch6'
 
 local function set_backlight(sign, num)
-	hl.exec_cmd('\
-		brightnessctl set ' ..num.. '%' ..sign.. ' &&\
-		ddcutil setvcp 10 ' ..sign.. ' ' ..num.. ' --noverify --sleep-multiplier=0.2\
-	')
+	hl.exec_cmd('brightnessctl set ' ..num.. '%' ..sign--[[.. '&& ddcutil setvcp 10 ' ..sign.. ' ' ..num.. ' --noverify --sleep-multiplier=0.2']])
 end
 
 hl.bind(incBrightness,               function() set_backlight('+', 10)  end)

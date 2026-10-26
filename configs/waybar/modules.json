@@ -1,8 +1,4 @@
 {
-	"user": {
-		"format": "{work_H}h {work_M}m"
-	},
-
 	"idle_inhibitor": {
 		"tooltip": false,
 		"format": "{icon}",
@@ -20,11 +16,7 @@
 	},
 
 	"hyprland/window": {
-		"format": "{title}"
-	},
-
-	"mpris": {
-		"format": "󰝚 {title} by {artist} 󰝚"
+		"format": "{class}"
 	},
 
 	"clock": {
@@ -76,50 +68,21 @@
 
 	"backlight": {
 		"device": "intel_backlight",
-		"on-scroll-up": "brightnessctl set 10%+ && dcutil setvcp 10 + 10 --noverify --sleep-multiplier=0.2",
-		"on-scroll-down": "brightnessctl set 10%- && dcutil setvcp 10 - 10 --noverify --sleep-multiplier=0.2",
-		"on-click": "pkill hyprsunset || hyprsunset",
+		"on-scroll-down": "brightnessctl set 1%+",
+		"on-scroll-up": "brightnessctl set 1%-",
+		"on-click": "pkill hyprsunset | hyprsunset",
 		"tooltip": false,
-		"format": "{percent} {icon}",
+		"format": "{icon} {percent}%",
 		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
 	},
 
 	"wireplumber": {
-		"on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+",
-		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+		"on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
 		"tooltip": false,
-		"format": "{volume} {icon}",
+		"format": "{icon} {volume}%",
 		"format-muted": "{volume} 󰝟",
 		"format-icons": ["󰕿", "󰖀", "󰕾"]
-	},
-
-	"temperature": {
-		"on-click": "pkill btop || kitty btop",
-		"tooltip": false,
-		"interval": 1,
-		"format": "{icon} {temperatureC}°",
-		"format-icons": ["󱃃", "󰔏", "󱃂"]
-	},
-
-	"memory": {
-		"on-click": "pkill btop || kitty btop",
-		"interval": 1,
-		"tooltip": true,
-		"tooltip-format": "format: GiB\ntotal : {total}\nunused: {avail}\nused  : {used}",
-		"format": "󰓌 {percentage}%"
-	},
-
-	"cpu": {
-		"on-click": "pkill btop || kitty btop",
-		"interval": 1,
-		"tooltip": false,
-		"format": "󰍛 {usage}%"
-	},
-
-	"disk": {
-		"on-click": "pkill ncdu || kitty ncdu",
-		"interval": 1,
-		"format": "󰋊 {percentage_used}%"
 	},
 
 	"battery": {
@@ -131,7 +94,7 @@
 			"p4": 80,
 			"p5": 100,
 		},
-		"format":      "{capacity} {icon}",
+		"format":      "{icon} {capacity}%",
 		"format-time": "{H}h {M}m",
 		"format-icons": {
 			"default":  ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],

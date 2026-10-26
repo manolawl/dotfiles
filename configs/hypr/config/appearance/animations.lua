@@ -11,8 +11,8 @@ hl.animation({ leaf = 'windowsMove', enabled = true, speed = 2.5, bezier = 'bow'
 hl.animation({ leaf = 'windowsIn',   enabled = true, speed = 2.5, bezier = 'bow', style = 'slide', })
 hl.animation({ leaf = 'windowsOut',  enabled = true, speed = 2.5, bezier = 'wob', style = 'gnomed', })
 
-hl.animation({ leaf = 'workspacesIn',  enabled = true, speed = 2.5, bezier = 'linear', style = 'slidefadevert', })
-hl.animation({ leaf = 'workspacesOut', enabled = true, speed = 2.5, bezier = 'linear', style = 'slidefadevert', })
+hl.animation({ leaf = 'workspacesIn',  enabled = true, speed = 2.0, bezier = 'linear', style = 'slidefadevert', })
+hl.animation({ leaf = 'workspacesOut', enabled = true, speed = 2.0, bezier = 'linear', style = 'slidefadevert', })
 
 hl.animation({ leaf = 'fadeLayersIn',  enabled = true, speed = 3.0, bezier = 'boost', })
 hl.animation({ leaf = 'fadeLayersOut', enabled = true, speed = 3.0, bezier = 'bow', })
