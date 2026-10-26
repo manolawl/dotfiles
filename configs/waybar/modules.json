@@ -89,7 +89,7 @@
 		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
 		"tooltip": false,
 		"format": "{volume} {icon}",
-		"format-muted": "󰝟",
+		"format-muted": "{volume} 󰝟",
 		"format-icons": ["󰕿", "󰖀", "󰕾"]
 	},
 
