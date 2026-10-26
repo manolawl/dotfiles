@@ -70,7 +70,7 @@
 		"device": "intel_backlight",
 		"on-scroll-down": "brightnessctl set 1%+",
 		"on-scroll-up": "brightnessctl set 1%-",
-		"on-click": "pkill hyprsunset | hyprsunset",
+		"on-click": "pkill hyprsunset || hyprsunset",
 		"tooltip": false,
 		"format": "{icon} {percent}%",
 		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
