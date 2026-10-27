@@ -1,26 +1,26 @@
 {
 	"hyprland/workspaces": {
-		"active-only": true,
-		"format": " {name}",
-		"on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({workspace=\"+1\"})'",
+		"active-only":     true,
+		"format":         " {name}",
+		"on-scroll-up":   "hyprctl dispatch 'hl.dsp.focus({workspace=\"+1\"})'",
 		"on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({workspace=\"-1\"})'"
 	},
 
 	"clock": {
-		"timezone": "Asia/Manila",
-		"locale": "en_PH.UTF-8",
-		"tooltip": true,
-		"interval": 60,
-		"format": "{:%I:%M %a %d}",
+		"timezone":       "Asia/Manila",
+		"locale":         "en_PH.UTF-8",
+		"tooltip":         true,
+		"interval":        60,
+		"format":         "{:%I:%M %a %d}",
 		"tooltip-format": "{calendar}",
 		"calendar":{
-			"mode": "year",
+			"mode":        "year",
 			"mode-mon-col": 4,
 			"format": {
-				"today": "<span color='#71b0ff'><b><u>{}</u></b></span>",
-				"days": "<span color='#26587d'>{}</span>",
+				"today":    "<span color='#71b0ff'><b><u>{}</u></b></span>",
+				"days":     "<span color='#26587d'>{}</span>",
 				"weekdays": "<span color='#4b90f9'><i>{}</i></span>",
-				"months": "<span color='#4b90f9'><b>{}</b></span>"
+				"months":   "<span color='#4b90f9'><b>{}</b></span>"
 			},
 		},
 		
@@ -32,7 +32,8 @@
 	"bluetooth": {
 		"tooltip": true,
 		"tooltip-format": "{device_enumerate}",
-		"tooltip-format-enumerate-connected": "{device_alias} {device_battery_percentage}%",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias} {device_battery_percentage}%",
 		"format": "{icon}",
 		"format-icons": {
 			"on": "󰂯",
@@ -43,6 +44,8 @@
 	},
 
 	"network": {
+		"align": 0,
+		"interval": 15,
 		"tooltip-format": "network: {essid}\niplocal: {ipaddr}\nquality: {signalStrengthApp}",
 		"format": "{icon}",
 		"format-icons": {
@@ -54,6 +57,7 @@
 	},
 
 	"backlight": {
+		"align": 0,
 		"min-length": 7,
 		"device": "intel_backlight",
 		"on-scroll-down": "brightnessctl set 1%+",
@@ -65,6 +69,7 @@
 	},
 
 	"wireplumber": {
+		"align": 0,
 		"min-length": 7,
 		"on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+",
 		"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
@@ -78,11 +83,11 @@
 		"min-length": 7,
 		"tooltip": false,
 		"states": {
-			"p1": 20,
-			"p2": 40,
-			"p3": 60,
-			"p4": 80,
-			"p5": 100,
+			"lvl1": 20,
+			"lvl2": 40,
+			"lvl3": 60,
+			"lvl4": 80,
+			"lvl5": 100,
 		},
 		"format":      "{icon} {capacity}%",
 		"format-time": "{H}h {M}m",
@@ -93,30 +98,37 @@
 	},
 
 	"power-profiles-daemon": {
+		"align": 0,
 		"tooltip": true,
 		"format": "{icon}",
 		"tooltip-format": "power usage",
 		"format-icons": {
 			"default": "󱐌",
-			"performance": "󰓅 MAX",
-			"balanced": "󰾅 MID",
-			"power-saver": "󰾆 LOW"
+			"performance": "󰓅",
+			"balanced": "󰾅",
+			"power-saver": "󰾆"
 		}
 	},
 
 	"memory": {
-		"interval": 5,
+		"align": 0,
+		"min-length": 7,
+		"interval": 15,
 		"format": "󰍛 {percentage}%",
 	},
 
 	"cpu": {
-		"interval": 5,
+		"align": 0,
+		"min-length": 7,
+		"interval": 15,
 		"format": "󰘚 {usage}%",
 	},
 
 	"temperature": {
+		"align": 0,
+		"min-length": 7,
 		"tooltip": false,
-		"interval": 5,
+		"interval": 15,
 		"warning-threshold": 59,
 		"critical-threshold": 79,
 		"format": "󱃃 {temperatureC}°C",

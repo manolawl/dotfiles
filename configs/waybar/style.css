@@ -18,19 +18,19 @@ tooltip {
 }
 
 .module, tooltip label {
-	margin: 4px;
-	padding: 0 8px;
+	margin: 2px;
+	padding: 0 4px;
 }
 
 #power-profiles-daemon.power-saver { color: @aquamarine-light; }
 #power-profiles-daemon.balanced { color: @peridot-light; }
 #power-profiles-daemon.performance { color: @ruby-light; }
 
-#battery.p1 { color: @ruby-neutral; }
-#battery.p2 { color: @spessartine-neutral }
-#battery.p3 { color: @citrine-neutral; }
-#battery.p4 { color: @emerald-neutral }
-#battery.p5 { color: @peridot-neutral; }
+#battery.lvl1 { color: @ruby-neutral; }
+#battery.lvl2 { color: @spessartine-neutral }
+#battery.lvl3 { color: @citrine-neutral; }
+#battery.lvl4 { color: @emerald-neutral }
+#battery.lvl5 { color: @peridot-neutral; }
 
 #workspaces label { color: @tourmaline-light; }
 

@@ -24,10 +24,10 @@
 	"modules-right":[
 		"network",
 		"bluetooth",
+		"power-profiles-daemon",
+		"battery",
 		"wireplumber",
 		"backlight",
-		"battery",
-		"power-profiles-daemon",
 	]
 }
 
