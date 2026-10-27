@@ -10,8 +10,8 @@ local function set_backlight(sign, num)
 	hl.exec_cmd('brightnessctl set ' ..num.. '%' ..sign--[[.. '&& ddcutil setvcp 10 ' ..sign.. ' ' ..num.. ' --noverify --sleep-multiplier=0.2']])
 end
 
-hl.bind(incBrightness,               function() set_backlight('+', 10)  end)
-hl.bind(decBrightness,               function() set_backlight('-', 10)  end)
+hl.bind(incBrightness,               function() set_backlight('+', 1)   end)
+hl.bind(decBrightness,               function() set_backlight('-', 1)   end)
 hl.bind('SHIFT + ' .. incBrightness, function() set_backlight('',  100) end)
 hl.bind('SHIFT + ' .. decBrightness, function() set_backlight('',  0)   end)
 

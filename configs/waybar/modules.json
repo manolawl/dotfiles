@@ -1,22 +1,9 @@
 {
-	"idle_inhibitor": {
-		"tooltip": false,
-		"format": "{icon}",
-		"format-icons": {
-			"activated": "󰈈",
-			"deactivated": "󰛐",
-		},
-	},
-
 	"hyprland/workspaces": {
 		"active-only": true,
 		"format": " {name}",
 		"on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({workspace=\"+1\"})'",
 		"on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({workspace=\"-1\"})'"
-	},
-
-	"hyprland/window": {
-		"format": "{class}"
 	},
 
 	"clock": {
@@ -67,6 +54,7 @@
 	},
 
 	"backlight": {
+		"min-length": 7,
 		"device": "intel_backlight",
 		"on-scroll-down": "brightnessctl set 1%+",
 		"on-scroll-up": "brightnessctl set 1%-",
@@ -77,15 +65,17 @@
 	},
 
 	"wireplumber": {
+		"min-length": 7,
 		"on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+",
 		"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
 		"tooltip": false,
 		"format": "{icon} {volume}%",
-		"format-muted": "{volume} 󰝟",
+		"format-muted": "󰝟 {volume}%",
 		"format-icons": ["󰕿", "󰖀", "󰕾"]
 	},
 
 	"battery": {
+		"min-length": 7,
 		"tooltip": false,
 		"states": {
 			"p1": 20,
@@ -103,13 +93,14 @@
 	},
 
 	"power-profiles-daemon": {
-		"tooltip": false,
+		"tooltip": true,
 		"format": "{icon}",
+		"tooltip-format": "power usage",
 		"format-icons": {
 			"default": "󱐌",
-			"performance": "󰓅",
-			"balanced": "󰾅",
-			"power-saver": "󰾆"
+			"performance": "󰓅 MAX",
+			"balanced": "󰾅 MID",
+			"power-saver": "󰾆 LOW"
 		}
 	},
 }

@@ -19,15 +19,7 @@ tooltip {
 
 .module, tooltip label {
 	margin: 2px;
-	padding: 0 8px;
-}
-
-#wireplumber.muted,
-#idle_inhibitor.deactivated,
-#bluetooth.disabled,
-#network.disabled {
-	color: @diamond-dark;
-	border-color: @diamond-dark;
+	padding: 0 4px;
 }
 
 #power-profiles-daemon.power-saver { color: @aquamarine-light; }
@@ -41,9 +33,15 @@ tooltip {
 #battery.p5 { color: @peridot-neutral; }
 
 #workspaces label { color: @tourmaline-light; }
-#window label { color: @amethyst-light; }
+
 #bluetooth { color: @sapphire-light; }
+#bluetooth.disabled { color: @sapphire-dark; }
+
 #network { color: @tanzanite-light; }
+#network.disabled { color: @tanzanite-dark; }
+
 #wireplumber { color: @turquoise-light; }
+#wireplumber.muted { color: @turquoise-dark; }
+
 #backlight { color: @citrine-light; }
 #clock { color: @aquamarine-light; }
