@@ -32,7 +32,7 @@
 	"bluetooth": {
 		"tooltip": true,
 		"tooltip-format": "{device_enumerate}",
-		"tooltip-format-enumerate-connected": "{device_alias}",
+		"tooltip-format-enumerate-connected": "{device_alias} {device_battery_percentage}%",
 		"format": "{icon}",
 		"format-icons": {
 			"on": "󰂯",
