@@ -103,4 +103,24 @@
 			"power-saver": "󰾆 LOW"
 		}
 	},
+
+	"memory": {
+		"interval": 5,
+		"format": "󰍛 {percentage}%",
+	},
+
+	"cpu": {
+		"interval": 5,
+		"format": "󰘚 {usage}%",
+	},
+
+	"temperature": {
+		"tooltip": false,
+		"interval": 5,
+		"warning-threshold": 59,
+		"critical-threshold": 79,
+		"format": "󱃃 {temperatureC}°C",
+		"format-warning": "󰔏 {temperatureC}°C",
+		"format-critical": "󱃂 {temperatureC}°C",
+	}
 }
