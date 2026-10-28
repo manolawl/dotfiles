@@ -1,7 +1,7 @@
 {
 	"hyprland/workspaces": {
 		"active-only":     true,
-		"format":         " {name}",
+		"format":         "󰨇 {name}",
 		"on-scroll-up":   "hyprctl dispatch 'hl.dsp.focus({workspace=\"+1\"})'",
 		"on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({workspace=\"-1\"})'"
 	},
@@ -44,43 +44,37 @@
 	},
 
 	"network": {
-		"align": 0,
 		"interval": 15,
 		"tooltip-format": "network: {essid}\niplocal: {ipaddr}\nquality: {signalStrengthApp}",
 		"format": "{icon}",
 		"format-icons": {
 			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-			"ethernet": "󰈀",
+			"ethernet": "󰈁",
 			"disconnected": "󰤮",
-			"disabled": "󰤮"
+			"disabled": "󰤬"
 		},
 	},
 
 	"backlight": {
-		"align": 0,
-		"min-length": 7,
 		"device": "intel_backlight",
 		"on-scroll-down": "brightnessctl set 1%+",
 		"on-scroll-up": "brightnessctl set 1%-",
 		"on-click": "pkill hyprsunset || hyprsunset",
 		"tooltip": false,
-		"format": "{icon} {percent}%",
+		"format": "{icon} {percent}",
 		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
 	},
 
 	"wireplumber": {
-		"align": 0,
-		"min-length": 7,
 		"on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+",
 		"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
 		"tooltip": false,
-		"format": "{icon} {volume}%",
-		"format-muted": "󰝟 {volume}%",
+		"format": "{icon} {volume}",
+		"format-muted": "󰝟 {volume}",
 		"format-icons": ["󰕿", "󰖀", "󰕾"]
 	},
 
 	"battery": {
-		"min-length": 7,
 		"tooltip": false,
 		"states": {
 			"lvl1": 20,
@@ -89,8 +83,7 @@
 			"lvl4": 80,
 			"lvl5": 100,
 		},
-		"format":      "{icon} {capacity}%",
-		"format-time": "{H}h {M}m",
+		"format":      "{capacity} {icon}",
 		"format-icons": {
 			"default":  ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 			"charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂊", "󰂅"]
@@ -98,7 +91,6 @@
 	},
 
 	"power-profiles-daemon": {
-		"align": 0,
 		"tooltip": true,
 		"format": "{icon}",
 		"tooltip-format": "power usage",
@@ -111,22 +103,16 @@
 	},
 
 	"memory": {
-		"align": 0,
-		"min-length": 7,
 		"interval": 15,
 		"format": "󰍛 {percentage}%",
 	},
 
 	"cpu": {
-		"align": 0,
-		"min-length": 7,
 		"interval": 15,
 		"format": "󰘚 {usage}%",
 	},
 
 	"temperature": {
-		"align": 0,
-		"min-length": 7,
 		"tooltip": false,
 		"interval": 15,
 		"warning-threshold": 59,

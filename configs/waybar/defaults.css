@@ -1,6 +1,6 @@
 * {
 	font-family: "JetBrainsMono Nerd Font Propo";
-	font-size: 15pt;
+	font-size: 16pt;
 	color: #e2dff9;
 	border: none;
 	border-radius: 0;
@@ -11,7 +11,7 @@
 	margin: 0;
 	text-shadow: none;
 	box-shadow: none;
-	transition: 0;
+	transition: color 250ms;
 	-gtk-icon-shadow: none;
 	-gtk-icon-effect: none;
 }

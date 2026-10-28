@@ -8,8 +8,7 @@ window#waybar, tooltip {
 }
 
 window#waybar {
-	border-radius: 0 0 8px 8px;
-	border-width: 0 1px 1px 1px;
+	border-width: 0 0 1px 0;
 }
 
 tooltip {
@@ -18,8 +17,8 @@ tooltip {
 }
 
 .module, tooltip label {
-	margin: 2px;
-	padding: 0 4px;
+	margin: 4px;
+	padding: 0 8px;
 }
 
 #power-profiles-daemon.power-saver { color: @aquamarine-light; }
@@ -35,9 +34,11 @@ tooltip {
 #workspaces label { color: @tourmaline-light; }
 
 #bluetooth { color: @sapphire-light; }
+#bluetooth.off { color: @sapphire-neutral; }
 #bluetooth.disabled { color: @sapphire-dark; }
 
 #network { color: @tanzanite-light; }
+#network.off { color: @tanzanite-neutral; }
 #network.disabled { color: @tanzanite-dark; }
 
 #wireplumber { color: @turquoise-light; }
