@@ -10,21 +10,20 @@
 
 	"modules-left":[
 		"hyprland/workspaces",
+		"battery",
 		"memory",
-		"cpu",
 		"temperature",
 	],
 
 	"modules-center":[
-		"network",
 		"clock",
-		"bluetooth",
 	],
 
 	"modules-right":[
+		"network",
+		"bluetooth",
 		"wireplumber",
 		"backlight",
 		"power-profiles-daemon",
-		"battery",
 	]
 }

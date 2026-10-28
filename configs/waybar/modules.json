@@ -61,17 +61,17 @@
 		"on-scroll-up": "brightnessctl set 1%-",
 		"on-click": "pkill hyprsunset || hyprsunset",
 		"tooltip": false,
-		"format": "{icon} {percent}",
+		"format": "{icon}",
 		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
 	},
 
 	"wireplumber": {
-		"on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+",
+		"on-scroll-down": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+",
 		"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
 		"tooltip": false,
-		"format": "{icon} {volume}",
+		"format": "{icon}",
 		"format-muted": "󰝟 {volume}",
-		"format-icons": ["󰕿", "󰖀", "󰕾"]
+		"format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]
 	},
 
 	"battery": {
@@ -83,7 +83,7 @@
 			"lvl4": 80,
 			"lvl5": 100,
 		},
-		"format":      "{capacity} {icon}",
+		"format":      "{icon} {capacity}%",
 		"format-icons": {
 			"default":  ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 			"charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂊", "󰂅"]
@@ -91,9 +91,8 @@
 	},
 
 	"power-profiles-daemon": {
-		"tooltip": true,
+		"tooltip": false,
 		"format": "{icon}",
-		"tooltip-format": "power usage",
 		"format-icons": {
 			"default": "󱐌",
 			"performance": "󰓅",
@@ -105,11 +104,6 @@
 	"memory": {
 		"interval": 15,
 		"format": "󰍛 {percentage}%",
-	},
-
-	"cpu": {
-		"interval": 15,
-		"format": "󰘚 {usage}%",
 	},
 
 	"temperature": {
