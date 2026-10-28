@@ -61,6 +61,7 @@
 		"on-scroll-up": "brightnessctl set 1%-",
 		"on-click": "pkill hyprsunset || hyprsunset",
 		"tooltip": false,
+		"tooltip-format": "{percent}%",
 		"format": "{icon}",
 		"format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
 	},
@@ -75,7 +76,7 @@
 	},
 
 	"battery": {
-		"tooltip": false,
+		"tooltip": true,
 		"states": {
 			"lvl1": 20,
 			"lvl2": 40,
@@ -83,7 +84,8 @@
 			"lvl4": 80,
 			"lvl5": 100,
 		},
-		"format":      "{icon} {capacity}%",
+		"format":         "{icon}",
+		"tooltip-format": "{capacity}%",
 		"format-icons": {
 			"default":  ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 			"charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂊", "󰂅"]

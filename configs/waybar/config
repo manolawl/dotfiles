@@ -10,7 +10,6 @@
 
 	"modules-left":[
 		"hyprland/workspaces",
-		"battery",
 		"memory",
 		"temperature",
 	],
@@ -25,5 +24,6 @@
 		"wireplumber",
 		"backlight",
 		"power-profiles-daemon",
+		"battery",
 	]
 }
