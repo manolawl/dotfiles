@@ -2,13 +2,13 @@ hl.config({
 	general = {
 		allow_tearing = true,
 
-		gaps_in =  4,
-		gaps_out = 8,
+		gaps_in =  0,
+		gaps_out = 16,
 
 		border_size = 1,
 		col = {
-			active_border =   '#e2dff9',
-			inactive_border = '#71707d',
+			active_border =   '#e2dff9a6',
+			inactive_border = '#71707da6',
 		}
 	},
 
