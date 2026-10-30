@@ -15,7 +15,7 @@ hl.config({
 		repeat_rate =   50,  -- keys per second
 
 		touchpad = {
-			natural_scroll = true, -- scrolls opposite to finger swipe
+			natural_scroll = false, -- scrolls opposite to finger swipe
 			scroll_factor =  0.75,
 		},
 	},
