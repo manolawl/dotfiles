@@ -12,3 +12,4 @@ require('./config/system/environment')
 require('./config/system/events')
 require('./config/system/permissions')
 require('./config/system/rules')
+
