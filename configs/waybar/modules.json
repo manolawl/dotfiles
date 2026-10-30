@@ -51,14 +51,14 @@
 			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
 			"ethernet": "󰈁",
 			"disconnected": "󰤮",
-			"disabled": "󰤬"
+			"disabled": "󰤮"
 		},
 	},
 
 	"backlight": {
 		"device": "intel_backlight",
-		"on-scroll-up": "brightnessctl set 10%+",
-		"on-scroll-down": "brightnessctl set 10%-",
+		"on-scroll-up": "brightnessctl set 20%+ && ddcutil setvcp 10 + 20 -b 18 --sleep-multiplier=0.1 --noverify",
+		"on-scroll-down": "brightnessctl set 20%- && ddcutil setvcp 10 - 20 -b 18 --sleep-multiplier=0.1 --noverify",
 		"on-click": "pkill hyprsunset || hyprsunset",
 		"tooltip": false,
 		"tooltip-format": "{percent}%",
@@ -71,7 +71,6 @@
 		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
 		"tooltip": false,
 		"format": "{icon}",
-		"format-muted": "󱃓",
 		"format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]
 	},
 

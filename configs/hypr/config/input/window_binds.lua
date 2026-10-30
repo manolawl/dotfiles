@@ -10,8 +10,8 @@ local VimR = 'L'
 
 local Mousing = 'mouse:272'   -- left click
 
-local PrevWorkspace = 'W'
-local NextWorkspace = 'S'
+local PrevWorkspace = 'P'
+local NextWorkspace = 'N'
 
 local PixelOffset = 8
 
