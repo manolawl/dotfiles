@@ -57,3 +57,10 @@ hl.layer_rule({
 	blur_popups = true,
 	ignore_alpha = 0.2,
 })
+
+-- disabling visual clutter for screenshot
+hl.layer_rule({
+	match = { namespace = 'selection' },
+	blur = false,
+	xray = false,
+})

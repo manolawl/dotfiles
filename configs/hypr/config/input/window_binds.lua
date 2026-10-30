@@ -65,7 +65,7 @@ local layouts = {
 for key, layout in pairs(layouts) do
 	hl.bind(LayoutMod .. key, function()
 		if hl.get_config('general.layout') == layout then
-			hl.exec_cmd('hyprctl reload')
+			hl.dispatch(hl.dsp.reload_config())
 		end
 		hl.config({ ['general.layout'] = layout })
 	end)
@@ -85,7 +85,7 @@ if hl.get_config('dwindle') then
 end
 
 -- -- >> DECORATION TOGGLE
-hl.bind('SUPER + A', function()
+hl.bind('SUPER + D', function()
 	if hl.get_config('animations.enabled') then
 		hl.notification.create({ text = 'Decorations Disabled', font_size = 16, timeout = 3000 })
 		hl.config({
@@ -94,9 +94,10 @@ hl.bind('SUPER + A', function()
 			['decoration.rounding'] = 0,
 			['general.gaps_in'] = 0,
 			['general.gaps_out'] = 0,
+			['general.border_size'] = 0,
 		})
 	else
-		hl.exec_cmd('hyprctl reload')
+		hl.dispatch(hl.dsp.reload_config())
 		hl.notification.create({ text = 'Decorations Enabled', font_size = 16, timeout = 3000 })
 	end
 end)
