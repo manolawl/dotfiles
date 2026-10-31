@@ -1,7 +1,7 @@
 require('./config/input/devices')
-require('./config/input/fn_binds')
-require('./config/input/launch_binds')
-require('./config/input/window_binds')
+require('./config/input/fn')
+require('./config/input/run')
+require('./config/input/wm')
 
 require('./config/appearance/animations')
 require('./config/appearance/monitors')

@@ -8,7 +8,7 @@ local VimD = 'J'
 local VimU = 'K'
 local VimR = 'L'
 
-local Mousing = 'mouse:272'   -- left click
+local MainMouseBtn = 'mouse:272'   -- left click
 
 local PrevWorkspace = 'P'
 local NextWorkspace = 'N'
@@ -38,8 +38,8 @@ for _, face in ipairs(faces) do
 	end, { repeating = true })
 end
 
-hl.bind(ResizeMod .. Mousing, hl.dsp.window.resize(), { mouse = true })
-hl.bind(MoveMod ..   Mousing, hl.dsp.window.drag(),   { mouse = true })
+hl.bind(ResizeMod .. MainMouseBtn, hl.dsp.window.resize(), { mouse = true })
+hl.bind(MoveMod ..   MainMouseBtn, hl.dsp.window.drag(),   { mouse = true })
 
 -- -- >> WORKSPACE BINDS
 local workspaces = {
