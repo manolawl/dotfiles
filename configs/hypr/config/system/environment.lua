@@ -1,5 +1,5 @@
 -- -- >> THEMiNG
-hl.env('GTK_THEME',        'Adapta-Nokto')
+hl.env('GTK_THEME',        'deepin-dark')
 hl.env('XCURSOR_THEME',    'capitaine-cursors')
 hl.env('XCURSOR_SIZE',     '32')
 --hl.env('HYPRCURSOR_SIZE',  '32')

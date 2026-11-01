@@ -72,9 +72,9 @@ for key, layout in pairs(layouts) do
 end
 
 -- -- >> WINDOW ACTIONS
-hl.bind('SUPER + Q',   hl.dsp.window.close())
-hl.bind('SUPER + F11', hl.dsp.window.fullscreen({ action = 'toggle' }))
-hl.bind('F11',         hl.dsp.window.float({ action = 'toggle' }))
+hl.bind('SUPER + Q',         hl.dsp.window.close())
+hl.bind('SUPER + F',         hl.dsp.window.fullscreen({ action = 'toggle' }))
+hl.bind('SUPER + SHIFT + F', hl.dsp.window.float({ action = 'toggle' }))
 
 -- -- >> SPECIAL WORKSPACES
 hl.bind('CTRL + ALT + SHIFT + G', hl.dsp.workspace.toggle_special('gaming'))

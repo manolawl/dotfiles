@@ -18,6 +18,15 @@ hl.config({
 			natural_scroll = false, -- scrolls opposite to finger swipe
 			scroll_factor =  0.75,
 		},
+
+		tablet = {
+			output = 'HDMI-A-2',
+		},
+
+		tablettool = {
+			pressure_range_min = 0,
+			pressure_range_max = 1,
+		}
 	},
 
 	cursor = {
