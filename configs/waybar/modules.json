@@ -1,9 +1,15 @@
 {
 	"hyprland/workspaces": {
-		"active-only":     true,
-		"format":         "󰨇 {name}",
-		"on-scroll-down":   "hyprctl dispatch 'hl.dsp.focus({workspace=\"+1\"})'",
-		"on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({workspace=\"-1\"})'"
+		"format": "{icon}",
+		"format-icons": {
+			"active": "󰋘",
+			"default": "󰋙",
+		},
+
+		"persistent-workspaces": {
+			"eDP-1": 3,
+			"HDMI-A-2":  1,
+		}
 	},
 
 	"clock": {
@@ -101,19 +107,4 @@
 			"power-saver": "󰾆"
 		}
 	},
-
-	"memory": {
-		"interval": 15,
-		"format": "󰍛 {percentage}%",
-	},
-
-	"temperature": {
-		"tooltip": false,
-		"interval": 15,
-		"warning-threshold": 59,
-		"critical-threshold": 79,
-		"format": "󱃃 {temperatureC}°C",
-		"format-warning": "󰔏 {temperatureC}°C",
-		"format-critical": "󱃂 {temperatureC}°C",
-	}
 }

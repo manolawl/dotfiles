@@ -6,9 +6,6 @@ local Browser =  'zen-browser'
 local FileMan =  'kitty yazi'
 
 local SysMon =       'pkill btop || kitty btop'
-local AudioControl = 'pkill wiremix || kitty wiremix -v output'
-local Network =      'pkill impala || kitty impala'
-local Bluetooth =    'pkill bluetui || kitty bluetui'
 
 local Clipboard =   'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
 local Launcher =    'rofi -show drun'
@@ -22,10 +19,6 @@ local programs = {
 	{ cmd = Terminal, keybind = AppMod .. 'T' },
 	{ cmd = Browser,  keybind = AppMod .. 'B' },
 	{ cmd = FileMan,  keybind = AppMod .. 'E' },
-
-	{ cmd = Network,      keybind = AppMod .. '1', floating = true },
-	{ cmd = Bluetooth,    keybind = AppMod .. '2', floating = true },
-	{ cmd = AudioControl, keybind = AppMod .. '3', floating = true },
 
 	{ cmd = Clipboard,   keybind = MenuMod .. 'V' },
 	{ cmd = Launcher,    keybind = MenuMod .. 'Space' },

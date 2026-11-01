@@ -10,8 +10,7 @@ local VimR = 'L'
 
 local MainMouseBtn = 'mouse:272'   -- left click
 
-local PrevWorkspace = 'P'
-local NextWorkspace = 'N'
+local WorkspaceNum = 3
 
 local PixelOffset = 8
 
@@ -42,14 +41,10 @@ hl.bind(ResizeMod .. MainMouseBtn, hl.dsp.window.resize(), { mouse = true })
 hl.bind(MoveMod ..   MainMouseBtn, hl.dsp.window.drag(),   { mouse = true })
 
 -- -- >> WORKSPACE BINDS
-local workspaces = {
-	{ interval = '+1', key = NextWorkspace },
-	{ interval = '-1', key = PrevWorkspace },
-}
-for _, ws in ipairs(workspaces) do
-	local adj_ws = { workspace = ws.interval }
-	hl.bind(FocusMod .. ws.key, hl.dsp.focus(adj_ws))
-	hl.bind(MoveMod ..  ws.key, hl.dsp.window.move(adj_ws))
+for i = 1, WorkspaceNum do
+	local ws = i % WorkspaceNum + 1
+	hl.bind(FocusMod .. ws, hl.dsp.focus(       { workspace = ws } ))
+	hl.bind(MoveMod ..  ws, hl.dsp.window.move( { workspace = ws } ))
 end
 
 -- -- >> GESTURES

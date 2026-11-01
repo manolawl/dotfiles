@@ -10,8 +10,6 @@
 
 	"modules-left":[
 		"hyprland/workspaces",
-		"memory",
-		"temperature",
 	],
 
 	"modules-center":[
