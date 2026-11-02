@@ -1,34 +1,23 @@
-local LayoutMod = 'ALT + SHIFT + '
-local FocusMod =  'SUPER + '
-local MoveMod =   'SUPER + CTRL + '
-local ResizeMod = 'SUPER + SHIFT + '
-
-local VimL = 'H'
-local VimD = 'J'
-local VimU = 'K'
-local VimR = 'L'
-
-local MainMouseBtn = 'mouse:272'   -- left click
-
-local WorkspaceNum = 3
-
-local PixelOffset = 8
-
--- -- >> WINDOW BINDS
-local faces = {
-	{ symbol = 'l', key = VimL, x = -PixelOffset, y =  0 },
-	{ symbol = 'd', key = VimD, x =  0,           y =  PixelOffset },
-	{ symbol = 'u', key = VimU, x =  0,           y = -PixelOffset },
-	{ symbol = 'r', key = VimR, x =  PixelOffset, y =  0 },
+local vectors = {
+	{ dir = 'l', key = DirL, x = -PixelChange, y = 0 },
+	{ dir = 'd', key = DirD, x =  0,      y =  PixelChange },
+	{ dir = 'u', key = DirU, x =  0,      y = -PixelChange },
+	{ dir = 'r', key = DirR, x =  PixelChange, y = 0 },
 }
 
-for _, face in ipairs(faces) do
-	local direction = { direction = face.symbol }
-	local offset =    { x = face.x, y = face.y, relative = true }
+local layouts = {
+	S = 'scrolling',
+	D = 'dwindle',
+	M = 'master',
+}
 
-	hl.bind(ResizeMod .. face.key, hl.dsp.window.resize(offset), { repeating = true })
-	hl.bind(FocusMod ..  face.key, hl.dsp.focus(direction),      { repeating = true })
-	hl.bind(MoveMod ..   face.key, function()
+for _, vector in ipairs(vectors) do
+	local direction = { direction = vector.dir }
+	local offset =    { x = vector.x, y = vector.y, relative = true }
+
+	hl.bind(ResizeMod .. vector.key, hl.dsp.window.resize(offset), { repeating = true })
+	hl.bind(FocusMod ..  vector.key, hl.dsp.focus(direction),      { repeating = true })
+	hl.bind(MoveMod ..   vector.key, function()
 		if not hl.get_active_window().floating then
 			hl.dispatch(hl.dsp.window.move(direction))
 		else
@@ -37,62 +26,49 @@ for _, face in ipairs(faces) do
 	end, { repeating = true })
 end
 
-hl.bind(ResizeMod .. MainMouseBtn, hl.dsp.window.resize(), { mouse = true })
-hl.bind(MoveMod ..   MainMouseBtn, hl.dsp.window.drag(),   { mouse = true })
-
--- -- >> WORKSPACE BINDS
-for i = 1, WorkspaceNum do
-	local ws = i % WorkspaceNum + 1
-	hl.bind(FocusMod .. ws, hl.dsp.focus(       { workspace = ws } ))
-	hl.bind(MoveMod ..  ws, hl.dsp.window.move( { workspace = ws } ))
-end
-
--- -- >> GESTURES
-hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
-hl.gesture({ fingers = 3, direction = 'vertical',   action = 'workspace' })
-
--- -- >> LAYOUT TOGGLES
-local layouts = {
-	S = 'scrolling',
-	D = 'dwindle',
-	M = 'master',
-}
 for key, layout in pairs(layouts) do
 	hl.bind(LayoutMod .. key, function()
-		if hl.get_config('general.layout') == layout then
-			hl.dispatch(hl.dsp.reload_config())
-		end
 		hl.config({ ['general.layout'] = layout })
 	end)
 end
 
--- -- >> WINDOW ACTIONS
+for i = 1, WorkspaceTotal do
+	local workspaceNum = i % WorkspaceTotal + 1
+
+	hl.bind(FocusMod .. workspaceNum, hl.dsp.focus(       { workspace = workspaceNum } ))
+	hl.bind(MoveMod ..  workspaceNum, hl.dsp.window.move( { workspace = workspaceNum } ))
+end
+
+hl.bind(ResizeMod .. MainMouseBtn, hl.dsp.window.resize(), { mouse = true })
+hl.bind(MoveMod ..   MainMouseBtn, hl.dsp.window.drag(),   { mouse = true })
+
 hl.bind('SUPER + Q',         hl.dsp.window.close())
+hl.bind('SUPER + R',         hl.dsp.reload_config())
 hl.bind('SUPER + F',         hl.dsp.window.fullscreen({ action = 'toggle' }))
 hl.bind('SUPER + SHIFT + F', hl.dsp.window.float({ action = 'toggle' }))
 
--- -- >> SPECIAL WORKSPACES
 hl.bind('CTRL + ALT + SHIFT + G', hl.dsp.workspace.toggle_special('gaming'))
 
--- -- >> DWINDLE BINDS
-if hl.get_config('dwindle') then
-	hl.bind('SUPER + S', hl.dsp.layout('togglesplit'))
-end
-
--- -- >> DECORATION TOGGLE
 hl.bind('SUPER + D', function()
 	if hl.get_config('animations.enabled') then
-		hl.notification.create({ text = 'Decorations Disabled', font_size = 16, timeout = 3000 })
+		hl.notification.create({ text = 'Decorations Disabled', font_size = 16, timeout = 1500 })
+		hl.exec_cmd('pkill swaybg')
 		hl.config({
 			['animations.enabled'] = false,
 			['decoration.blur.enabled'] = false,
 			['decoration.rounding'] = 0,
 			['general.gaps_in'] = 0,
 			['general.gaps_out'] = 0,
-			['general.border_size'] = 0,
 		})
 	else
-		hl.dispatch(hl.dsp.reload_config())
-		hl.notification.create({ text = 'Decorations Enabled', font_size = 16, timeout = 3000 })
+		hl.notification.create({ text = 'Decorations Enabled', font_size = 16, timeout = 1500 })
+		hl.exec_cmd('swaybg -m fill -i ~/pictures/backgrounds/background.png')
+		hl.config({
+			['animations.enabled'] = true,
+			['decoration.blur.enabled'] = true,
+			['decoration.rounding'] = RoundValue,
+			['general.gaps_in'] = InnerGap,
+			['general.gaps_out'] = OuterGap,
+		})
 	end
 end)

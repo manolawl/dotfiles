@@ -63,8 +63,8 @@
 
 	"backlight": {
 		"device": "intel_backlight",
-		"on-scroll-up": "brightnessctl set 20%+ && ddcutil setvcp 10 + 20 -b 18 --sleep-multiplier=0.1 --noverify",
-		"on-scroll-down": "brightnessctl set 20%- && ddcutil setvcp 10 - 20 -b 18 --sleep-multiplier=0.1 --noverify",
+		"on-scroll-down": "brightnessctl set 20%+ && ddcutil setvcp 10 + 20 -b 18 --sleep-multiplier=0.1 --noverify",
+		"on-scroll-up": "brightnessctl set 20%- && ddcutil setvcp 10 - 20 -b 18 --sleep-multiplier=0.1 --noverify",
 		"on-click": "pkill hyprsunset || hyprsunset",
 		"tooltip": false,
 		"tooltip-format": "{percent}%",
@@ -73,8 +73,8 @@
 	},
 
 	"wireplumber": {
-		"on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
-		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+		"on-scroll-down": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
 		"tooltip": false,
 		"format": "{icon}",
 		"format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]

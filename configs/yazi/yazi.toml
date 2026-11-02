@@ -4,4 +4,4 @@ show_hidden = true
 sort_reverse = true
 sort_by = "extension"
 linemode = "mtime"
-tab_size = 2
+tab_size = 4

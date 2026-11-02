@@ -1,9 +1,10 @@
 hl.config({
 	general = {
 		allow_tearing = true,
+		resize_on_border = false,
 
-		gaps_in =  8,
-		gaps_out = 16,
+		gaps_in =  InnerGap,
+		gaps_out = OuterGap,
 
 		border_size = 1,
 		col = {
@@ -16,17 +17,17 @@ hl.config({
 		shadow = { enabled = false },
 		glow =   { enabled = false },
 
-		rounding =       8,
-		rounding_power = 2,
-
 		active_opacity =   1,
 		inactive_opacity = 1,
+
+		rounding =       RoundValue,
+		rounding_power = RoundPower,
 
 		blur = {
 			enabled =    true,
 			xray =       false,
-			size =       4,
-			passes =     2,
+			size =       BlurSize,
+			passes =     BlurPass,
 			noise =      0,
 			vibrancy =   0.25,
 			brightness = 0.50,

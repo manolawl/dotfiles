@@ -17,7 +17,6 @@ hl.window_rule({
 	},
 })
 
-
 hl.window_rule({ match = { class = 'wev' }, float = true })
 hl.window_rule({ match = { class = 'hyprland-share-picker' }, float = true })
 

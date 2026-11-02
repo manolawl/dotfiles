@@ -1,27 +1,20 @@
-local AppMod =  'SUPER + '
-local MenuMod = 'ALT + '
-
 local Terminal = 'kitty'
 local Browser =  'zen-browser'
 local FileMan =  'kitty yazi'
-
-local SysMon =       'pkill btop || kitty btop'
-
-local Clipboard =   'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
-local Launcher =    'rofi -show drun'
-
+local SysMon = 'pkill btop || kitty btop'
+local Clipboard = 'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'
+local Launcher =  'rofi -show drun'
 local RegCapture =  'hyprshot -m region -o ~/pictures/screenshots'
 local WinCapture =  'hyprshot -m window -o ~/pictures/screenshots'
 local ColorPicker = 'hyprpicker -a -f hex -n -u 256 -s 10'
 
--- -- >> LAUNCHING PROGRAMS
 local programs = {
 	{ cmd = Terminal, keybind = AppMod .. 'T' },
 	{ cmd = Browser,  keybind = AppMod .. 'B' },
 	{ cmd = FileMan,  keybind = AppMod .. 'E' },
 
-	{ cmd = Clipboard,   keybind = MenuMod .. 'V' },
-	{ cmd = Launcher,    keybind = MenuMod .. 'Space' },
+	{ cmd = Clipboard, keybind = MenuMod .. 'V' },
+	{ cmd = Launcher,  keybind = MenuMod .. 'Space' },
 
 	{ cmd = RegCapture,  keybind = 'Print' },
 	{ cmd = WinCapture,  keybind = 'SHIFT + Print' },
