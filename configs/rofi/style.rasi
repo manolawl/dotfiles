@@ -40,7 +40,7 @@ prompt {
 }
 
 entry {
-	placeholder: "search here;
+	placeholder: "search here";
 	placeholder-color: @fg2;
 	text-color: @fg0;
 }
