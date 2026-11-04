@@ -37,7 +37,7 @@ require('./config/input/run')
 require('./config/input/wm')
 
 require('./config/appearance/animations')
-require('./config/appearance/monitors')
+require('./config/appearance/display')
 require('./config/appearance/layouts')
 require('./config/appearance/windows')
 

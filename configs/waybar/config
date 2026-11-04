@@ -5,6 +5,7 @@
 	"expand-center": true,
 	"fixed-center": true,
 	"reload_on_style_change": true,
+	"output": "eDP-1",
 
 	"include": "modules.json",
 
