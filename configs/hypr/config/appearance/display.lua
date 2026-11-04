@@ -2,7 +2,7 @@ hl.config({
 	['render.direct_scanout'] = 0, -- 0=off 1=on 2=auto
 	['render.cm_auto_hdr'] =    0, -- 0=off 1=hdr 2=hdredid
 	['quirks.prefer_hdr'] =     0, -- 0=off 1=always 2=gamescope
-	['misc.vrr'] =              1, -- variable refresh rate
+	['misc.vrr'] =              0, -- variable refresh rate, disabled because of jittering
 	['general.allow_tearing'] = true, -- screen tearing
 })
 
