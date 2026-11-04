@@ -20,8 +20,8 @@ hl.window_rule({
 hl.window_rule({
 	match = { class = 'wev' },
 	float = true,
-	size = { 'window_w * 0.1', 'window_h * 0.1' },
-	move = { 'monitor_w * 0.75', 'monitor_h * 0.75' }
+	size = { 'monitor_w * 0.02', 'monitor_w * 0.02' },
+	move = { 'monitor_w * 0.5 - monitor_w * 0.02 / 2', 'monitor_h * 0.5 - monitor_w * 0.02 / 2' }
 
 })
 
@@ -33,14 +33,21 @@ hl.window_rule({
 	float = true,
 	pin = true,
 	size = { 'monitor_w * 0.25', 'monitor_h * 0.25' },
-	move = { 'monitor_w * 0.75 - ' ..OuterGap, 'monitor_h * 0.75 - ' ..OuterGap }
+	move = { 'monitor_w * 0.75 - ' ..OuterGap - InnerGap, 'monitor_h * 0.75 - ' ..OuterGap }
 })
 
 hl.window_rule({
-	match = { title = 'xdg-desktop-portal-gtk' },
+	match = { class = 'xdg-desktop-portal-gtk' },
 	float = true,
-	size = { 'monitor_w * 0.90', 'monitor_h * 0.50' },
-	move = { 'monitor_w', 'monitor_h' }
+	size = { 'monitor_w * 0.5', 'monitor_h * 0.5' },
+	move = { OuterGap + InnerGap, OuterGap + 37 }
+})
+
+hl.window_rule({
+	match = { title = 'Select file to open' },
+	float = true,
+	size = { 'monitor_w * 0.5', 'monitor_h * 0.5' },
+	move = { OuterGap + InnerGap, OuterGap + 37 }
 })
 
 -- -- -- >> STEAM

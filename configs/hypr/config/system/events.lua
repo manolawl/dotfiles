@@ -12,5 +12,6 @@ hl.on('config.reloaded', function ()
 	hl.exec_cmd('killall -SIGUSR2 waybar')
 end)
 
-hl.on('monitor.added',   function() hl.notification.create({ text = 'Monitor Added',   font_size = 16, timeout = 1500 }) end)
-hl.on('monitor.removed', function() hl.notification.create({ text = 'Monitor Removed', font_size = 16, timeout = 1500 }) end)
+hl.on('monitor.added',   function() notify('Monitor Added!',   18, '#ff60ff') end)
+hl.on('monitor.removed', function() notify('Monitor Removed!', 18, '#ff60ff') end)
+
