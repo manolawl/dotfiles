@@ -56,7 +56,6 @@ hl.window_rule({
 		workspace = 'special:gaming',
 		float =     true
 	},
-	center =          true,
 	fullscreen =      false,
 	confine_pointer = false
 })
