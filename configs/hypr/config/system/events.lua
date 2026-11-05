@@ -10,6 +10,7 @@ end)
 
 hl.on('config.reloaded', function ()
 	hl.exec_cmd('killall -SIGUSR2 waybar')
+	hl.exec_cmd('hyprsunset')
 end)
 
 hl.on('monitor.added',   function() notify('Monitor Added!',   18, '#ff60ff') end)
