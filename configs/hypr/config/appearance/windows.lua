@@ -40,6 +40,7 @@ hl.config({
 		disable_hyprland_logo =    true,
 		disable_splash_rendering = true,
 		force_default_wallpaper =  0,
+		background_color =         '#000000', --when no wallpaper
 	},
 
 	xwayland = {
