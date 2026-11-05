@@ -67,9 +67,9 @@ hl.workspace_rule({
 	gaps_out = 0,
 })
 hl.window_rule({ match = { initial_class = 'steam', }, workspace = 'special:gaming' })
+hl.window_rule({ match = { class =         'steam', }, workspace = 'special:gaming' })
 hl.window_rule({ match = { initial_title = 'Steam', }, workspace = 'special:gaming' })
-hl.window_rule({ match = { class = 'steam', }, workspace = 'special:gaming' })
-hl.window_rule({ match = { title = 'Steam', }, workspace = 'special:gaming' })
+hl.window_rule({ match = { title =         'Steam', }, workspace = 'special:gaming' })
 
 -- blur for non-window layers
 hl.layer_rule({
