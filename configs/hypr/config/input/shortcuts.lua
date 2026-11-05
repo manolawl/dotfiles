@@ -4,7 +4,7 @@ hl.bind(AppMod .. 'E', hl.dsp.exec_cmd('kitty yazi'))
 hl.bind(AppMod .. 'C', hl.dsp.exec_cmd('hyprpicker -a -f hex -n -u 256 -s 10'))
 
 hl.bind(MenuMod .. 'V',     hl.dsp.exec_cmd('cliphist list | rofi -dmenu | cliphist decode | wl-copy'))
-hl.bind(MenuMod .. 'Space', hl.dsp.exec_cmd('rofi -show drun'))
+hl.bind(MenuMod .. 'Space', hl.dsp.exec_cmd('rofi -show drun -show-icons'))
 
 hl.bind('Print',             hl.dsp.exec_cmd('hyprshot -m region -o ~/pictures/screenshots'))
 hl.bind('XF86Presentation',  hl.dsp.exec_cmd('kitty btop'))
