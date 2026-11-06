@@ -4,6 +4,7 @@
 	fg0: #e2dff9;
 	fg1: #ff60ae;
 	fg2: #4b4074;
+	fg3: #71707d;
 
 	accent: #4b407459;
 
@@ -41,7 +42,7 @@ prompt {
 
 entry {
 	placeholder: "search here";
-	placeholder-color: @fg2;
+	placeholder-color: @fg3;
 	text-color: @fg0;
 }
 
