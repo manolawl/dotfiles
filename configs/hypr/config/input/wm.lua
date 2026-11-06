@@ -1,19 +1,27 @@
+local ActionMod = 'SUPER + '
+local MoveMod =   'SUPER + CTRL + '
+local ResizeMod = 'SUPER + SHIFT + '
+local FocusMod =  'SUPER + '
+local LayoutMod = 'ALT + SHIFT + '
+local StepSize = 20 --how many pixels to move or resize via keybinds
+local LeftClick = 'mouse:272' --left click
+
 --binding window movement, resize, and focus to vim motions
 local directions = {
-	{ face = 'left',  key = 'H', x = -StepSize, y =  0 },
-	{ face = 'down',  key = 'J', x =  0,        y =  StepSize },
-	{ face = 'up',    key = 'K', x =  0,        y = -StepSize },
-	{ face = 'right', key = 'L', x =  StepSize, y =  0 },
+	{ orientation = 'left',  key = 'H', x = -StepSize, y =  0 },
+	{ orientation = 'down',  key = 'J', x =  0,        y =  StepSize },
+	{ orientation = 'up',    key = 'K', x =  0,        y = -StepSize },
+	{ orientation = 'right', key = 'L', x =  StepSize, y =  0 },
 }
 for _, direction in ipairs(directions) do
-	local face = { direction = direction.face }
+	local orientation = { direction = direction.orientation }
 	local step = { x = direction.x, y = direction.y, relative = true }
 
 	hl.bind(ResizeMod .. direction.key, hl.dsp.window.resize(step), { repeating = true })
-	hl.bind(FocusMod ..  direction.key, hl.dsp.focus(face),         { repeating = true })
+	hl.bind(FocusMod ..  direction.key, hl.dsp.focus(orientation),  { repeating = true })
 	hl.bind(MoveMod ..   direction.key, function()
 		if not hl.get_active_window().floating then
-			hl.dispatch(hl.dsp.window.move(face))
+			hl.dispatch(hl.dsp.window.move(orientation))
 		else
 			hl.dispatch(hl.dsp.window.move(step))
 		end
@@ -37,8 +45,8 @@ hl.bind('CTRL + ALT + SHIFT + G', hl.dsp.workspace.toggle_special('gaming'))
 hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
 hl.gesture({ fingers = 3, direction = 'vertical',   action = 'workspace' })
 
-hl.bind(ResizeMod .. MainMouseBtn, hl.dsp.window.resize(), { mouse = true })
-hl.bind(MoveMod ..   MainMouseBtn, hl.dsp.window.drag(),   { mouse = true })
+hl.bind(ResizeMod .. LeftClick, hl.dsp.window.resize(), { mouse = true })
+hl.bind(MoveMod ..   LeftClick, hl.dsp.window.drag(),   { mouse = true })
 
 hl.bind(ActionMod .. 'R',     hl.dsp.reload_config())
 hl.bind(ActionMod .. 'Q',     hl.dsp.window.close())

@@ -1,12 +1,12 @@
 hl.window_rule({
-	name =           'suppress_maximize_events',
-	match =          { class = '.*' },
+	name =  'suppress_maximize_events',
+	match = { class = '.*' },
+
 	suppress_event = 'maximize',
 })
 
 hl.window_rule({
-	name =             'fix_xwayland_drags',
-	no_initial_focus = true,
+	name = 'fix_xwayland_drags',
 	match = {
 		class =      '^$',
 		title =      '^$',
@@ -15,14 +15,16 @@ hl.window_rule({
 		fullscreen = false,
 		pin =        false,
 	},
+
+	no_initial_focus = true,
 })
 
 hl.window_rule({
 	match = { class = 'wev' },
-	float = true,
-	size = { 'monitor_w * 0.02', 'monitor_w * 0.02' },
-	move = { 'monitor_w * 0.5 - monitor_w * 0.02 / 2', 'monitor_h * 0.5 - monitor_w * 0.02 / 2' }
 
+	float = true,
+	center = true,
+	size = { 'monitor_w * 0.02', 'monitor_w * 0.02' },
 })
 
 hl.window_rule({ match = { class = 'hyprland-share-picker' }, float = true })
@@ -33,14 +35,14 @@ hl.window_rule({
 	float = true,
 	pin = true,
 	size = { 'monitor_w * 0.25', 'monitor_h * 0.25' },
-	move = { 'monitor_w * 0.75 - ' ..OuterGap - InnerGap, 'monitor_h * 0.75 - ' ..OuterGap }
+	move = { 'monitor_w * 0.75 - ' .. OuterGap - InnerGap, 'monitor_h * 0.75 - ' .. OuterGap }
 })
 
 hl.window_rule({
 	match = { class = 'xdg-desktop-portal-gtk' },
 	float = true,
 	size = { 'monitor_w * 0.5', 'monitor_h * 0.5' },
-	move = { OuterGap + InnerGap, OuterGap + 37 }
+	move = { OuterGap + InnerGap, 'monitor_h * 0.5 - ' .. OuterGap }
 })
 
 hl.window_rule({

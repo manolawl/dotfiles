@@ -1,23 +1,3 @@
---modifiers
-FocusMod =  'SUPER + '
-AppMod =    'SUPER + '
-ActionMod = 'SUPER + '
-MoveMod =   'SUPER + CTRL + '
-ResizeMod = 'SUPER + SHIFT + '
-MenuMod =   'ALT + '
-LayoutMod = 'ALT + SHIFT + '
-
---vim motions
-LeftKey =  'H'
-DownKey =  'J'
-UpKey =    'K'
-RightKey = 'L'
-
---button used when mouse in hand (used only in moving and resizing windows)
-MainMouseBtn = 'mouse:272' --left click
-
-StepSize = 20 --how many pixels to move or resize via keybinds
-
 --pixel widths between windows and monitor edges respectively
 InnerGap = 8
 OuterGap = 16

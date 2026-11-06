@@ -1,3 +1,6 @@
+local AppMod =  'SUPER + '
+local MenuMod = 'ALT + '
+
 hl.bind(AppMod .. 'T', hl.dsp.exec_cmd('kitty'))
 hl.bind(AppMod .. 'B', hl.dsp.exec_cmd('zen-browser'))
 hl.bind(AppMod .. 'E', hl.dsp.exec_cmd('kitty yazi'))
@@ -11,8 +14,8 @@ hl.bind('XF86Presentation',  hl.dsp.exec_cmd('kitty btop'))
 hl.bind('switch:Lid Switch', hl.dsp.exec_cmd('hyprlock'), { locked = true })
 
 local function set_backlight(sign, num)
-	hl.exec_cmd('brightnessctl set ' ..num.. '%' ..sign)
-	hl.exec_cmd('ddcutil setvcp 10 ' ..sign.. ' ' ..num.. ' -b 18 --sleep-multiplier=0.1 --noverify')
+	hl.exec_cmd('brightnessctl set ' .. num .. '%' .. sign)
+	hl.exec_cmd('ddcutil setvcp 10 ' .. sign .. ' ' .. num .. ' -b 18 --sleep-multiplier=0.1 --noverify')
 end
 
 hl.bind('XF86MonBrightnessUp',   function() set_backlight('+', 20) end)
