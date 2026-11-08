@@ -1,10 +1,10 @@
 local ActionMod = 'SUPER + '
-local MoveMod =   'SUPER + CTRL + '
+local LayoutMod = 'SUPER + ALT + '
 local ResizeMod = 'SUPER + SHIFT + '
+local LeftClick = 'mouse:272'
 local FocusMod =  'SUPER + '
-local LayoutMod = 'ALT + SHIFT + '
-local StepSize = 20 --how many pixels to move or resize via keybinds
-local LeftClick = 'mouse:272' --left click
+local StepSize =  20 --how many pixels to move or resize via keybinds
+local MoveMod =   'SUPER + CTRL + '
 
 --binding window movement, resize, and focus to vim motions
 local directions = {
@@ -44,6 +44,7 @@ hl.bind('CTRL + ALT + SHIFT + G', hl.dsp.workspace.toggle_special('gaming'))
 
 hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
 hl.gesture({ fingers = 3, direction = 'vertical',   action = 'workspace' })
+--hl.gesture({ fingers = 2, direction = 'swipe',   action = 'resize' })
 
 hl.bind(ResizeMod .. LeftClick, hl.dsp.window.resize(), { mouse = true })
 hl.bind(MoveMod ..   LeftClick, hl.dsp.window.drag(),   { mouse = true })

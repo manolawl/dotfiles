@@ -27,6 +27,7 @@ hl.window_rule({
 	size = { 'monitor_w * 0.02', 'monitor_w * 0.02' },
 })
 
+--screen share
 hl.window_rule({ match = { class = 'hyprland-share-picker' }, float = true })
 
 -- zen browser PiP
@@ -38,6 +39,7 @@ hl.window_rule({
 	move = { 'monitor_w * 0.75 - ' .. OuterGap - InnerGap, 'monitor_h * 0.75 - ' .. OuterGap }
 })
 
+--file picker
 hl.window_rule({
 	match = { class = 'xdg-desktop-portal-gtk' },
 	float = true,
@@ -54,13 +56,10 @@ hl.window_rule({
 
 -- -- -- >> STEAM
 hl.window_rule({
-	match = {
-		workspace = 'special:gaming',
-		float =     true
-	},
-	fullscreen =      false,
-	confine_pointer = false
+	match = { workspace = 'special:gaming', },
+	confine_pointer = true
 })
+
 hl.workspace_rule({
 	workspace = 'special:gaming',
 	decorate = false,
@@ -77,7 +76,7 @@ hl.window_rule({ match = { title =         'Steam', }, workspace = 'special:gami
 hl.layer_rule({
 	match = { namespace = '.*' },
 	blur = true,
-	xray = true,
+	xray = false,
 	blur_popups = true,
 	ignore_alpha = 0.2,
 })

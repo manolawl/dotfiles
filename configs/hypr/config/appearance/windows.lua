@@ -24,10 +24,9 @@ hl.config({
 		rounding_power = RoundPower,
 
 		blur = {
-			xray =       true,
 			noise =      0,
 			vibrancy =   0.25,
-			brightness = 0.50,
+			brightness = 0.75,
 			contrast =   0.75,
 
 			size =       BlurSize,

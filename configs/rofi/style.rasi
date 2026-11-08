@@ -1,5 +1,6 @@
 * {
 	bg0: #26203aa6;
+	bg1: #000000a6;
 
 	fg0: #e2dff9;
 	fg1: #ff60ae;
@@ -24,11 +25,12 @@ window {
 	border-radius: 8;
 	border-color: @fg0;
 	border: 1;
-	background-color: @bg0;
+	background-color: transparent;
 }
 
 mainbox {
 	children: [ inputbar, listview ];
+	background-color: @bg1;
 }
 
 inputbar {
