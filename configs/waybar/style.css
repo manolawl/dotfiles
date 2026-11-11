@@ -8,7 +8,7 @@ window#waybar, tooltip {
 }
 
 window#waybar {
-	border-width: 0 0 1px 0;
+	border-width: 0 1px 0 0;
 }
 
 tooltip {
@@ -18,7 +18,7 @@ tooltip {
 
 .module, tooltip label, #workspaces button {
 	margin: 2px;
-	padding: 0 8px;
+	padding: 0 4px;
 }
 
 #power-profiles-daemon.power-saver { color: @aquamarine-light; }

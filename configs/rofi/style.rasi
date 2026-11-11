@@ -19,7 +19,7 @@
 
 window {
 	location: north;
-	y-offset: 8px;
+	y-offset: 16px;
 	width: 25%;
 	height: 25%;
 	border-radius: 8;

@@ -6,6 +6,8 @@ hl.bind(AppMod .. 'B', hl.dsp.exec_cmd('zen-browser'))
 hl.bind(AppMod .. 'E', hl.dsp.exec_cmd('kitty yazi'))
 hl.bind(AppMod .. 'C', hl.dsp.exec_cmd('hyprpicker -a -f hex -n -u 256 -s 10'))
 
+hl.bind('ALT + B', hl.dsp.exec_cmd('killall -SIGUSR1 waybar'))
+
 hl.bind(MenuMod .. 'V',     hl.dsp.exec_cmd('cliphist list | rofi -dmenu | cliphist decode | wl-copy'))
 hl.bind(MenuMod .. 'Space', hl.dsp.exec_cmd('rofi -show drun -show-icons'))
 

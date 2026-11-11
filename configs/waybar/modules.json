@@ -18,10 +18,10 @@
 		"locale":         "en_PH.UTF-8",
 		"tooltip":         true,
 		"interval":        60,
-		"format":         "{:%I:%M %a %d}",
+		"format":         "{:%I\n%M}",
 		"tooltip-format": "{calendar}",
 		"calendar":{
-			"mode":        "year",
+			"mode":        "month",
 			"mode-mon-col": 4,
 			"format": {
 				"today":    "<span color='#71b0ff'><b><u>{}</u></b></span>",
