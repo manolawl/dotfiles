@@ -64,8 +64,8 @@
 
 	"backlight": {
 		"device": "intel_backlight",
-		"on-scroll-down": "brightnessctl set 20%+ && ddcutil setvcp 10 + 20 -b 18 --sleep-multiplier=0.1 --noverify",
-		"on-scroll-up": "brightnessctl set 20%- && ddcutil setvcp 10 - 20 -b 18 --sleep-multiplier=0.1 --noverify",
+		"on-scroll-down": "brightnessctl set 5%+ && ddcutil setvcp 10 + 5 -b 18 --sleep-multiplier=0.1 --noverify",
+		"on-scroll-up": "brightnessctl set 5%- && ddcutil setvcp 10 - 5 -b 18 --sleep-multiplier=0.1 --noverify",
 		"on-click": "pkill hyprsunset || hyprsunset",
 		"tooltip": false,
 		"tooltip-format": "{percent}%",
