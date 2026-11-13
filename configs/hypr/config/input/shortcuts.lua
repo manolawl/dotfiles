@@ -14,20 +14,22 @@ hl.bind('XF86Presentation',  hl.dsp.exec_cmd('kitty btop'))
 hl.bind('switch:Lid Switch', hl.dsp.exec_cmd('hyprlock'), { locked = true })
 
 local function set_backlight(sign, num)
-	hl.exec_cmd('swayosd-client --brightness ' .. sign .. num)
-
-	--hl.exec_cmd('brightnessctl set ' .. num .. '%' .. sign)
+	hl.exec_cmd('brightnessctl set ' .. num .. '%' .. sign)
 
 	--run ddcutil if second monitor is connected
-	--if hl.get_monitor('HDMI-A-2') then
-		--hl.exec_cmd('ddcutil setvcp 10 ' .. sign .. ' ' .. num .. ' -b 18 --sleep-multiplier=0.1 --noverify')
-	--end
+	if hl.get_monitor('HDMI-A-2') then
+		hl.exec_cmd('ddcutil setvcp 10 ' .. sign .. ' ' .. num .. ' -b 18 --sleep-multiplier=0.1 --noverify')
+	end
+end
+
+local function set_volume(sign, num)
+	hl.exec_cmd('wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ ' .. num .. '%' .. sign)
 end
 
 hl.bind('XF86MonBrightnessUp',   function() set_backlight('+', 10) end)
 hl.bind('XF86MonBrightnessDown', function() set_backlight('-', 10) end)
 
-hl.bind('XF86AudioRaiseVolume',  hl.dsp.exec_cmd('wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%+'), { repeating = true })
-hl.bind('XF86AudioLowerVolume',  hl.dsp.exec_cmd('wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-'),      { repeating = true })
+hl.bind('XF86AudioRaiseVolume',  function() set_volume('+', 10) end, { repeating = true })
+hl.bind('XF86AudioLowerVolume',  function() set_volume('-', 10) end, { repeating = true })
 hl.bind('XF86AudioMute',         hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'))
 hl.bind('XF86Launch6',           hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle'))

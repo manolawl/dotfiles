@@ -8,7 +8,7 @@ window#waybar, tooltip {
 }
 
 window#waybar {
-	border-width: 0 1px 0 0;
+	border-width: 0 0 1px 0;
 }
 
 tooltip {
