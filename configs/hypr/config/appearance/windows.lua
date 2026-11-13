@@ -26,7 +26,7 @@ hl.config({
 		blur = {
 			noise =      0,
 			vibrancy =   0.25,
-			brightness = 0.75,
+			brightness = 0.50,
 			contrast =   0.75,
 
 			size =       BlurSize,

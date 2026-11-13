@@ -18,7 +18,7 @@
 		"locale":         "en_PH.UTF-8",
 		"tooltip":         true,
 		"interval":        60,
-		"format":         "{:%I\n%M}",
+		"format":         "{:%I:%M %a %d}",
 		"tooltip-format": "{calendar}",
 		"calendar":{
 			"mode":        "month",

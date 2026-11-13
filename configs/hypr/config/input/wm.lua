@@ -52,6 +52,8 @@ hl.bind(MoveMod ..   LeftClick, hl.dsp.window.drag(),   { mouse = true })
 hl.bind(ActionMod .. 'R',     hl.dsp.reload_config())
 hl.bind(ActionMod .. 'Q',     hl.dsp.window.close())
 hl.bind(ActionMod .. 'F',     hl.dsp.window.fullscreen({ action = 'toggle' }))
+hl.bind(ActionMod .. 'N',     hl.dsp.exec_cmd('pkill hyprsunset || hyprsunset &'))
+hl.bind(ActionMod .. 'Grave', hl.dsp.exec_cmd('killall -SIGUSR1 waybar'))
 hl.bind(ActionMod .. 'Space', hl.dsp.window.float({ action = 'toggle' }))
 
 --toggling eye candy
