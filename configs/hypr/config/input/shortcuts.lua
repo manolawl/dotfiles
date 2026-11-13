@@ -14,12 +14,14 @@ hl.bind('XF86Presentation',  hl.dsp.exec_cmd('kitty btop'))
 hl.bind('switch:Lid Switch', hl.dsp.exec_cmd('hyprlock'), { locked = true })
 
 local function set_backlight(sign, num)
-	hl.exec_cmd('brightnessctl set ' .. num .. '%' .. sign)
+	hl.exec_cmd('swayosd-client --brightness ' .. sign .. num)
+
+	--hl.exec_cmd('brightnessctl set ' .. num .. '%' .. sign)
 
 	--run ddcutil if second monitor is connected
-	if hl.get_monitor('HDMI-A-2') then
-		hl.exec_cmd('ddcutil setvcp 10 ' .. sign .. ' ' .. num .. ' -b 18 --sleep-multiplier=0.1 --noverify')
-	end
+	--if hl.get_monitor('HDMI-A-2') then
+		--hl.exec_cmd('ddcutil setvcp 10 ' .. sign .. ' ' .. num .. ' -b 18 --sleep-multiplier=0.1 --noverify')
+	--end
 end
 
 hl.bind('XF86MonBrightnessUp',   function() set_backlight('+', 10) end)

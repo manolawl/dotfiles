@@ -1,6 +1,7 @@
 hl.on('hyprland.start', function()
 	hl.exec_cmd('swaybg -m fill -i ~/pictures/backgrounds/background.png')
 	hl.exec_cmd('waybar')
+	hl.exec_cmd('swayosd-server')
 	hl.exec_cmd('systemctl --user start hyprpolkitagent')
 	hl.exec_cmd('hyprsunset')
 	--hl.exec_cmd('udiskie')                                      -- automount devices
