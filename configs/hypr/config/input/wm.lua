@@ -43,8 +43,7 @@ end
 hl.bind('CTRL + ALT + SHIFT + G', hl.dsp.workspace.toggle_special('gaming'))
 
 hl.gesture({ fingers = 3, direction = 'horizontal', action = 'scroll_move' })
-hl.gesture({ fingers = 3, direction = 'vertical',   action = 'workspace' })
---hl.gesture({ fingers = 2, direction = 'swipe',   action = 'resize' })
+hl.gesture({ fingers = 4, direction = 'horizontal', action = 'workspace' })
 
 hl.bind(ResizeMod .. LeftClick, hl.dsp.window.resize(), { mouse = true })
 hl.bind(MoveMod ..   LeftClick, hl.dsp.window.drag(),   { mouse = true })

@@ -57,7 +57,8 @@ hl.window_rule({
 -- -- -- >> STEAM
 hl.window_rule({
 	match = { workspace = 'special:gaming', },
-	confine_pointer = true
+	confine_pointer = true,
+	center = true,
 })
 
 hl.workspace_rule({
@@ -67,10 +68,10 @@ hl.workspace_rule({
 	gaps_in = 0,
 	gaps_out = 0,
 })
-hl.window_rule({ match = { initial_class = 'steam', }, workspace = 'special:gaming' })
-hl.window_rule({ match = { class =         'steam', }, workspace = 'special:gaming' })
-hl.window_rule({ match = { initial_title = 'Steam', }, workspace = 'special:gaming' })
-hl.window_rule({ match = { title =         'Steam', }, workspace = 'special:gaming' })
+hl.window_rule({ match = { initial_class = 'steam', }, workspace = 'special:gaming', center = true, })
+hl.window_rule({ match = { class =         'steam', }, workspace = 'special:gaming', center = true, })
+hl.window_rule({ match = { initial_title = 'Steam', }, workspace = 'special:gaming', center = true, })
+hl.window_rule({ match = { title =         'Steam', }, workspace = 'special:gaming', center = true, })
 
 -- blur for non-window layers
 hl.layer_rule({

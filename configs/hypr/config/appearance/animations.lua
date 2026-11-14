@@ -15,7 +15,7 @@ hl.animation({ leaf = 'windowsOut',  enabled = true, speed = 2.50, bezier = 'acc
 
 hl.animation({ leaf = 'workspaces', enabled = true, speed = 2.50, bezier = 'decel', style = 'slidefade', })
 
-hl.animation({ leaf = 'layers', enabled = true, speed = 1.50, bezier = 'decel', style = 'slidefade', })
+hl.animation({ leaf = 'layers', enabled = true, speed = 1.50, bezier = 'decel', style = 'fade', })
 
 hl.animation({ leaf = 'fadeIn',        enabled = true, speed = 3.00, bezier = 'boost', })
 hl.animation({ leaf = 'fadeOut',       enabled = true, speed = 3.00, bezier = 'decel', })
