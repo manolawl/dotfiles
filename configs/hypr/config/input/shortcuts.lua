@@ -3,7 +3,7 @@ local MenuMod = 'ALT + '
 
 hl.bind(AppMod .. 'T', hl.dsp.exec_cmd('kitty'))
 hl.bind(AppMod .. 'B', hl.dsp.exec_cmd('zen-browser'))
-hl.bind(AppMod .. 'E', hl.dsp.exec_cmd('kitty yazi'))
+hl.bind(AppMod .. 'E', hl.dsp.exec_cmd('hyprfm'))
 hl.bind(AppMod .. 'C', hl.dsp.exec_cmd('hyprpicker -a -f hex -n -u 256 -s 10'))
 
 hl.bind(MenuMod .. 'V',     hl.dsp.exec_cmd('cliphist list | rofi -dmenu | cliphist decode | wl-copy'))
