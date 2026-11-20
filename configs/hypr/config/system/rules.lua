@@ -58,7 +58,6 @@ hl.window_rule({
 hl.window_rule({
 	match = { workspace = 'special:gaming', },
 	confine_pointer = true,
-	center = true,
 })
 
 hl.workspace_rule({
@@ -68,16 +67,16 @@ hl.workspace_rule({
 	gaps_in = 0,
 	gaps_out = 0,
 })
-hl.window_rule({ match = { initial_class = 'steam', }, workspace = 'special:gaming', center = true, })
-hl.window_rule({ match = { class =         'steam', }, workspace = 'special:gaming', center = true, })
-hl.window_rule({ match = { initial_title = 'Steam', }, workspace = 'special:gaming', center = true, })
-hl.window_rule({ match = { title =         'Steam', }, workspace = 'special:gaming', center = true, })
+hl.window_rule({ match = { initial_class = 'steam', }, workspace = 'special:gaming', })
+hl.window_rule({ match = { class =         'steam', }, workspace = 'special:gaming', })
+hl.window_rule({ match = { initial_title = 'Steam', }, workspace = 'special:gaming', })
+hl.window_rule({ match = { title =         'Steam', }, workspace = 'special:gaming', })
 
 -- blur for non-window layers
 hl.layer_rule({
 	match = { namespace = '.*' },
 	blur = true,
-	xray = false,
+	xray = true,
 	blur_popups = true,
 	ignore_alpha = 0.2,
 })
@@ -86,7 +85,6 @@ hl.layer_rule({
 hl.layer_rule({
 	match = { namespace = 'selection' },
 	blur = false,
-	xray = false,
 })
 
 hl.workspace_rule({ workspace = '1', monitor = 'eDP-1' })

@@ -24,13 +24,16 @@ hl.config({
 		rounding_power = RoundPower,
 
 		blur = {
-			noise =      0,
-			vibrancy =   0.25,
-			brightness = 0.50,
-			contrast =   0.75,
-
 			size =       BlurSize,
 			passes =     BlurPass,
+
+			noise =      0,
+			vibrancy =   0.25,
+			contrast =   0.75,
+			brightness = 1,
+
+			popups =     true,
+			xray =       true,
 		},
 	},
 

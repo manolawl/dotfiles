@@ -17,8 +17,7 @@ tooltip {
 }
 
 .module, tooltip label, #workspaces button {
-	margin: 2px;
-	padding: 0 4px;
+	padding: 0 8px;
 }
 
 #power-profiles-daemon.power-saver { color: @aquamarine-light; }
